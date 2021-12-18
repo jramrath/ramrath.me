@@ -10,7 +10,7 @@
 main h1 {
   padding: 0.5em;
   margin-top: 0.5em;
-  margin-bottom: 0;
+  margin-bottom: 0.5em;
 }
 main h1 .project {
   color: #569CD6;
@@ -23,7 +23,7 @@ main h1 .blog {
   color: #4EC9B0;
 }
 main section {
-  padding: 0;
+  padding: 0.25em 0;
   margin: 0.5em 0.75em;
 }
 main section h2 {

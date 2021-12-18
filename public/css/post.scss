@@ -17,8 +17,6 @@ $color-blue: #1a52a0;
 
 
 
-
-
 $color-black-dark: #1E1E1E;   /* main background color & header current color */
 $color-black-medium: #252526; /* header background */
 $color-black-light: #2A2D2E;  /* hover color */
@@ -44,7 +42,8 @@ main {
     h1 {
         padding: 0.5em;
         margin-top: 0.5em;
-        margin-bottom: 0;
+        margin-bottom: .5em;
+
         .project {
             color: $h1-color-project;
             font-weight: bold;
@@ -58,7 +57,7 @@ main {
     }
 
     section {
-        padding: 0;
+        padding: .25em  0;
         margin: .5em .75em;
 
         h2 {
