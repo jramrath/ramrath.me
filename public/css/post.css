@@ -1,0 +1,88 @@
+/* main background color & header current color */
+/* header background */
+/* hover color */
+/* dark text color */
+/* normal text color */
+/* Project part of h1 in posts */
+/* h2 title of Project overview */
+/* Divider Part of h1 in posts */
+/* Post-name part of h1 in posts */
+main h1 {
+  padding: 0.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+main h1 .project {
+  color: #569CD6;
+  font-weight: bold;
+}
+main h1 .divider {
+  color: #CE9178;
+}
+main h1 .blog {
+  color: #4EC9B0;
+}
+main section {
+  padding: 0;
+  margin: 0.5em 0.75em;
+}
+main section h2 {
+  margin: 0 0.3em;
+  color: #9CDCFE;
+}
+main section h2 span {
+  color: #949494;
+  font-size: 0.6em;
+  display: block;
+  height: 1.5em;
+  float: right;
+  margin-left: 1em;
+  padding-top: 0.5em;
+}
+main section pre.terminal {
+  background-color: #252526;
+  padding: 1em 1.5em;
+  margin: 1em 3em;
+  border: 1px solid #252526;
+  border-radius: 1.25em;
+  white-space: pre-line;
+}
+main section pre.terminal code {
+  font-size: 1.1em;
+  line-height: 1.75em;
+}
+main section pre.code {
+  background-color: #252526;
+  padding: 1em 1.5em;
+  margin: 1em 0;
+  border: 1px solid #252526;
+  border-radius: 1.25em;
+  position: relative;
+}
+main section pre.code code {
+  font-size: 1.1em;
+  line-height: 1.75em;
+}
+main section pre.code a.downloadCode {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1em;
+}
+main section pre.code a.downloadCode button {
+  background-color: #1E1E1E;
+  border-color: #1E1E1E;
+  border-radius: 0.75em;
+  border-width: 2px;
+  width: 2.5em;
+  height: 2.5em;
+  background-image: url("/img/icons/download-white.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1.5em;
+}
+main section pre.code a.downloadCode button:hover {
+  border-color: #1a52a0;
+  background-image: url("/img/icons/download-blue.png");
+}/*# sourceMappingURL=post.css.map */

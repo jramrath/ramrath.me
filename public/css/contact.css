@@ -1,0 +1,104 @@
+main {
+  width: 100%;
+  display: block;
+  margin: 0;
+}
+main a div.container {
+  display: inline-flex;
+  width: 100%;
+  margin: 0.75em 0;
+  height: 8em;
+  position: relative;
+  background: #252526;
+}
+main a div.container img.icon {
+  float: left;
+  height: auto;
+  width: 3.5em;
+  margin: auto 1em;
+}
+main a div.container section {
+  height: auto;
+  width: 100%;
+  margin: auto 0;
+  display: block;
+}
+main a div.container section h1 {
+  font-size: 1em;
+  width: auto;
+}
+main a div.container section h1.name {
+  margin: auto 1em;
+}
+main a div.container section h1.content {
+  margin: auto 1em;
+}
+
+.pgp-info {
+  display: block;
+}
+.pgp-info div.container {
+  height: auto;
+}
+.pgp-info div.container p {
+  padding: 1em 2em;
+  color: #D4D4D4;
+}
+
+.question-mark {
+  width: auto;
+  height: 100%;
+  display: flex;
+  right: 0;
+  margin-right: 1em;
+  float: right;
+}
+.question-mark img {
+  height: 1.75em;
+  margin: auto 0;
+}
+
+.question-mark-pc {
+  display: none;
+  height: 2.687em;
+  width: auto;
+  position: relative;
+}
+.question-mark-pc:hover + .pgp-info {
+  display: unset;
+}
+.question-mark-pc img {
+  height: 1.75em;
+  margin: auto 0;
+}
+
+@media only screen and (min-width: 600px) {
+  main {
+    width: 90%;
+    margin: auto;
+  }
+  main a div.container {
+    margin: 0.75em;
+    border-radius: 0.5em;
+    border: 1px solid #252526;
+  }
+  main a div.container:hover {
+    border-color: #1a52a0;
+  }
+  main a div.container section {
+    display: inline-flex;
+  }
+  main a div.container section h1 {
+    font-size: 2.25em;
+  }
+  main a div.container section h1.name {
+    float: left;
+    margin: auto 0.5em auto 1em;
+  }
+  main a div.container section h1.content {
+    right: 0;
+    text-align: right;
+    width: 100%;
+    margin: auto 1em auto 0.5em;
+  }
+}/*# sourceMappingURL=contact.css.map */

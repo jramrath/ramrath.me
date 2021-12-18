@@ -1,0 +1,29 @@
+input(id="mobile-menu-checkbox" type="checkbox")
+label(for="mobile-menu-checkbox") 
+  img#mobile-cta(class="mobile-menu" src="/img/mobile-menu.svg" alt="Open and close Navigation")
+
+nav
+  ul.pages-nav(level=0)
+    li(class=(current == "home" ? "current" : ""))
+      a(href="/")
+        img(src="/img/icons/home.png")
+        | HOME
+
+    li(class=(current == "about" ? "current" : ""))
+      a(href="/about")
+        img(src="/img/icons/about.png")
+        | ABOUT
+    
+    li(class=(current == "projects" ? "current" : ""))
+      a(href="/projects")
+        img(src="/img/icons/projects.png")
+        | PROJECTS
+
+    li(class=(current == "contact" ? "current" : ""))
+      a(href="/contact")
+        img(src="/img/icons/contact.png")
+        | CONTACT
+
+span.ip
+  a(href="/user-data/")
+    | IP: #{remoteAddress} 

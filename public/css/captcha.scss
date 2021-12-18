@@ -1,0 +1,112 @@
+$main-bg-color: #1E1E1E;
+$header-bg-color:  #252526;
+$header-bg-color-hover: #2A2D2E;
+$header-bg-color-current: #37373D;
+$header-bg-color-current-pc: #1E1E1E;
+
+$text-color: #D4D4D4;
+$hyperlink-color: #569CD6;
+$h1-color-project: #569CD6;
+$h1-color-divider: #CE9178;
+$h1-color-blog: #4EC9B0;
+$h2-color: #9CDCFE;
+$text-color-dark: #949494;
+
+$dark-blue: #1a52a0;
+
+main {
+    div.captcha-wrapper {
+        background-color: $header-bg-color;
+        padding: 2em;
+        margin-top: 2em;
+
+        h1 {
+            text-align: center;
+            font-size: 1.75em;
+        }
+
+        section.captcha-image {
+            margin: 2em 0;
+            display: flex;
+
+            img {
+                width: 20em;
+                height: auto;
+                margin: 0 auto;
+            }
+        }
+
+        section.captcha-interface {
+
+            h2 {
+                text-align: center;
+            }
+
+            form {
+                div.time-wrapper {
+                    display: flex;
+                    margin-bottom: .75em;
+
+                    div.time {
+                        margin: 0 auto;
+
+                        select {
+                            color: $text-color;
+                            background-color: $main-bg-color;
+                            border-width: 1px;
+                            border-radius: .3em;
+                            border-color: $header-bg-color;
+                            font-size: 1.5em;
+                            text-align: center;
+
+                            option {
+                                margin: .5em;
+                            }
+                        }
+                    }
+                }
+
+                div.submit {
+                    display: flex;
+
+                    input {
+                        margin: 0 auto;
+                        padding: .2em .4em;
+                        color: $text-color;
+                        background: $main-bg-color;
+                        border-width: 1px;
+                        border-radius: .3em;
+                        border-color: $dark-blue;
+                        font-size: 1.5em;
+                        text-align: center;
+
+                        &:hover {
+                            background: $header-bg-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 600px) {
+    main {
+        display: flex;
+
+        div.captcha-wrapper {
+            margin: 3em auto;
+            width: 400px;
+            margin-top: 4em;
+            border-radius: 1em;
+            border-width: 1px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1120px) {
+    main div.captcha-wrapper {
+        width: 35%;
+    }
+}

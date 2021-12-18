@@ -1,0 +1,22 @@
+doctype html5
+head
+  include ./template/head.pug
+  link(rel="stylesheet", href="/css/post.css")
+
+header
+  include ./template/header.pug
+
+
+main 
+  h1
+    span.project= project_name
+    span.divider  | 
+    span.blog= post_name
+    
+
+  - var path = path
+  |!{include(path)}
+
+
+footer
+  include ./template/footer.pug

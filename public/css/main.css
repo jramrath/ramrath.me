@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+/* main background color & header current color */
+/* header background */
+/* hover color */
+/* dark text color */
+/* normal text color */
+/* Project part of h1 in posts */
+/* h2 title of Project overview */
+/* Divider Part of h1 in posts */
+/* Post-name part of h1 in posts */
+html {
+  height: 100%;
+  color: #D4D4D4;
+}
+html h1, html h2, html h3 {
+  font-weight: normal;
+  color: #D4D4D4;
+}
+html a {
+  color: #1a52a0;
+  text-decoration: none;
+}
+html a:hover {
+  text-decoration: underline;
+}
+html body {
+  margin: 0;
+  padding: 0;
+  background: #1E1E1E;
+  font-family: "Poppins", sans-serif;
+  min-height: calc(100% - 4em);
+  padding-bottom: 4em;
+  position: relative;
+}
+html body header {
+  background-color: #252526;
+  height: 3em;
+  display: flex;
+  border-bottom: 1px solid #1a52a0;
+}
+html body header a {
+  color: #949494;
+}
+html body header a:hover {
+  text-decoration: none;
+}
+html body header input#mobile-menu-checkbox {
+  display: none;
+}
+html body header input#mobile-menu-checkbox:checked ~ nav {
+  display: unset;
+}
+html body header label {
+  margin: auto 1em;
+}
+html body header nav {
+  display: none;
+  margin-top: 3em;
+  background-color: #252526;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+html body header nav ul {
+  list-style-type: none;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+html body header nav ul li a {
+  display: flex;
+  padding: 0.5em;
+  font-size: 1.25em;
+  cursor: pointer;
+  padding-right: 1em;
+}
+html body header nav ul li a:hover {
+  background-color: #2A2D2E;
+}
+html body header nav ul li a img {
+  width: 1.25em;
+  height: 1.25em;
+  margin-right: 0.25em;
+}
+html body header nav ul li.current a {
+  color: #D4D4D4;
+  background-color: #1E1E1E;
+}
+html body header span.ip {
+  display: inline-flex;
+  margin-left: auto;
+  overflow: hidden;
+}
+html body header span.ip a {
+  margin: auto 0;
+  padding: 0.5em;
+  white-space: nowrap;
+  font-size: 1em;
+}
+html body header span.ip a:hover {
+  background-color: #2A2D2E;
+}
+html body footer {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  height: 4em;
+}
+html body footer a {
+  color: #949494;
+  margin: auto;
+}
+
+@media only screen and (min-width: 600px) {
+  html body header {
+    height: unset;
+  }
+  html body header label {
+    display: none;
+  }
+  html body header nav {
+    display: flex;
+    margin: 0;
+    background-color: unset;
+    position: relative;
+    left: unset;
+    top: unset;
+    bottom: unset;
+  }
+  html body header nav ul {
+    display: flex;
+  }
+  html body header nav ul li a {
+    padding: 0.5em 0.7em;
+  }
+  html body header nav ul li.current {
+    outline: #1E1E1E solid 1px;
+  }
+}
+@media only screen and (min-width: 1120px) {
+  html body {
+    width: 1120px;
+    margin: 2em auto 0 auto;
+    min-height: calc(100% - 4em - 2em);
+  }
+}/*# sourceMappingURL=main.css.map */

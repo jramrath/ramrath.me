@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+$color-black-dark: #1E1E1E;   /* main background color & header current color */
+$color-black-medium: #252526; /* header background */
+$color-black-light: #2A2D2E;  /* hover color */
+
+$color-white-dark: #949494;   /* dark text color */
+$color-white-light: #D4D4D4;  /* normal text color */
+
+$color-blue-dark: #1a52a0;
+$color-blue-medium: #569CD6;  /* Project part of h1 in posts */
+$color-blue-light: #9CDCFE;   /* h2 title of Project overview */
+
+$color-orange: #CE9178;       /* Divider Part of h1 in posts */
+
+$color-green: #4EC9B0;        /* Post-name part of h1 in posts */
+
+
+$height-mobileHeader: 3em;
+$height-footer: 4em;
+
+
+
+
+html {
+    height: 100%;
+    color: $color-white-light;
+
+    h1, h2, h3 {
+        font-weight: normal;
+        color: $color-white-light;
+    }
+
+    a { 
+        color: $color-blue-dark;
+        text-decoration: none;
+    
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: $color-black-dark;
+        font-family: "Poppins", sans-serif;
+        min-height: calc(100% - #{$height-footer});
+        padding-bottom: $height-footer;
+        position: relative;
+
+        header {
+            background-color: $color-black-medium;
+            height: $height-mobileHeader;
+            display: flex;
+            border-bottom: 1px solid $color-blue-dark;
+
+            a {
+                color: $color-white-dark;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+
+
+            input#mobile-menu-checkbox {
+                display: none;
+
+                &:checked ~ nav {
+                    display: unset;
+                }
+            }
+
+            label {
+                margin: auto 1em;
+            }
+
+            nav {
+                display: none;
+                margin-top: $height-mobileHeader;
+                background-color: $color-black-medium;
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+
+                ul {
+                    list-style-type: none;
+                    position: relative;
+                    padding: 0;
+                    margin: 0;
+
+                    li {
+                        a {
+                            display: flex;
+                            padding: .5em;
+                            font-size: 1.25em;
+                            cursor: pointer;
+                            padding-right: 1em;
+
+                            &:hover {
+                                background-color: $color-black-light;
+                            }
+        
+                            img {
+                                width: 1.25em;
+                                height: 1.25em;
+                                margin-right: .25em;
+                            }
+                        }
+
+                        &.current {
+                            a {
+                                color: $color-white-light;
+                                background-color: $color-black-dark;
+                            }
+                        }
+                    }
+                }
+            }
+
+            span.ip {
+                display: inline-flex;
+                margin-left: auto;
+                overflow: hidden;
+
+                a {
+                    margin: auto 0;
+                    padding: .5em;
+                    white-space: nowrap;
+                    font-size: 1em;
+
+                    &:hover {
+                        background-color: $color-black-light;
+                    }
+                }
+            }
+        }
+
+        footer {
+            position: absolute;
+            display: flex;
+            bottom: 0;
+            width: 100%;
+            height: $height-footer;
+
+            a {
+                color: $color-white-dark;
+                margin: auto;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 600px) {
+    html {
+        body {
+            header {
+                height: unset;
+
+                label {
+                    display: none;
+                }
+
+                nav {
+                    display: flex;
+                    margin: 0;
+                    background-color: unset;
+                    position: relative;
+                    left: unset;
+                    top: unset;
+                    bottom: unset;
+
+                    ul {
+                        display: flex;
+
+                        li {
+                            a {
+                                padding: .5em .7em;
+                            }
+
+                            &.current {
+                                outline: $color-black-dark solid 1px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1120px) {
+    html body {
+        width: 1120px;
+        margin: 2em auto 0 auto;
+        min-height: calc(100% - #{$height-footer} - 2em);
+    }
+}

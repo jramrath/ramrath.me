@@ -1,0 +1,22 @@
+doctype html5
+head
+  include ./template/head.pug
+  link(rel="stylesheet", href="/css/captchaFailed.css")
+
+header
+  include ./template/header.pug
+
+
+
+main 
+  h1 Something went wrong.
+    br 
+    | Please 
+    a(href="/contact/") try again
+    |!
+
+
+
+
+footer
+  include ./template/footer.pug

@@ -1,0 +1,47 @@
+doctype html5
+head
+  include ./template/head.pug
+  link(rel="stylesheet", href="/css/contact.css")
+
+header
+  include ./template/header.pug
+
+
+
+main 
+
+
+  a(href="#")
+    .container
+      img.icon(src="/img/icons/instagram.png", alt="")
+      section 
+        h1.name INSTAGRAM 
+        h1.content *insta-username 
+
+
+  a(href="mailto: jannik@ramrath.me")
+    .container 
+      img.icon(src="/img/icons/email.png")
+      section 
+        h1.name EMAIL 
+        h1.content jannik@ramrath.me
+  
+
+
+  a(href="/jannik-ramrath_public-pgp.asc") 
+    .container 
+      img.icon(src="/img/icons/pgp.png")
+      section 
+        h1.name PGP 
+        h1.content
+
+  a.pgp-info(href="https://www.varonis.com/blog/pgp-encryption/" target="_blank" rel="noreferrer noopener")
+    .container 
+      p Pretty Good Privacy (PGP) is an encryption system used for both sending encrypted emails and encrypting sensitive files. Since its invention back in 1991, PGP has become the standard for email security.
+
+
+
+  
+
+footer
+  include ./template/footer.pug

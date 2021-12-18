@@ -1,0 +1,61 @@
+$main-bg-color: #1E1E1E;
+$header-bg-color:  #252526;
+$header-bg-color-hover: #2A2D2E;
+$header-bg-color-current: #37373D;
+$header-bg-color-current-pc: #1E1E1E;
+
+$text-color: #D4D4D4;
+$hyperlink-color: #569CD6;
+$h1-color-project: #569CD6;
+$h1-color-divider: #CE9178;
+$h1-color-blog: #4EC9B0;
+$h2-color: #9CDCFE;
+$text-color-dark: #949494;
+
+$dark-blue: #1a52a0;
+
+
+main {
+    ul.ip-details {
+        list-style-type: none;
+        display: block;
+        padding: 0;
+
+        li .container {
+            color: $dark-blue;
+            margin: 1em 0;
+            padding: .5em;
+            background-color: $header-bg-color;
+            height: auto;
+            position: relative;
+            display: flex;
+            white-space: nowrap;
+
+            border-width: 1px;
+            border-style: solid;
+            border-color: $header-bg-color;
+
+            .content {
+                color: $text-color;
+                margin-left: auto;
+                text-align: right;
+                white-space: normal;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 600px) {
+    main {
+        padding-top: .75em;
+        
+        ul.ip-details {
+            margin: 0 5em;
+
+            li {
+                border-radius: .5em;
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+doctype html5
+head
+  include ./template/head.pug
+  link(rel="stylesheet", href="/css/user-data.css")
+
+body
+
+  header
+    include ./template/header.pug
+
+
+  main
+    ul.ip-details 
+
+      li.ip 
+        .container IP: 
+          .content= ip
+
+      li.user-agent 
+        .container user-agent: 
+          .content= user_agent
+
+      li.country 
+        .container Country: 
+          .content= country
+
+      li.region 
+        .container Region: 
+          .content= region
+
+      li.city
+        .container City: 
+          .content= city
+
+      li.coordinates
+        .container Coordinates: 
+          .content= coordinates
+
+      li.timezone
+        .container Timezone: 
+          .content= timezone
+
+
+
+
+  footer
+    include ./template/footer.pug

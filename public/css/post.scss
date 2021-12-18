@@ -1,0 +1,134 @@
+$main-bg-color: #1E1E1E;
+$header-bg-color:  #252526;
+$header-bg-color-hover: #2A2D2E;
+$header-bg-color-current: #37373D;
+$header-bg-color-current-pc: #1E1E1E;
+
+$text-color: #D4D4D4;
+$hyperlink-color: #569CD6;
+$h1-color-project: #569CD6;
+$h1-color-divider: #CE9178;
+$h1-color-blog: #4EC9B0;
+$h2-color: #9CDCFE;
+$text-color-dark: #949494;
+
+$color-blue: #1a52a0;
+
+
+
+
+
+
+$color-black-dark: #1E1E1E;   /* main background color & header current color */
+$color-black-medium: #252526; /* header background */
+$color-black-light: #2A2D2E;  /* hover color */
+
+$color-white-dark: #949494;   /* dark text color */
+$color-white-light: #D4D4D4;  /* normal text color */
+
+$color-blue-dark: #1a52a0;
+$color-blue-medium: #569CD6;  /* Project part of h1 in posts */
+$color-blue-light: #9CDCFE;   /* h2 title of Project overview */
+
+$color-orange: #CE9178;       /* Divider Part of h1 in posts */
+
+$color-green: #4EC9B0;        /* Post-name part of h1 in posts */
+
+
+
+
+
+
+
+main {
+    h1 {
+        padding: 0.5em;
+        margin-top: 0.5em;
+        margin-bottom: 0;
+        .project {
+            color: $h1-color-project;
+            font-weight: bold;
+        }
+        .divider {
+            color: $h1-color-divider;
+        }
+        .blog {
+            color: $h1-color-blog;
+        }
+    }
+
+    section {
+        padding: 0;
+        margin: .5em .75em;
+
+        h2 {
+            margin: 0 .3em;
+            color: $h2-color;
+            span {
+                color: $text-color-dark;
+                font-size: 0.6em;
+        
+                display: block;
+                //width: 1.5em;
+                height: 1.5em;
+                float: right;
+                margin-left: 1em;
+                padding-top: .5em;
+            }
+        }
+
+        pre.terminal {
+            background-color: $color-black-medium;
+            padding: 1em 1.5em;
+            margin: 1em 3em;
+            border: 1px solid $color-black-medium;
+            border-radius: 1.25em;
+            white-space: pre-line;
+
+            code {
+                font-size: 1.1em;
+                line-height: 1.75em;
+            }
+        }
+
+        pre.code {
+            background-color: $color-black-medium;
+            padding: 1em 1.5em;
+            margin: 1em 0;
+            border: 1px solid $color-black-medium;
+            border-radius: 1.25em;
+            position: relative;
+
+            code {
+                font-size: 1.1em;
+                line-height: 1.75em;
+            }
+
+            a.downloadCode {
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin: 1em;
+
+                button {
+                    background-color: $color-black-dark;
+                    border-color: $color-black-dark;
+                    border-radius: .75em;
+                    border-width: 2px;
+                    width: 2.5em;
+                    height: 2.5em;
+                    background-image: url("/img/icons/download-white.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 1.5em;
+
+                    &:hover {
+                        border-color: $color-blue-dark;
+                        background-image: url("/img/icons/download-blue.png");
+                    }
+                }
+            }
+        }
+    }
+}

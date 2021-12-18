@@ -1,0 +1,128 @@
+$color-black-dark: #1E1E1E;   /* main background color & header current color */
+$color-black-medium: #252526; /* header background */
+$color-black-light: #2A2D2E;  /* hover color */
+
+$color-white-dark: #949494;   /* dark text color */
+$color-white-light: #D4D4D4;  /* normal text color */
+
+$color-blue-dark: #1a52a0;
+$color-blue-medium: #569CD6;  /* Project part of h1 in posts */
+$color-blue-light: #9CDCFE;   /* h2 title of Project overview */
+
+$color-orange: #CE9178;       /* Divider Part of h1 in posts */
+
+$color-green: #4EC9B0;        /* Post-name part of h1 in posts */
+
+
+main {
+    section.project-details {
+        margin: 0 .5em;
+
+        h1.project-name {
+            color: $color-blue-medium;
+            font-weight: bold;
+        }
+    }
+
+    hr.seperator {
+        color: $color-blue-dark
+    }
+
+    section.posts {
+        .project-preview {
+            display: inline-block;
+            margin: .75em 0;
+            min-height: 10em;
+            position: relative;
+            background: $color-black-medium;
+            width: 100%;
+        
+            .description {
+                max-width: 100%;
+                min-height: 150px;
+                margin: 0;
+                padding: .5em;
+                float: left;
+        
+                h2 {
+                    color: $color-blue-light;
+                    margin-bottom: .25em;
+                    margin-top: 0;
+                }
+        
+                p {
+                    color: $color-white-light;
+                    margin: 0;
+                    align-items: center;
+                }
+            }
+            .picture {
+                display: none;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 600px) {
+    main {
+        display: block;
+        width: 95%;
+        margin: auto;
+
+        section.project-details {
+            margin: 0;
+        }
+
+        section.posts .project-preview {
+            margin-left: 0; margin-right: 0;
+            border-radius: .5em;
+            border-width: 1px;
+            border-style: solid;
+            border-color: $color-black-medium;
+            min-height: unset;
+            height: 10em;
+
+            &:hover {
+                border-color: $color-blue-dark
+            }
+
+            .description {
+                max-width: 65%;
+                padding: .5em;
+            }
+
+            .picture {
+                display: flex;
+
+                max-width: 45%;
+                height: inherit;
+                margin: 0;
+                float: right;
+
+                img {
+                    margin: auto 0;
+                    width: auto;
+                    height: 100%;
+                    border-radius: 0 .5em .5em 0;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1120px) {
+    main {
+        width: 100%;
+
+        section.posts .project-preview {
+            height: 12em;
+        }
+    }
+}

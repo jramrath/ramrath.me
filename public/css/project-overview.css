@@ -1,0 +1,84 @@
+/* main background color & header current color */
+/* header background */
+/* hover color */
+/* dark text color */
+/* normal text color */
+/* Project part of h1 in posts */
+/* h2 title of Project overview */
+/* Divider Part of h1 in posts */
+/* Post-name part of h1 in posts */
+.project-preview {
+  display: inline-block;
+  margin: 0.75em 0;
+  min-height: 10em;
+  position: relative;
+  background: #252526;
+  width: 100%;
+}
+.project-preview .description {
+  max-width: 100%;
+  min-height: 150px;
+  margin: 0;
+  padding: 0.5em;
+  float: left;
+}
+.project-preview .description h2 {
+  color: #569CD6;
+  margin-bottom: 0.25em;
+  margin-top: 0;
+  font-weight: bold;
+}
+.project-preview .description p {
+  color: #D4D4D4;
+  margin: 0;
+  align-items: center;
+}
+.project-preview .picture {
+  display: none;
+}
+
+@media only screen and (min-width: 600px) {
+  main {
+    display: block;
+    width: 95%;
+    margin: auto;
+  }
+  main .project-preview {
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0.5em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #252526;
+    min-height: unset;
+    height: 10em;
+  }
+  main .project-preview:hover {
+    border-color: #1a52a0;
+  }
+  main .project-preview .description {
+    max-width: 65%;
+    padding: 0.5em;
+  }
+  main .project-preview .picture {
+    display: flex;
+    max-width: 45%;
+    height: inherit;
+    margin: 0;
+    float: right;
+  }
+  main .project-preview .picture img {
+    margin: auto 0;
+    width: auto;
+    height: 100%;
+    border-radius: 0 0.5em 0.5em 0;
+  }
+}
+@media only screen and (min-width: 1120px) {
+  main {
+    width: 100%;
+  }
+  main .project-preview {
+    height: 12em;
+  }
+}/*# sourceMappingURL=project-overview.css.map */

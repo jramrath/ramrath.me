@@ -1,0 +1,19 @@
+/* main background color & header current color */
+/* header background */
+/* hover color */
+/* dark text color */
+/* normal text color */
+/* Project part of h1 in posts */
+/* h2 title of Project overview */
+/* Divider Part of h1 in posts */
+/* Post-name part of h1 in posts */
+main {
+  color: #D4D4D4;
+}
+main h1 {
+  text-align: center;
+  margin-top: 1.5em;
+}
+main h1 span {
+  color: #1a52a0;
+}/*# sourceMappingURL=404.css.map */

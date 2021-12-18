@@ -1,0 +1,72 @@
+include ../../../views/template/postMixins.pug
+
+section
+    h2 
+        span 1
+        | Introduction 
+    
+    p.
+        Lorem <a href="#">ipsum</a> dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat. Duis aute irure dolor in
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+        culpa qui officia deserunt mollit anim id est laborum.
+
+
+section
+    h2 
+        span 2
+        | Project Revision 
+    
+    p.
+        Nam faucibus mollis nulla, rutrum semper urna auctor vitae. Mauris in
+        molestie diam. Fusce id consequat velit. Morbi accumsan nulla vitae
+        enim efficitur, eget ornare nibh bibendum. Mauris eget lacinia lacus.
+        Proin nec purus non sem faucibus feugiat id quis neque. Suspendisse
+        sed lorem tincidunt, luctus ligula ac, sollicitudin ex. Phasellus
+        justo dolor, laoreet vitae ante ut, rutrum ullamcorper risus. Sed
+        commodo tincidunt luctus. Aenean elementum diam eu dictum pulvinar.
+
+    +terminalMixin.
+        sudo apt install python3-pip
+        sudo python3-pip install tqdm
+
+    p.
+        Duis vel lorem quis sem pretium porta. Nullam rutrum rutrum lacus, vel
+        hendrerit magna sodales quis. Duis congue, nibh vel efficitur auctor,
+        nibh tellus facilisis massa, nec egestas est magna id diam. Aenean
+        commodo fermentum tellus ultrices finibus. Nunc tempor commodo congue.
+        Cras sit amet dui feugiat, ullamcorper tellus in, facilisis metus.
+        Mauris ac quam non ex pellentesque vehicula. Sed hendrerit ultrices
+        nibh, vitae auctor nunc consectetur ut. Phasellus in ex commodo, porta
+        magna non, eleifend dui. Donec velit purus, pulvinar eget maximus in,
+        condimentum hendrerit sem. Vivamus sit amet metus in magna gravida
+        posuere at in nisi. Pellentesque in arcu vitae augue euismod tempus.
+        Phasellus non gravida dui. Morbi felis metus, facilisis ut est at,
+        fermentum tincidunt nisi. Nunc in quam scelerisque, ullamcorper neque
+        at, faucibus mauris. Aenean vel fringilla erat.
+
+
+    +codeMixin("/programs/test-2-example.py").
+        class Gen():
+            def __init__(self):
+                self.numOfCaptchas = 500
+                self.directory = "../public/captcha-img"
+                print(self.directory)
+
+            def reDoCaptchas(self):
+                print("Deleting old Captchas!")
+
+                for f in os.listdir(self.directory):
+                    os.remove(os.path.join(self.directory, f))
+
+                print("Done!")
+                print()
+                print("Generating {} new Captchas!".format(self.numOfCaptchas))
+
+                for c in tqdm(range(self.numOfCaptchas), desc="Generating..."):
+                    self.genCaptcha()
+
+                print("Done!")
