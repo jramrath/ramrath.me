@@ -25,13 +25,13 @@ class Gen():
         print("Generating {} new Captchas!".format(self.numOfCaptchas))
 
         for c in tqdm(range(self.numOfCaptchas), desc="Generating..."):
-            self.genCaptcha()
+            self.genCaptcha(c)
 
         print("Done!")
 
 
 
-    def genCaptcha(self):
+    def genCaptcha(self, index):
         time = (random.randint(0, 11), random.randint(0, 59))
 
         # calculate direction of minute arm (minutes * 6°[one minute])
@@ -65,14 +65,14 @@ class Gen():
         draw.line((1350, 1350, 1350 + arm_length[1][0], 1350 + arm_length[1][1]), fill=color, width=60) # draw hour arm
 
 
-        for i in range(0, 4):
-            pos = [[1350, 1950], [1950, 1350], [1350, 750], [750, 1350]][i]
+        for i in range(0, 8):
+            pos = [[1350, 1950], [1950, 1350], [1350, 750], [750, 1350], [1050, 1050], [1650, 1650], [1050, 1650], [1650, 1050]][i]
             last = "NORTH"
             width = random.randint(5, 10)
             color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
-            for n in range(random.randint(150, 400)):
-                step = random.randint(80, 200)
+            for n in range(random.randint(150, 300)):
+                step = random.randint(20, 100)
 
                 directions = ["NORTH", "EAST", "SOUTH", "WEST"]
                 currentDirection = random.choices(directions)[0]
@@ -99,11 +99,11 @@ class Gen():
                 pos = (pos[0] + delta_x, pos[1] + delta_y)
 
                 # Check for collision with Circle
-                if not self.checkForCollision(oldPos, pos):
+                if self.checkForCollision(oldPos, pos):
                     break
 
         timeHash = hashlib.sha256((str(time[0]) + ":" + str(time[1])).encode("utf-8")).hexdigest()
-        img.save(self.directory + "/{}.png".format(timeHash))
+        img.save(self.directory + "/{}_{}.png".format(index, timeHash))
 
 
 
@@ -124,7 +124,7 @@ class Gen():
         
         d = x + a * t
 
-        return np.linalg.norm(m - x) **2 < r **2 # False: new position is outside of circle
+        return np.linalg.norm(m - x) **2 >= r **2 # False: new position is outside of circle
 
 
 
