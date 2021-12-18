@@ -36,39 +36,41 @@ https.createServer(httpsOptions, app).listen(port, function() {
 
 // -------------------------------------------------------------------------------------------------------
 
+let render = (req, res, path, options = {}) => {
+    res.render(path, Object.assign({}, options, {
+        remoteAddress: req.headers["x-forwarded-for"],
+    }));
+}
+
 let includeFunc = (path, options = {}) => {
     return pug.renderFile(path, options);
 }
 
 let notFoundFunc = (req, res) => {
-    res.status(404).render("404.pug", {
-        remoteAddress: req.headers["x-forwarded-for"]
-    });
+    res.status(404);
+    render(req, res, "404.pug");
 }
 
 // -------------------------------------------------------------------------------------------------------
 
 
 app.get("/", function(req, res) {
-    res.render("home.pug", { 
-        remoteAddress: req.headers["x-forwarded-for"],
+    render(req, res, "home.pug", { 
         current: "home"
     });
 });
 
 
 app.get("/about/", function(req, res) {
-    res.render("about.pug", { 
-        remoteAddress: req.headers["x-forwarded-for"],
+    render(req, res, "about.pug", { 
         current: "about"
     });
 });
 
 
 app.get("/projects/", function(req, res) {
-    res.render("project-overview.pug", { 
+    render(req, res, "project-overview.pug", { 
         projects: PM.projects, 
-        remoteAddress: req.headers["x-forwarded-for"],
         current: "projects"
     });
 });
@@ -78,9 +80,8 @@ app.get("/projects/:name", function(req, res) {
     const project = PM.projects[req.params.name]
 
     if(project) {
-        res.render("post-overview.pug", { 
-            project: project, 
-            remoteAddress: req.headers["x-forwarded-for"]
+        render(req, res, "post-overview.pug", { 
+            project: project
         });
     }
     else {
@@ -95,12 +96,11 @@ app.get("/projects/:name/:post", function(req, res) {
     const post = project.posts[req.params.post];
 
     if(project && post) {
-        res.render("post.pug", {
+        render(req, res, "post.pug", {
             project_name: project.details["name"],
             post_name: "#" + post.details["slug"] + ": " + post.details["name"],
-            remoteAddress: req.headers["x-forwarded-for"],
             path: __dirname + post.dir + "/content.pug",
-            include: includeFunc,
+            include: includeFunc
         });
     }
     else {
@@ -116,10 +116,9 @@ app.get("/contact/", function(req, res) {
         
         clients[id] = file.split("_")[1].slice(0, -4);
 
-        res.render("captcha.pug", { 
+        render(req, res, "captcha.pug", { 
             src: path.join("/captcha-img", file), 
-            id: id, 
-            remoteAddress: req.headers["x-forwarded-for"]
+            id: id
         });
     });
 });
@@ -130,23 +129,19 @@ app.post("/contact/", function(req, res) {
     var hashedResult = crypto.createHash("sha256").update(result).digest("hex");
 
     if(clients[req.body["id"]] == hashedResult) {
-        res.render("contact.pug", { 
-            remoteAddress: req.headers["x-forwarded-for"],
+        render(req, res, "contact.pug", {
             current: "contact"
         });
     }
     else {
-        res.render("captchaFailed.pug", { 
-            remoteAddress: req.headers["x-forwarded-for"]
-        });
+        render(req, res, "captchaFailed.pug");
     }
     delete clients[req.body["id"]];
 })
 
 
 app.get("/user-data/", function(req, res) {
-    res.render("user-data.pug", {
-        remoteAddress: req.headers["x-forwarded-for"],
+    render(req, res, "user-data.pug", {
         ip: req.headers["x-forwarded-for"],
         user_agent: req.headers["user-agent"],
         country: lookup(req.headers["x-forwarded-for"])["country"],
@@ -159,9 +154,7 @@ app.get("/user-data/", function(req, res) {
 
 
 app.get("/donations/", function(req, res) {
-    res.render("donations.pug", {
-        remoteAddress: req.headers["x-forwarded-for"]
-    })
+    render(req, res, "donations.pug");
 });
 
 
