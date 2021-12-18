@@ -114,7 +114,7 @@ app.get("/contact/", function(req, res) {
         var file = files[Math.floor(Math.random() * files.length)];
         var id = Math.floor(Math.random() * Math.pow(10, 16));
         
-        clients[id] = file.slice(0, -4);
+        clients[id] = file.split("_")[1].slice(0, -4);
 
         res.render("captcha.pug", { 
             src: path.join("/captcha-img", file), 
