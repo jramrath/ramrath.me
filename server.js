@@ -38,7 +38,7 @@ https.createServer(httpsOptions, app).listen(port, function() {
 
 let render = (req, res, path, options = {}) => {
     res.render(path, Object.assign({}, options, {
-        remoteAddress: req.headers["x-forwarded-for"],
+        remoteAddress: req.headers["x-forwarded-for"]
     }));
 }
 
