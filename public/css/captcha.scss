@@ -50,6 +50,11 @@ main {
                     div.time {
                         margin: 0 auto;
 
+                        span.divider {
+                            font-size: 2em;
+                            font-weight: bold;
+                        }
+
                         select {
                             color: $text-color;
                             background-color: $main-bg-color;
@@ -66,23 +71,37 @@ main {
                     }
                 }
 
-                div.submit {
+                .button-wrapper {
                     display: flex;
 
-                    input {
-                        margin: 0 auto;
-                        padding: .2em .4em;
-                        color: $text-color;
-                        background: $main-bg-color;
-                        border-width: 1px;
-                        border-radius: .3em;
-                        border-color: $dark-blue;
-                        font-size: 1.5em;
-                        text-align: center;
+                    .button {
+                        display: flex;
 
-                        &:hover {
-                            background: $header-bg-color;
+                        input, button {
+                            margin: 0 auto;
+                            padding: .2em .4em;
+                            color: $text-color;
+                            background: $main-bg-color;
+                            border-width: 1px;
+                            border-radius: .3em;
+                            border-color: $dark-blue;
+                            font-size: 1.5em;
+                            text-align: center;
+
+                            &:hover {
+                                background: $header-bg-color;
+                            }
                         }
+                    }
+
+                    a.button {
+                        margin-left: auto;
+                        margin-right: .5em;
+                    }
+
+                    div.button {
+                        margin-right: auto;
+                        margin-left: .5em;
                     }
                 }
             }

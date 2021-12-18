@@ -35,7 +35,7 @@ main
               option(value="10") 10
               option(value="11") 11
 
-            | :
+            span.divider :
             
             select.minutes(name="minutes" required)
               option(value="0") 00
@@ -99,8 +99,13 @@ main
               option(value="58") 58
               option(value="59") 59
 
-        .submit 
-          input(type="submit" value="Submit")
+        .button-wrapper
+
+          a.button(href="/contact")
+            input(type="button" value="Reload")
+
+          .button 
+            input(type="submit" value="Submit")
 
 
 
