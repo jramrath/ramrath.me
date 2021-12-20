@@ -63,26 +63,37 @@ main section pre.code code {
   font-size: 1.1em;
   line-height: 1.75em;
 }
-main section pre.code a.downloadCode {
+main section pre.code .buttons {
   display: block;
   position: absolute;
   top: 0;
   right: 0;
   margin: 1em;
 }
-main section pre.code a.downloadCode button {
+main section pre.code .buttons a button {
   background-color: #1E1E1E;
   border-color: #1E1E1E;
   border-radius: 0.75em;
   border-width: 2px;
   width: 2.5em;
   height: 2.5em;
-  background-image: url("/img/icons/download-white.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 1.5em;
+  margin-left: 0.25em;
 }
-main section pre.code a.downloadCode button:hover {
+main section pre.code .buttons a button:hover {
   border-color: #1a52a0;
+}
+main section pre.code .buttons a.downloadCode button {
+  background-image: url("/img/icons/download-white.png");
+}
+main section pre.code .buttons a.downloadCode button:hover {
   background-image: url("/img/icons/download-blue.png");
+}
+main section pre.code .buttons a.seeRaw button {
+  background-image: url("/img/icons/raw-white.png");
+}
+main section pre.code .buttons a.seeRaw button:hover {
+  background-image: url("/img/icons/raw-blue.png");
 }/*# sourceMappingURL=post.css.map */

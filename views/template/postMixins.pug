@@ -1,7 +1,11 @@
-mixin codeMixin(filename)
+mixin codeMixin(filename, rawFilename)
     pre.code 
-        a(href= filename).downloadCode
-            button
+        .buttons
+            a(href= filename).downloadCode
+                button
+
+            a(href= rawFilename).seeRaw
+                button
 
 
         code
