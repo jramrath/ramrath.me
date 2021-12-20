@@ -39,6 +39,16 @@ main section h2 span {
   margin-left: 1em;
   padding-top: 0.5em;
 }
+main section p {
+  text-align: justify;
+}
+main section .img_wrapper {
+  display: flex;
+}
+main section .img_wrapper img {
+  margin: 0.5em auto;
+  width: 90%;
+}
 main section pre.terminal {
   background-color: #252526;
   padding: 1em 1.5em;

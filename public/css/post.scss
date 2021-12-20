@@ -76,6 +76,19 @@ main {
             }
         }
 
+        p {
+            text-align: justify;
+        }
+
+        .img_wrapper{
+            display: flex;
+
+            img {
+                margin: .5em auto;
+                width: 90%;
+            }
+        } 
+
         pre.terminal {
             background-color: $color-black-medium;
             padding: 1em 1.5em;
