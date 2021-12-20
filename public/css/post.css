@@ -68,8 +68,8 @@ main section pre ul.buttons {
 main section pre ul.buttons li {
   white-space: normal;
   position: relative;
-  width: 2.5em;
-  height: 2.5em;
+  width: 3em;
+  height: 3em;
   margin-left: 0.25em;
 }
 main section pre ul.buttons li span {
@@ -103,6 +103,9 @@ main section pre ul.buttons li a button {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 1.5em;
+}
+main section pre ul.buttons li a button:hover {
+  border-color: #1a52a0;
 }
 main section pre ul.buttons code {
   font-size: 1.1em;
