@@ -49,38 +49,14 @@ main section .img_wrapper img {
   margin: 0.5em auto;
   width: 90%;
 }
-main section pre.terminal {
+main section pre {
   background-color: #252526;
   padding: 1em 1.5em;
-  margin: 1em 3em;
-  border: 1px solid #252526;
-  border-radius: 1.25em;
-  white-space: pre-line;
-}
-main section pre.terminal code {
-  font-size: 1.1em;
-  line-height: 1.75em;
-}
-main section pre.code {
-  background-color: #252526;
-  padding: 1em 1.5em;
-  margin: 1em 0;
   border: 1px solid #252526;
   border-radius: 1.25em;
   position: relative;
 }
-main section pre.code code {
-  font-size: 1.1em;
-  line-height: 1.75em;
-}
-main section pre.code .buttons {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 1em;
-}
-main section pre.code .buttons a button {
+main section pre button {
   background-color: #1E1E1E;
   border-color: #1E1E1E;
   border-radius: 0.75em;
@@ -92,8 +68,42 @@ main section pre.code .buttons a button {
   background-size: 1.5em;
   margin-left: 0.25em;
 }
-main section pre.code .buttons a button:hover {
-  border-color: #1a52a0;
+main section pre.terminal {
+  margin: 1em 3em;
+  white-space: pre-line;
+}
+main section pre.terminal a.copy {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1em;
+}
+main section pre.terminal a.copy button {
+  background-image: url("/img/icons/copy-white.png");
+}
+main section pre.terminal a.copy button:hover {
+  background-image: url("/img/icons/copy-blue.png");
+}
+main section pre.terminal code {
+  font-size: 1.1em;
+  line-height: 1.75em;
+}
+main section pre.code {
+  margin: 1em 0;
+}
+main section pre.code .buttons {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1em;
+}
+main section pre.code .buttons a.copy button {
+  background-image: url("/img/icons/copy-white.png");
+}
+main section pre.code .buttons a.copy button:hover {
+  background-image: url("/img/icons/copy-blue.png");
 }
 main section pre.code .buttons a.downloadCode button {
   background-image: url("/img/icons/download-white.png");
@@ -106,4 +116,8 @@ main section pre.code .buttons a.seeRaw button {
 }
 main section pre.code .buttons a.seeRaw button:hover {
   background-image: url("/img/icons/raw-blue.png");
+}
+main section pre.code code {
+  font-size: 1.1em;
+  line-height: 1.75em;
 }/*# sourceMappingURL=post.css.map */

@@ -1,4 +1,4 @@
-include ../../../views/template/postMixins.pug
+include ../../../views/template/postTemplates.pug
 
 section
     h2 
@@ -29,9 +29,10 @@ section
         justo dolor, laoreet vitae ante ut, rutrum ullamcorper risus. Sed
         commodo tincidunt luctus. Aenean elementum diam eu dictum pulvinar.
 
-    +terminalMixin.
-        sudo apt install python3-pip
-        sudo python3-pip install tqdm
+    +terminalMixin("1").
+        sudo -v
+        sudo -k
+        sudo -v
 
     p.
         Duis vel lorem quis sem pretium porta. Nullam rutrum rutrum lacus, vel
@@ -66,5 +67,5 @@ section
         at, faucibus mauris. Aenean vel fringilla erat.
 
 
-    +codeMixin("/programs/test-2-example.py", "/programs/test-2-example.txt")
+    +codeMixin("/programs/test-2-example.py", "/programs/test-2-example.txt", "2")
         include ../../../public/programs/test-2-example.txt
