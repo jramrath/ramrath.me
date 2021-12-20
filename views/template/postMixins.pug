@@ -1,0 +1,24 @@
+mixin img(src, alt)
+    .img_wrapper
+        img(src=src, alt=alt)
+
+
+
+mixin codeMixin(filename, rawFilename)
+    pre.code 
+        .buttons
+            a(href= filename).downloadCode
+                button
+
+            a(href= rawFilename).seeRaw
+                button
+
+
+        code
+            block
+        
+
+mixin terminalMixin
+    pre.terminal 
+        code
+            block
