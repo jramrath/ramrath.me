@@ -96,35 +96,55 @@ main {
             border-radius: 1.25em;  
             position: relative;
 
-            button {
-                background-color: $color-black-dark;
-                border-color: $color-black-dark;
-                border-radius: .75em;
-                border-width: 2px;
-                width: 2.5em;
-                height: 2.5em;
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: 1.5em;
-                margin-left: .25em;
-            }
+            ul.buttons {
+                position: absolute;
+                display: flex;
+                top: 0;
+                right: 0;
+                margin: 1em;
+                padding: 0;
+                list-style-type: none;
 
-            &.terminal {
-                margin: 1em 3em;
-                white-space: pre-line;
+                li {
+                    white-space: normal;
+                    position: relative;
+                    width: 2.5em;
+                    height: 2.5em;
+                    margin-left: .25em;
+    
+                    span {
+                        display: none;
+                        position: absolute;
+                        white-space: nowrap;
+                        font-family: sans-serif;
+                        bottom: 100%;
+                        right: 0;
+                        background-color: $color-black-dark;
+                        padding: .25em .75em;
+                        border: 2px solid $color-black-medium;
+                        border-radius: 1em;
+                        color: $color-blue-dark;
+                        font-size: .75em;
+                    }
 
-                a.copy {
-                    display: block;
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    margin: 1em;
+                    &:hover span {
+                        display: block;
+                    }
+    
+                    a {
+                        width: inherit;
+                        height: inherit;
 
-                    button {
-                        background-image: url("/img/icons/copy-white.png");
-
-                        &:hover {
-                            background-image: url("/img/icons/copy-blue.png");
+                        button {
+                            background-color: $color-black-dark;
+                            border-color: $color-black-dark;
+                            border-radius: .75em;
+                            border-width: 2px;
+                            width: inherit;
+                            height: inherit;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: 1.5em;
                         }
                     }
                 }
@@ -134,18 +154,30 @@ main {
                     line-height: 1.75em;
                 }
             }
+            
+
+
+            &.terminal {
+                margin: 1em 3em;
+                white-space: pre-line;
+
+                ul.buttons li a.copy {
+                    button {
+                        background-image: url("/img/icons/copy-white.png");
+
+                        &:hover {
+                            background-image: url("/img/icons/copy-blue.png");
+                        }
+                    }
+                }
+            }
 
             &.code {
                 margin: 1em 0;
 
-                .buttons {
-                    display: block;
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    margin: 1em;
+                ul.buttons {
     
-                    a {
+                    li a {
                         &.copy button {
                             background-image: url("/img/icons/copy-white.png");
 
@@ -170,11 +202,6 @@ main {
                             }
                         }
                     }
-                }
-
-                code {
-                    font-size: 1.1em;
-                    line-height: 1.75em;
                 }
             }
         }

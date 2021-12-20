@@ -56,68 +56,86 @@ main section pre {
   border-radius: 1.25em;
   position: relative;
 }
-main section pre button {
+main section pre ul.buttons {
+  position: absolute;
+  display: flex;
+  top: 0;
+  right: 0;
+  margin: 1em;
+  padding: 0;
+  list-style-type: none;
+}
+main section pre ul.buttons li {
+  white-space: normal;
+  position: relative;
+  width: 2.5em;
+  height: 2.5em;
+  margin-left: 0.25em;
+}
+main section pre ul.buttons li span {
+  display: none;
+  position: absolute;
+  white-space: nowrap;
+  font-family: sans-serif;
+  bottom: 100%;
+  right: 0;
+  background-color: #1E1E1E;
+  padding: 0.25em 0.75em;
+  border: 2px solid #252526;
+  border-radius: 1em;
+  color: #1a52a0;
+  font-size: 0.75em;
+}
+main section pre ul.buttons li:hover span {
+  display: block;
+}
+main section pre ul.buttons li a {
+  width: inherit;
+  height: inherit;
+}
+main section pre ul.buttons li a button {
   background-color: #1E1E1E;
   border-color: #1E1E1E;
   border-radius: 0.75em;
   border-width: 2px;
-  width: 2.5em;
-  height: 2.5em;
+  width: inherit;
+  height: inherit;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 1.5em;
-  margin-left: 0.25em;
+}
+main section pre ul.buttons code {
+  font-size: 1.1em;
+  line-height: 1.75em;
 }
 main section pre.terminal {
   margin: 1em 3em;
   white-space: pre-line;
 }
-main section pre.terminal a.copy {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 1em;
-}
-main section pre.terminal a.copy button {
+main section pre.terminal ul.buttons li a.copy button {
   background-image: url("/img/icons/copy-white.png");
 }
-main section pre.terminal a.copy button:hover {
+main section pre.terminal ul.buttons li a.copy button:hover {
   background-image: url("/img/icons/copy-blue.png");
-}
-main section pre.terminal code {
-  font-size: 1.1em;
-  line-height: 1.75em;
 }
 main section pre.code {
   margin: 1em 0;
 }
-main section pre.code .buttons {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 1em;
-}
-main section pre.code .buttons a.copy button {
+main section pre.code ul.buttons li a.copy button {
   background-image: url("/img/icons/copy-white.png");
 }
-main section pre.code .buttons a.copy button:hover {
+main section pre.code ul.buttons li a.copy button:hover {
   background-image: url("/img/icons/copy-blue.png");
 }
-main section pre.code .buttons a.downloadCode button {
+main section pre.code ul.buttons li a.downloadCode button {
   background-image: url("/img/icons/download-white.png");
 }
-main section pre.code .buttons a.downloadCode button:hover {
+main section pre.code ul.buttons li a.downloadCode button:hover {
   background-image: url("/img/icons/download-blue.png");
 }
-main section pre.code .buttons a.seeRaw button {
+main section pre.code ul.buttons li a.seeRaw button {
   background-image: url("/img/icons/raw-white.png");
 }
-main section pre.code .buttons a.seeRaw button:hover {
+main section pre.code ul.buttons li a.seeRaw button:hover {
   background-image: url("/img/icons/raw-blue.png");
-}
-main section pre.code code {
-  font-size: 1.1em;
-  line-height: 1.75em;
 }/*# sourceMappingURL=post.css.map */
