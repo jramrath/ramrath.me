@@ -17,8 +17,6 @@ $color-blue: #1a52a0;
 
 
 
-
-
 $color-black-dark: #1E1E1E;   /* main background color & header current color */
 $color-black-medium: #252526; /* header background */
 $color-black-light: #2A2D2E;  /* hover color */
@@ -44,7 +42,8 @@ main {
     h1 {
         padding: 0.5em;
         margin-top: 0.5em;
-        margin-bottom: 0;
+        margin-bottom: .5em;
+
         .project {
             color: $h1-color-project;
             font-weight: bold;
@@ -58,7 +57,7 @@ main {
     }
 
     section {
-        padding: 0;
+        padding: .25em  0;
         margin: .5em .75em;
 
         h2 {
@@ -76,6 +75,19 @@ main {
                 padding-top: .5em;
             }
         }
+
+        p {
+            text-align: justify;
+        }
+
+        .img_wrapper{
+            display: flex;
+
+            img {
+                margin: .5em auto;
+                width: 90%;
+            }
+        } 
 
         pre.terminal {
             background-color: $color-black-medium;
@@ -104,28 +116,43 @@ main {
                 line-height: 1.75em;
             }
 
-            a.downloadCode {
+            .buttons {
                 display: block;
                 position: absolute;
                 top: 0;
                 right: 0;
                 margin: 1em;
 
-                button {
+                a button {
                     background-color: $color-black-dark;
                     border-color: $color-black-dark;
                     border-radius: .75em;
                     border-width: 2px;
                     width: 2.5em;
                     height: 2.5em;
-                    background-image: url("/img/icons/download-white.png");
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: 1.5em;
+                    margin-left: .25em;
 
                     &:hover {
                         border-color: $color-blue-dark;
+                    }
+                }
+    
+                a.downloadCode  button {
+                    background-image: url("/img/icons/download-white.png");
+                    
+                    &:hover {
                         background-image: url("/img/icons/download-blue.png");
+                    }
+                }
+
+                a.seeRaw button {
+                    background-image: url("/img/icons/raw-white.png");
+                    
+                    &:hover {
+                        background-image: url("/img/icons/raw-blue.png");
                     }
                 }
             }

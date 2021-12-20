@@ -26,6 +26,10 @@ main div.captcha-wrapper section.captcha-interface form div.time-wrapper {
 main div.captcha-wrapper section.captcha-interface form div.time-wrapper div.time {
   margin: 0 auto;
 }
+main div.captcha-wrapper section.captcha-interface form div.time-wrapper div.time span.divider {
+  font-size: 2em;
+  font-weight: bold;
+}
 main div.captcha-wrapper section.captcha-interface form div.time-wrapper div.time select {
   color: #D4D4D4;
   background-color: #1E1E1E;
@@ -38,10 +42,13 @@ main div.captcha-wrapper section.captcha-interface form div.time-wrapper div.tim
 main div.captcha-wrapper section.captcha-interface form div.time-wrapper div.time select option {
   margin: 0.5em;
 }
-main div.captcha-wrapper section.captcha-interface form div.submit {
+main div.captcha-wrapper section.captcha-interface form .button-wrapper {
   display: flex;
 }
-main div.captcha-wrapper section.captcha-interface form div.submit input {
+main div.captcha-wrapper section.captcha-interface form .button-wrapper .button {
+  display: flex;
+}
+main div.captcha-wrapper section.captcha-interface form .button-wrapper .button input, main div.captcha-wrapper section.captcha-interface form .button-wrapper .button button {
   margin: 0 auto;
   padding: 0.2em 0.4em;
   color: #D4D4D4;
@@ -52,8 +59,16 @@ main div.captcha-wrapper section.captcha-interface form div.submit input {
   font-size: 1.5em;
   text-align: center;
 }
-main div.captcha-wrapper section.captcha-interface form div.submit input:hover {
+main div.captcha-wrapper section.captcha-interface form .button-wrapper .button input:hover, main div.captcha-wrapper section.captcha-interface form .button-wrapper .button button:hover {
   background: #252526;
+}
+main div.captcha-wrapper section.captcha-interface form .button-wrapper a.button {
+  margin-left: auto;
+  margin-right: 0.5em;
+}
+main div.captcha-wrapper section.captcha-interface form .button-wrapper div.button {
+  margin-right: auto;
+  margin-left: 0.5em;
 }
 
 @media only screen and (min-width: 600px) {
