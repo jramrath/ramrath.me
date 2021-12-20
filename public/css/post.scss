@@ -89,92 +89,71 @@ main {
             }
         } 
 
-        pre {
+        pre.terminal {
             background-color: $color-black-medium;
             padding: 1em 1.5em;
+            margin: 1em 3em;
             border: 1px solid $color-black-medium;
-            border-radius: 1.25em;  
+            border-radius: 1.25em;
+            white-space: pre-line;
+
+            code {
+                font-size: 1.1em;
+                line-height: 1.75em;
+            }
+        }
+
+        pre.code {
+            background-color: $color-black-medium;
+            padding: 1em 1.5em;
+            margin: 1em 0;
+            border: 1px solid $color-black-medium;
+            border-radius: 1.25em;
             position: relative;
 
-            button {
-                background-color: $color-black-dark;
-                border-color: $color-black-dark;
-                border-radius: .75em;
-                border-width: 2px;
-                width: 2.5em;
-                height: 2.5em;
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: 1.5em;
-                margin-left: .25em;
+            code {
+                font-size: 1.1em;
+                line-height: 1.75em;
             }
 
-            &.terminal {
-                margin: 1em 3em;
-                white-space: pre-line;
+            .buttons {
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin: 1em;
 
-                a.copy {
-                    display: block;
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    margin: 1em;
+                a button {
+                    background-color: $color-black-dark;
+                    border-color: $color-black-dark;
+                    border-radius: .75em;
+                    border-width: 2px;
+                    width: 2.5em;
+                    height: 2.5em;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 1.5em;
+                    margin-left: .25em;
 
-                    button {
-                        background-image: url("/img/icons/copy-white.png");
-
-                        &:hover {
-                            background-image: url("/img/icons/copy-blue.png");
-                        }
+                    &:hover {
+                        border-color: $color-blue-dark;
                     }
                 }
-
-                code {
-                    font-size: 1.1em;
-                    line-height: 1.75em;
-                }
-            }
-
-            &.code {
-                margin: 1em 0;
-
-                .buttons {
-                    display: block;
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    margin: 1em;
     
-                    a {
-                        &.copy button {
-                            background-image: url("/img/icons/copy-white.png");
-
-                            &:hover {
-                                background-image: url("/img/icons/copy-blue.png");
-                            }
-                        }
-
-                        &.downloadCode button {
-                            background-image: url("/img/icons/download-white.png");
-                        
-                            &:hover {
-                                background-image: url("/img/icons/download-blue.png");
-                            }
-                        }
-
-                        &.seeRaw button {
-                            background-image: url("/img/icons/raw-white.png");
-                        
-                            &:hover {
-                                background-image: url("/img/icons/raw-blue.png");
-                            }
-                        }
+                a.downloadCode  button {
+                    background-image: url("/img/icons/download-white.png");
+                    
+                    &:hover {
+                        background-image: url("/img/icons/download-blue.png");
                     }
                 }
 
-                code {
-                    font-size: 1.1em;
-                    line-height: 1.75em;
+                a.seeRaw button {
+                    background-image: url("/img/icons/raw-white.png");
+                    
+                    &:hover {
+                        background-image: url("/img/icons/raw-blue.png");
+                    }
                 }
             }
         }
