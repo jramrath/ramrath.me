@@ -4,6 +4,12 @@ script.
     } 
 
 
+mixin sectionTitle(content, num)
+    h2
+        span= num
+        |#{content}
+
+
 mixin img(src, alt)
     .img_wrapper
         img(src=src, alt=alt)
@@ -42,4 +48,19 @@ mixin terminalMixin(num)
                     button(onclick="copyFunc(" + num + ")")
 
         code(id= num)
+            block
+
+
+mixin pimg(imgFile)
+    .doubleContents
+        p 
+            block
+        
+        img(src= imgFile)
+
+mixin imgp(imgFile)
+    .doubleContents
+        img(src= imgFile)
+
+        p 
             block

@@ -22,6 +22,9 @@ main h1 .divider {
 main h1 .blog {
   color: #4EC9B0;
 }
+main hr {
+  margin: 2.5em 0;
+}
 main section {
   padding: 0.25em 0;
   margin: 0.5em 0.75em;
@@ -141,4 +144,22 @@ main section pre.code ul.buttons li a.seeRaw button {
 }
 main section pre.code ul.buttons li a.seeRaw button:hover {
   background-image: url("/img/icons/raw-blue.png");
+}
+main section .doubleContents img {
+  width: 90%;
+  margin: 0.5em 5%;
+}
+
+@media only screen and (min-width: 600px) {
+  main section .doubleContents {
+    display: flex;
+  }
+  main section .doubleContents img {
+    width: 45%;
+    margin: 2.5%;
+  }
+  main section .doubleContents p {
+    width: 45%;
+    margin: 2.5%;
+  }
 }/*# sourceMappingURL=post.css.map */
