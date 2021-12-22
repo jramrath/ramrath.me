@@ -1,18 +1,17 @@
-$main-bg-color: #1E1E1E;
-$header-bg-color:  #252526;
-$header-bg-color-hover: #2A2D2E;
-$header-bg-color-current: #37373D;
-$header-bg-color-current-pc: #1E1E1E;
+$color-black-dark: #1E1E1E;   /* main background color & header current color */
+$color-black-medium: #252526; /* header background */
+$color-black-light: #2A2D2E;  /* hover color */
 
-$text-color: #D4D4D4;
-$hyperlink-color: #569CD6;
-$h1-color-project: #569CD6;
-$h1-color-divider: #CE9178;
-$h1-color-blog: #4EC9B0;
-$h2-color: #9CDCFE;
-$text-color-dark: #949494;
+$color-white-dark: #949494;   /* dark text color */
+$color-white-light: #D4D4D4;  /* normal text color */
 
-$dark-blue: #1a52a0;
+$color-blue-dark: #1a52a0;
+$color-blue-medium: #569CD6;  /* Project part of h1 in posts */
+$color-blue-light: #9CDCFE;   /* h2 title of Project overview */
+
+$color-orange: #CE9178;       /* Divider Part of h1 in posts */
+
+$color-green: #4EC9B0;        /* Post-name part of h1 in posts */
 
 main {
     width: 100%;
@@ -25,7 +24,7 @@ main {
         margin: .75em 0;
         height: 8em;
         position: relative;
-        background: $header-bg-color;
+        background: $color-black-medium;
 
         img.icon {
             float: left;
@@ -65,7 +64,7 @@ main {
 
         p {
             padding: 1em 2em;
-            color: $text-color;
+            color: $color-white-light;
         }
     }
 }
@@ -110,10 +109,10 @@ main {
         a div.container {
             margin: .75em;
             border-radius: .5em;
-            border: 1px solid $header-bg-color;
+            border: 1px solid $color-black-medium;
 
             &:hover {
-                border-color: $dark-blue;
+                border-color: $color-blue-dark;
             }
 
             section {

@@ -1,18 +1,17 @@
-$main-bg-color: #1E1E1E;
-$header-bg-color:  #252526;
-$header-bg-color-hover: #2A2D2E;
-$header-bg-color-current: #37373D;
-$header-bg-color-current-pc: #1E1E1E;
+$color-black-dark: #1E1E1E;   /* main background color & header current color */
+$color-black-medium: #252526; /* header background */
+$color-black-light: #2A2D2E;  /* hover color */
 
-$text-color: #D4D4D4;
-$hyperlink-color: #569CD6;
-$h1-color-project: #569CD6;
-$h1-color-divider: #CE9178;
-$h1-color-blog: #4EC9B0;
-$h2-color: #9CDCFE;
-$text-color-dark: #949494;
+$color-white-dark: #949494;   /* dark text color */
+$color-white-light: #D4D4D4;  /* normal text color */
 
-$dark-blue: #1a52a0;
+$color-blue-dark: #1a52a0;
+$color-blue-medium: #569CD6;  /* Project part of h1 in posts */
+$color-blue-light: #9CDCFE;   /* h2 title of Project overview */
+
+$color-orange: #CE9178;       /* Divider Part of h1 in posts */
+
+$color-green: #4EC9B0;        /* Post-name part of h1 in posts */
 
 
 main {
@@ -22,10 +21,10 @@ main {
         padding: 0;
 
         li .container {
-            color: $dark-blue;
+            color: $color-blue-dark;
             margin: 1em 0;
             padding: .5em;
-            background-color: $header-bg-color;
+            background-color: $color-black-medium;
             height: auto;
             position: relative;
             display: flex;
@@ -33,10 +32,10 @@ main {
 
             border-width: 1px;
             border-style: solid;
-            border-color: $header-bg-color;
+            border-color: $color-black-medium;
 
             .content {
-                color: $text-color;
+                color: $color-white-light;
                 margin-left: auto;
                 text-align: right;
                 white-space: normal;

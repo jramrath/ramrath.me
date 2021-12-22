@@ -1,22 +1,3 @@
-$main-bg-color: #1E1E1E;
-$header-bg-color:  #252526;
-$header-bg-color-hover: #2A2D2E;
-$header-bg-color-current: #37373D;
-$header-bg-color-current-pc: #1E1E1E;
-
-$text-color: #D4D4D4;
-$hyperlink-color: #569CD6;
-$h1-color-project: #569CD6;
-$h1-color-divider: #CE9178;
-$h1-color-blog: #4EC9B0;
-$h2-color: #9CDCFE;
-$text-color-dark: #949494;
-
-$color-blue: #1a52a0;
-
-
-
-
 $color-black-dark: #1E1E1E;   /* main background color & header current color */
 $color-black-medium: #252526; /* header background */
 $color-black-light: #2A2D2E;  /* hover color */
@@ -45,14 +26,14 @@ main {
         margin-bottom: .5em;
 
         .project {
-            color: $h1-color-project;
+            color: $color-blue-medium;
             font-weight: bold;
         }
         .divider {
-            color: $h1-color-divider;
+            color: $color-orange
         }
         .blog {
-            color: $h1-color-blog;
+            color: $color-green;
         }
     }
 
@@ -62,9 +43,9 @@ main {
 
         h2 {
             margin: 0 .3em;
-            color: $h2-color;
+            color: $color-blue-light;
             span {
-                color: $text-color-dark;
+                color: $color-white-dark;
                 font-size: 0.6em;
         
                 display: block;
