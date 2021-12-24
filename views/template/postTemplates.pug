@@ -39,7 +39,7 @@ mixin codeMixin(filename, rawFilename, num)
             block
         
 
-mixin terminalMixin(num)
+mixin terminalMixin(commands, num)
     pre.terminal 
         ul.buttons
             li 
@@ -47,8 +47,13 @@ mixin terminalMixin(num)
                 a.copy
                     button(onclick="copyFunc(" + num + ")")
 
-        code(id= num)
-            block
+        code
+            ul(id= num)
+                each command in commands
+                    li
+                        img(src="/img/icons/linux-terminal-symbol.png")
+                        span= command
+                        br
 
 
 mixin pimg(imgFile)

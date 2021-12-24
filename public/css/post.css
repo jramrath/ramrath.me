@@ -110,8 +110,8 @@ main section pre ul.buttons li a button {
 main section pre ul.buttons li a button:hover {
   border-color: #1a52a0;
 }
-main section pre ul.buttons code {
-  font-size: 1.1em;
+main section pre code {
+  font-size: 1.2em;
   line-height: 1.75em;
 }
 main section pre.terminal {
@@ -123,6 +123,23 @@ main section pre.terminal ul.buttons li a.copy button {
 }
 main section pre.terminal ul.buttons li a.copy button:hover {
   background-image: url("/img/icons/copy-blue.png");
+}
+main section pre.terminal code ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+main section pre.terminal code ul li {
+  display: flex;
+}
+main section pre.terminal code ul li img {
+  width: 1.25em;
+  height: 1.25em;
+  margin: auto 0;
+  margin-right: 0.5em;
+}
+main section pre.terminal code ul li span {
+  margin: auto 0;
 }
 main section pre.code {
   margin: 1em 0;
