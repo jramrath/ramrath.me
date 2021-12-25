@@ -24,6 +24,7 @@ main {
         padding: 0.5em;
         margin-top: 0.5em;
         margin-bottom: .5em;
+        line-height: 1.25em;
 
         .project {
             color: $color-blue-medium;
@@ -74,7 +75,7 @@ main {
             }
         }
 
-        pre {
+        .codeOrTerminal {
             background-color: $color-black-medium;
             padding: 1em 1.5em;
             border: 1px solid $color-black-medium;
@@ -93,10 +94,10 @@ main {
                 li {
                     white-space: normal;
                     position: relative;
-                    width: 3em;
-                    height: 3em;
+                    width: 2.5em;
+                    height: 2.5em;
                     margin-left: .25em;
-    
+
                     span {
                         display: none;
                         position: absolute;
@@ -115,7 +116,7 @@ main {
                     &:hover span {
                         display: block;
                     }
-    
+
                     a {
                         width: inherit;
                         height: inherit;
@@ -135,38 +136,7 @@ main {
                                 border-color: $color-blue-dark;
                             }
                         }
-                    }
-                }
 
-                code {
-                    font-size: 1.1em;
-                    line-height: 1.75em;
-                }
-            }
-            
-
-
-            &.terminal {
-                margin: 1em 3em;
-                white-space: pre-line;
-
-                ul.buttons li a.copy {
-                    button {
-                        background-image: url("/img/icons/copy-white.png");
-
-                        &:hover {
-                            background-image: url("/img/icons/copy-blue.png");
-                        }
-                    }
-                }
-            }
-
-            &.code {
-                margin: 1em 0;
-
-                ul.buttons {
-    
-                    li a {
                         &.copy button {
                             background-image: url("/img/icons/copy-white.png");
 
@@ -192,6 +162,65 @@ main {
                         }
                     }
                 }
+            }
+
+            table {
+                display: block;
+                overflow: auto;
+                
+                tbody {
+                    tr {
+                        td {
+                            pre {
+                                margin: 0;
+
+                                code {
+                                    font-size: 1.1em;
+                                    line-height: 1.5em;
+                                }
+                            }
+
+                            /*
+                            vertical-align: top;
+
+                            span {
+                                line-height: 1.5em;
+                                font-size: .9em;
+                            } */
+
+                            &.left pre {
+                                margin-right: .75em;
+
+                                code {
+                                    color: $color-blue-dark;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.terminal {
+                margin: 1em 3em;
+
+                ul.buttons {
+                    margin: .25em;
+                    margin-right: .5em;
+
+                    li span {
+                        bottom: unset;
+                        top: 0;
+                        right: 100%;
+                    }
+                }
+
+                table tbody tr td.left pre code {
+                    font-weight: bold;
+                }
+            }
+
+            &.code {
+                margin: 1em 0;
             }
         }
 
