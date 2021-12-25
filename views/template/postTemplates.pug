@@ -16,8 +16,8 @@ mixin img(src, alt)
 
 
 
-mixin codeMixin(filename, rawFilename, num)
-    pre.code 
+mixin codeMixin(filename, rawFilename, num, linesNum)
+    .codeOrTerminal.code
         ul.buttons
             li
                 span Copy to clipboard
@@ -34,21 +34,49 @@ mixin codeMixin(filename, rawFilename, num)
                 a(href= rawFilename).seeRaw
                     button
 
+        table
+            tr
 
-        code(id= num)
-            block
+                td.left
+                    pre
+                        code
+                            - var i = 1
+                            while i <= linesNum
+                                |#{i}
+                                - i++
+                                br
+                
+                td.right
+                    pre
+                        code(id= num)
+                            block
+
         
 
-mixin terminalMixin(num)
-    pre.terminal 
+mixin terminalMixin(commands, num)
+    .codeOrTerminal.terminal 
         ul.buttons
             li 
                 span Copy to clipboard
                 a.copy
                     button(onclick="copyFunc(" + num + ")")
 
-        code(id= num)
-            block
+        table
+            tr
+                td.left
+                    pre
+                        code
+                            each command in commands
+                                | $
+                                br
+
+                td.right
+                    pre
+                        code(id= num)
+                            each command in commands
+                                |#{command + "\n"}
+                    
+        
 
 
 mixin pimg(imgFile)

@@ -11,6 +11,7 @@ main h1 {
   padding: 0.5em;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+  line-height: 1.25em;
 }
 main h1 .project {
   color: #569CD6;
@@ -52,14 +53,14 @@ main section .img_wrapper img {
   margin: 0.5em auto;
   width: 90%;
 }
-main section pre {
+main section .codeOrTerminal {
   background-color: #252526;
   padding: 1em 1.5em;
   border: 1px solid #252526;
   border-radius: 1.25em;
   position: relative;
 }
-main section pre ul.buttons {
+main section .codeOrTerminal ul.buttons {
   position: absolute;
   display: flex;
   top: 0;
@@ -68,14 +69,14 @@ main section pre ul.buttons {
   padding: 0;
   list-style-type: none;
 }
-main section pre ul.buttons li {
+main section .codeOrTerminal ul.buttons li {
   white-space: normal;
   position: relative;
-  width: 3em;
-  height: 3em;
+  width: 2.5em;
+  height: 2.5em;
   margin-left: 0.25em;
 }
-main section pre ul.buttons li span {
+main section .codeOrTerminal ul.buttons li span {
   display: none;
   position: absolute;
   white-space: nowrap;
@@ -89,14 +90,14 @@ main section pre ul.buttons li span {
   color: #1a52a0;
   font-size: 0.75em;
 }
-main section pre ul.buttons li:hover span {
+main section .codeOrTerminal ul.buttons li:hover span {
   display: block;
 }
-main section pre ul.buttons li a {
+main section .codeOrTerminal ul.buttons li a {
   width: inherit;
   height: inherit;
 }
-main section pre ul.buttons li a button {
+main section .codeOrTerminal ul.buttons li a button {
   background-color: #1E1E1E;
   border-color: #1E1E1E;
   border-radius: 0.75em;
@@ -107,43 +108,61 @@ main section pre ul.buttons li a button {
   background-position: center;
   background-size: 1.5em;
 }
-main section pre ul.buttons li a button:hover {
+main section .codeOrTerminal ul.buttons li a button:hover {
   border-color: #1a52a0;
 }
-main section pre ul.buttons code {
-  font-size: 1.1em;
-  line-height: 1.75em;
-}
-main section pre.terminal {
-  margin: 1em 3em;
-  white-space: pre-line;
-}
-main section pre.terminal ul.buttons li a.copy button {
+main section .codeOrTerminal ul.buttons li a.copy button {
   background-image: url("/img/icons/copy-white.png");
 }
-main section pre.terminal ul.buttons li a.copy button:hover {
+main section .codeOrTerminal ul.buttons li a.copy button:hover {
   background-image: url("/img/icons/copy-blue.png");
 }
-main section pre.code {
-  margin: 1em 0;
-}
-main section pre.code ul.buttons li a.copy button {
-  background-image: url("/img/icons/copy-white.png");
-}
-main section pre.code ul.buttons li a.copy button:hover {
-  background-image: url("/img/icons/copy-blue.png");
-}
-main section pre.code ul.buttons li a.downloadCode button {
+main section .codeOrTerminal ul.buttons li a.downloadCode button {
   background-image: url("/img/icons/download-white.png");
 }
-main section pre.code ul.buttons li a.downloadCode button:hover {
+main section .codeOrTerminal ul.buttons li a.downloadCode button:hover {
   background-image: url("/img/icons/download-blue.png");
 }
-main section pre.code ul.buttons li a.seeRaw button {
+main section .codeOrTerminal ul.buttons li a.seeRaw button {
   background-image: url("/img/icons/raw-white.png");
 }
-main section pre.code ul.buttons li a.seeRaw button:hover {
+main section .codeOrTerminal ul.buttons li a.seeRaw button:hover {
   background-image: url("/img/icons/raw-blue.png");
+}
+main section .codeOrTerminal table {
+  display: block;
+  overflow: auto;
+}
+main section .codeOrTerminal table tbody tr td pre {
+  margin: 0;
+}
+main section .codeOrTerminal table tbody tr td pre code {
+  font-size: 1.1em;
+  line-height: 1.5em;
+}
+main section .codeOrTerminal table tbody tr td.left pre {
+  margin-right: 0.75em;
+}
+main section .codeOrTerminal table tbody tr td.left pre code {
+  color: #1a52a0;
+}
+main section .codeOrTerminal.terminal {
+  margin: 1em 3em;
+}
+main section .codeOrTerminal.terminal ul.buttons {
+  margin: 0.25em;
+  margin-right: 0.5em;
+}
+main section .codeOrTerminal.terminal ul.buttons li span {
+  bottom: unset;
+  top: 0;
+  right: 100%;
+}
+main section .codeOrTerminal.terminal table tbody tr td.left pre code {
+  font-weight: bold;
+}
+main section .codeOrTerminal.code {
+  margin: 1em 0;
 }
 main section .doubleContents img {
   width: 90%;
