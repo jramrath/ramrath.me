@@ -48,13 +48,12 @@ html body header input#mobile-menu-checkbox {
   display: none;
 }
 html body header input#mobile-menu-checkbox:checked ~ nav {
-  display: unset;
+  width: 45%;
 }
 html body header label {
   margin: auto 1em;
 }
 html body header nav {
-  display: none;
   margin-top: 3em;
   background-color: #252526;
   position: absolute;
@@ -62,6 +61,9 @@ html body header nav {
   top: 0;
   bottom: 0;
   z-index: 999;
+  overflow: hidden;
+  width: 0;
+  transition: width 0.5s cubic-bezier(0.17, 0.84, 0.44, 1);
 }
 html body header nav ul {
   list-style-type: none;
@@ -129,6 +131,7 @@ html body footer a {
     left: unset;
     top: unset;
     bottom: unset;
+    width: auto;
   }
   html body header nav ul {
     display: flex;
