@@ -120,7 +120,7 @@ html body footer ul {
 html body footer ul li {
   margin: 0 1em;
 }
-html body footer ul li a {
+html body footer ul li a, html body footer ul li span {
   color: #949494;
 }
 
