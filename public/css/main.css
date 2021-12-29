@@ -111,9 +111,17 @@ html body footer {
   width: 100%;
   height: 4em;
 }
-html body footer a {
-  color: #949494;
+html body footer ul {
   margin: auto;
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+}
+html body footer ul li {
+  margin: 0 1em;
+}
+html body footer ul li a {
+  color: #949494;
 }
 
 @media only screen and (min-width: 600px) {
