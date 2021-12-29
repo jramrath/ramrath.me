@@ -19,20 +19,28 @@ mixin img(src, alt)
 mixin codeMixin(filename, rawFilename, num, linesNum)
     .codeOrTerminal.code
         ul.buttons
-            li
-                span Copy to clipboard
-                a.copy
-                    button(onclick="copyFunc(" + num + ")")
 
-            li 
-                span Download code
-                a(href= filename).downloadCode
-                    button
+            li.copy
+                a
+                    button(onclick="copyFunc(" + num + ")").copy
+                        .tooltip 
+                            span Copy
+                        .icon
 
-            li 
-                span See raw
-                a(href= rawFilename).seeRaw
-                    button
+            li.seeRaw
+                a(href= rawFilename)
+                    button.seeRaw
+                        .tooltip 
+                            span See raw
+                        .icon   
+
+            li.downloadCode
+                a(href= filename)
+                    button.downloadCode
+                        .tooltip 
+                            span Download code
+                        .icon
+
 
         table
             tr
@@ -56,10 +64,12 @@ mixin codeMixin(filename, rawFilename, num, linesNum)
 mixin terminalMixin(commands, num)
     .codeOrTerminal.terminal 
         ul.buttons
-            li 
-                span Copy to clipboard
-                a.copy
-                    button(onclick="copyFunc(" + num + ")")
+            li.copy
+                a
+                    button(onclick="copyFunc(" + num + ")").copy
+                        .tooltip 
+                            span Copy
+                        .icon
 
         table
             tr

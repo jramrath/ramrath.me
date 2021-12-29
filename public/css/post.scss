@@ -15,7 +15,7 @@ $color-green: #4EC9B0;        /* Post-name part of h1 in posts */
 
 
 
-
+$buttons-animation: width .3s ease-out .2s;
 
 
 
@@ -90,73 +90,92 @@ main {
                 margin: 1em;
                 padding: 0;
                 list-style-type: none;
+                flex-direction: column;
+                width: auto;
 
                 li {
-                    white-space: normal;
-                    position: relative;
-                    width: 2.5em;
-                    height: 2.5em;
-                    margin-left: .25em;
-
-                    span {
-                        display: none;
-                        position: absolute;
-                        white-space: nowrap;
-                        font-family: sans-serif;
-                        bottom: 100%;
-                        right: 0;
-                        background-color: $color-black-dark;
-                        padding: .25em .75em;
-                        border: 2px solid $color-black-medium;
-                        border-radius: 1em;
-                        color: $color-blue-dark;
-                        font-size: .75em;
-                    }
-
-                    &:hover span {
-                        display: block;
-                    }
+                    margin-bottom: .5em;
 
                     a {
-                        width: inherit;
-                        height: inherit;
-
                         button {
                             background-color: $color-black-dark;
                             border-color: $color-black-dark;
                             border-radius: .75em;
                             border-width: 2px;
-                            width: inherit;
-                            height: inherit;
-                            background-repeat: no-repeat;
-                            background-position: center;
-                            background-size: 1.5em;
+                            display: flex;
+                            position: relative;
+                            overflow: hidden;
+                            padding: 0;
+                            float: right;
 
-                            &:hover {
+                            transition: $buttons-animation;
+                            width: 3em;
+                            height: 3em;
+
+                            .tooltip {
+                                overflow: hidden;
+                                display: flex;
+                                margin: auto 0;
+
+                                transition: $buttons-animation;
+                                width: 0;
+
+                                span {
+                                    white-space: nowrap;
+                                    font-family: sans-serif;
+                                    color: $color-blue-dark;
+                                    font-size: .75em;
+                                    width: auto;
+                                    margin: auto;
+                                }
+                            }
+
+                            .icon {
+                                background-repeat: no-repeat;
+                                background-position: center;
+                                background-size: 1.5em;
+                                height: 2.5em;
+                                width: 2.5em;
+                                margin: auto;
+                            }
+
+                            &.copy .icon {
+                                background-image: url("/img/icons/copy-white.png");
+                            }
+
+                            &.downloadCode .icon {
+                                background-image: url("/img/icons/download-white.png");
+                            }
+
+                            &.seeRaw .icon {
+                                background-image: url("/img/icons/raw-white.png");
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        a {
+                            text-decoration: none;
+
+                            button {
                                 border-color: $color-blue-dark;
-                            }
-                        }
-                        &.copy button {
-                            background-image: url("/img/icons/copy-white.png");
+                                width: 100%;
 
-                            &:hover {
-                                background-image: url("/img/icons/copy-blue.png");
-                            }
-                        }
+                                .tooltip {
+                                    width: 100%;
+                                }
 
-                        &.downloadCode button {
-                            background-image: url("/img/icons/download-white.png");
-                        
-                            &:hover {
-                                background-image: url("/img/icons/download-blue.png");
-                            }
-                        }
+                                &.copy .icon {
+                                    background-image: url("/img/icons/copy-blue.png");
+                                }
 
-                        &.seeRaw button {
-                            background-image: url("/img/icons/raw-white.png");
-                        
-                            &:hover {
-                                background-image: url("/img/icons/raw-blue.png");
+                                &.downloadCode .icon {
+                                    background-image: url("/img/icons/download-blue.png");
+                                }
+
+                                &.seeRaw .icon {
+                                    background-image: url("/img/icons/raw-blue.png");
+                                }
                             }
                         }
                     }
@@ -197,12 +216,6 @@ main {
                 ul.buttons {
                     margin: .25em;
                     margin-right: .5em;
-
-                    li span {
-                        bottom: unset;
-                        top: 0;
-                        right: 100%;
-                    }
                 }
 
                 table tbody tr td.left pre code {

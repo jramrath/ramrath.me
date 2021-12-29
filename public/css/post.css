@@ -68,65 +68,75 @@ main section .codeOrTerminal ul.buttons {
   margin: 1em;
   padding: 0;
   list-style-type: none;
+  flex-direction: column;
+  width: auto;
 }
 main section .codeOrTerminal ul.buttons li {
-  white-space: normal;
-  position: relative;
-  width: 2.5em;
-  height: 2.5em;
-  margin-left: 0.25em;
-}
-main section .codeOrTerminal ul.buttons li span {
-  display: none;
-  position: absolute;
-  white-space: nowrap;
-  font-family: sans-serif;
-  bottom: 100%;
-  right: 0;
-  background-color: #1E1E1E;
-  padding: 0.25em 0.75em;
-  border: 2px solid #252526;
-  border-radius: 1em;
-  color: #1a52a0;
-  font-size: 0.75em;
-}
-main section .codeOrTerminal ul.buttons li:hover span {
-  display: block;
-}
-main section .codeOrTerminal ul.buttons li a {
-  width: inherit;
-  height: inherit;
+  margin-bottom: 0.5em;
 }
 main section .codeOrTerminal ul.buttons li a button {
   background-color: #1E1E1E;
   border-color: #1E1E1E;
   border-radius: 0.75em;
   border-width: 2px;
-  width: inherit;
-  height: inherit;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  float: right;
+  transition: width 0.3s ease-out 0.2s;
+  width: 3em;
+  height: 3em;
+}
+main section .codeOrTerminal ul.buttons li a button .tooltip {
+  overflow: hidden;
+  display: flex;
+  margin: auto 0;
+  transition: width 0.3s ease-out 0.2s;
+  width: 0;
+}
+main section .codeOrTerminal ul.buttons li a button .tooltip span {
+  white-space: nowrap;
+  font-family: sans-serif;
+  color: #1a52a0;
+  font-size: 0.75em;
+  width: auto;
+  margin: auto;
+}
+main section .codeOrTerminal ul.buttons li a button .icon {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 1.5em;
+  height: 2.5em;
+  width: 2.5em;
+  margin: auto;
 }
-main section .codeOrTerminal ul.buttons li a button:hover {
-  border-color: #1a52a0;
-}
-main section .codeOrTerminal ul.buttons li a.copy button {
+main section .codeOrTerminal ul.buttons li a button.copy .icon {
   background-image: url("/img/icons/copy-white.png");
 }
-main section .codeOrTerminal ul.buttons li a.copy button:hover {
-  background-image: url("/img/icons/copy-blue.png");
-}
-main section .codeOrTerminal ul.buttons li a.downloadCode button {
+main section .codeOrTerminal ul.buttons li a button.downloadCode .icon {
   background-image: url("/img/icons/download-white.png");
 }
-main section .codeOrTerminal ul.buttons li a.downloadCode button:hover {
-  background-image: url("/img/icons/download-blue.png");
-}
-main section .codeOrTerminal ul.buttons li a.seeRaw button {
+main section .codeOrTerminal ul.buttons li a button.seeRaw .icon {
   background-image: url("/img/icons/raw-white.png");
 }
-main section .codeOrTerminal ul.buttons li a.seeRaw button:hover {
+main section .codeOrTerminal ul.buttons li:hover a {
+  text-decoration: none;
+}
+main section .codeOrTerminal ul.buttons li:hover a button {
+  border-color: #1a52a0;
+  width: 100%;
+}
+main section .codeOrTerminal ul.buttons li:hover a button .tooltip {
+  width: 100%;
+}
+main section .codeOrTerminal ul.buttons li:hover a button.copy .icon {
+  background-image: url("/img/icons/copy-blue.png");
+}
+main section .codeOrTerminal ul.buttons li:hover a button.downloadCode .icon {
+  background-image: url("/img/icons/download-blue.png");
+}
+main section .codeOrTerminal ul.buttons li:hover a button.seeRaw .icon {
   background-image: url("/img/icons/raw-blue.png");
 }
 main section .codeOrTerminal table {
@@ -152,11 +162,6 @@ main section .codeOrTerminal.terminal {
 main section .codeOrTerminal.terminal ul.buttons {
   margin: 0.25em;
   margin-right: 0.5em;
-}
-main section .codeOrTerminal.terminal ul.buttons li span {
-  bottom: unset;
-  top: 0;
-  right: 100%;
 }
 main section .codeOrTerminal.terminal table tbody tr td.left pre code {
   font-weight: bold;
