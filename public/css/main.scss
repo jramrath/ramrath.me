@@ -150,9 +150,19 @@ html {
             width: 100%;
             height: $height-footer;
 
-            a {
-                color: $color-white-dark;
+            ul {
                 margin: auto;
+                list-style-type: none;
+                display: flex;
+                padding: 0;
+
+                li {
+                    margin: 0 1em;
+
+                    a {
+                        color: $color-white-dark;
+                    }
+                }
             }
         }
     }
