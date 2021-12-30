@@ -143,18 +143,23 @@ main section .codeOrTerminal table {
   display: block;
   overflow: auto;
 }
-main section .codeOrTerminal table tbody tr td pre {
+main section .codeOrTerminal table tbody tr td pre, main section .codeOrTerminal table tbody tr td code {
   margin: 0;
-}
-main section .codeOrTerminal table tbody tr td pre code {
   font-size: 1.1em;
   line-height: 1.5em;
 }
-main section .codeOrTerminal table tbody tr td.left pre {
-  margin-right: 0.75em;
+main section .codeOrTerminal table tbody tr td.linenos .linenodiv {
+  border-right-color: #1E1E1E;
+  border-right-width: 3px;
+  border-right-style: solid;
+  margin-right: 0.5em;
+  padding-right: 0.5em;
 }
-main section .codeOrTerminal table tbody tr td.left pre code {
+main section .codeOrTerminal table tbody tr td.linenos pre code {
   color: #1a52a0;
+}
+main section .codeOrTerminal .textToCopy {
+  display: none;
 }
 main section .codeOrTerminal.terminal {
   margin: 1em 3em;

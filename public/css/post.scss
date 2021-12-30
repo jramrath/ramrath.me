@@ -189,25 +189,34 @@ main {
                 tbody {
                     tr {
                         td {
-                            pre {
+                            pre, code {
                                 margin: 0;
-
-                                code {
-                                    font-size: 1.1em;
-                                    line-height: 1.5em;
-                                }
+                                font-size: 1.1em;
+                                line-height: 1.5em;
                             }
 
-                            &.left pre {
-                                margin-right: .75em;
+                            &.linenos {
+                                .linenodiv {
+                                    border-right-color: $color-black-dark;
+                                    border-right-width: 3px;
+                                    border-right-style: solid;
+                                    margin-right: .5em;
+                                    padding-right: .5em;
+                                }
 
-                                code {
-                                    color: $color-blue-dark;
+                                pre {
+                                    code {
+                                        color: $color-blue-dark;
+                                    }
                                 }
                             }
                         }
                     }
                 }
+            }
+
+            .textToCopy {
+                display: none;
             }
 
             &.terminal {
