@@ -1,6 +1,6 @@
 script.
     function copyFunc(id) {
-        navigator.clipboard.writeText(document.getElementById(id).innerHTML);
+        navigator.clipboard.writeText(document.getElementById(id).innerHTML.replaceAll("&lt;", "<").replaceAll("&gt;", ">"));
     } 
 
 
@@ -16,18 +16,19 @@ mixin img(src, alt)
 
 
 
-mixin codeMixin(filename, rawFilename, num, linesNum)
+mixin codeMixin(filename)
     .codeOrTerminal.code
         ul.buttons
 
             li.copy
                 a
-                    button(onclick="copyFunc(" + num + ")").copy
+                    button(onclick="copyFunc('" + filename.split(".").slice(0, -2).join(".") + "')").copy
                         .tooltip 
                             span Copy
                         .icon
 
             li.seeRaw
+                - var rawFilename = filename.split(".").slice(0, -2).join(".") + ".raw.txt"
                 a(href= rawFilename)
                     button.seeRaw
                         .tooltip 
@@ -35,29 +36,19 @@ mixin codeMixin(filename, rawFilename, num, linesNum)
                         .icon   
 
             li.downloadCode
-                a(href= filename)
+                a(href= filename download= filename.replace("/programs/", ""))
                     button.downloadCode
                         .tooltip 
                             span Download code
                         .icon
 
-
-        table
-            tr
-
-                td.left
-                    pre
-                        code
-                            - var i = 1
-                            while i <= linesNum
-                                |#{i}
-                                - i++
-                                br
+        
+        - var path = "./public" + filename.split(".").slice(0, -2).join(".") + ".web.html"
+        |!{include(path)}
                 
-                td.right
-                    pre
-                        code(id= num)
-                            block
+        div(id= filename.split(".").slice(0, -2).join(".")).textToCopy
+            - var path = "./public" + filename.split(".").slice(0, -2).join(".") + ".raw.txt"
+            = include(path)
 
         
 
@@ -73,14 +64,14 @@ mixin terminalMixin(commands, num)
 
         table
             tr
-                td.left
+                td.linenos
                     pre
                         code
                             each command in commands
                                 | $
                                 br
 
-                td.right
+                td.code
                     pre
                         code(id= num)
                             each command in commands

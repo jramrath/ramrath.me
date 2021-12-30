@@ -43,7 +43,14 @@ let render = (req, res, path, options = {}) => {
 }
 
 let includeFunc = (path, options = {}) => {
-    return pug.renderFile(path, options);
+    if(path.slice(-4, ) == ".pug") {
+        return pug.renderFile(path, Object.assign({}, options, {
+            include: includeFunc
+        }));
+    }
+    else {
+        return fs.readFileSync(path);
+    }
 }
 
 let notFoundFunc = (req, res) => {
