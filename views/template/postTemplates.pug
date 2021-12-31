@@ -43,11 +43,11 @@ mixin codeMixin(filename)
                         .icon
 
         
-        - var path = "./public" + filename.split(".").slice(0, -2).join(".") + ".web.html"
+        - var path = wdPath + "/public" + filename.split(".").slice(0, -2).join(".") + ".web.html"
         |!{include(path)}
                 
         div(id= filename.split(".").slice(0, -2).join(".")).textToCopy
-            - var path = "./public" + filename.split(".").slice(0, -2).join(".") + ".raw.txt"
+            - var path = wdPath + "/public" + filename.split(".").slice(0, -2).join(".") + ".raw.txt"
             = include(path)
 
         
