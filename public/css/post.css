@@ -11,6 +11,7 @@ main h1 {
   padding: 0.5em;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+  line-height: 1.25em;
 }
 main h1 .project {
   color: #569CD6;
@@ -21,6 +22,9 @@ main h1 .divider {
 }
 main h1 .blog {
   color: #4EC9B0;
+}
+main hr {
+  margin: 2.5em 0;
 }
 main section {
   padding: 0.25em 0;
@@ -49,61 +53,142 @@ main section .img_wrapper img {
   margin: 0.5em auto;
   width: 90%;
 }
-main section pre.terminal {
+main section .codeOrTerminal {
   background-color: #252526;
   padding: 1em 1.5em;
-  margin: 1em 3em;
-  border: 1px solid #252526;
-  border-radius: 1.25em;
-  white-space: pre-line;
-}
-main section pre.terminal code {
-  font-size: 1.1em;
-  line-height: 1.75em;
-}
-main section pre.code {
-  background-color: #252526;
-  padding: 1em 1.5em;
-  margin: 1em 0;
   border: 1px solid #252526;
   border-radius: 1.25em;
   position: relative;
 }
-main section pre.code code {
-  font-size: 1.1em;
-  line-height: 1.75em;
-}
-main section pre.code .buttons {
-  display: block;
+main section .codeOrTerminal ul.buttons {
   position: absolute;
+  display: flex;
   top: 0;
   right: 0;
   margin: 1em;
+  padding: 0;
+  list-style-type: none;
+  flex-direction: column;
+  width: auto;
 }
-main section pre.code .buttons a button {
+main section .codeOrTerminal ul.buttons li {
+  margin-bottom: 0.5em;
+}
+main section .codeOrTerminal ul.buttons li a button {
   background-color: #1E1E1E;
   border-color: #1E1E1E;
   border-radius: 0.75em;
   border-width: 2px;
-  width: 2.5em;
-  height: 2.5em;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  float: right;
+  transition: width 0.3s ease-out 0.2s;
+  width: 3em;
+  height: 3em;
+}
+main section .codeOrTerminal ul.buttons li a button .tooltip {
+  overflow: hidden;
+  display: flex;
+  margin: auto 0;
+  transition: width 0.3s ease-out 0.2s;
+  width: 0;
+}
+main section .codeOrTerminal ul.buttons li a button .tooltip span {
+  white-space: nowrap;
+  font-family: sans-serif;
+  color: #1a52a0;
+  font-size: 0.75em;
+  width: auto;
+  margin: auto;
+}
+main section .codeOrTerminal ul.buttons li a button .icon {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 1.5em;
-  margin-left: 0.25em;
+  height: 2.5em;
+  width: 2.5em;
+  margin: auto;
 }
-main section pre.code .buttons a button:hover {
-  border-color: #1a52a0;
+main section .codeOrTerminal ul.buttons li a button.copy .icon {
+  background-image: url("/img/icons/copy-white.png");
 }
-main section pre.code .buttons a.downloadCode button {
+main section .codeOrTerminal ul.buttons li a button.downloadCode .icon {
   background-image: url("/img/icons/download-white.png");
 }
-main section pre.code .buttons a.downloadCode button:hover {
-  background-image: url("/img/icons/download-blue.png");
-}
-main section pre.code .buttons a.seeRaw button {
+main section .codeOrTerminal ul.buttons li a button.seeRaw .icon {
   background-image: url("/img/icons/raw-white.png");
 }
-main section pre.code .buttons a.seeRaw button:hover {
+main section .codeOrTerminal ul.buttons li:hover a {
+  text-decoration: none;
+}
+main section .codeOrTerminal ul.buttons li:hover a button {
+  border-color: #1a52a0;
+  width: 100%;
+}
+main section .codeOrTerminal ul.buttons li:hover a button .tooltip {
+  width: 100%;
+}
+main section .codeOrTerminal ul.buttons li:hover a button.copy .icon {
+  background-image: url("/img/icons/copy-blue.png");
+}
+main section .codeOrTerminal ul.buttons li:hover a button.downloadCode .icon {
+  background-image: url("/img/icons/download-blue.png");
+}
+main section .codeOrTerminal ul.buttons li:hover a button.seeRaw .icon {
   background-image: url("/img/icons/raw-blue.png");
+}
+main section .codeOrTerminal table {
+  display: block;
+  overflow: auto;
+}
+main section .codeOrTerminal table tbody tr td pre, main section .codeOrTerminal table tbody tr td code {
+  margin: 0;
+  font-size: 1.1em;
+  line-height: 1.5em;
+}
+main section .codeOrTerminal table tbody tr td.linenos .linenodiv {
+  border-right-color: #1E1E1E;
+  border-right-width: 3px;
+  border-right-style: solid;
+  margin-right: 0.5em;
+  padding-right: 0.5em;
+}
+main section .codeOrTerminal table tbody tr td.linenos pre code {
+  color: #1a52a0;
+}
+main section .codeOrTerminal .textToCopy {
+  display: none;
+}
+main section .codeOrTerminal.terminal {
+  margin: 1em 3em;
+}
+main section .codeOrTerminal.terminal ul.buttons {
+  margin: 0.25em;
+  margin-right: 0.5em;
+}
+main section .codeOrTerminal.terminal table tbody tr td.left pre code {
+  font-weight: bold;
+}
+main section .codeOrTerminal.code {
+  margin: 1em 0;
+}
+main section .doubleContents img {
+  width: 90%;
+  margin: 0.5em 5%;
+}
+
+@media only screen and (min-width: 600px) {
+  main section .doubleContents {
+    display: flex;
+  }
+  main section .doubleContents img {
+    width: 45%;
+    margin: 2.5%;
+  }
+  main section .doubleContents p {
+    width: 45%;
+    margin: 2.5%;
+  }
 }/*# sourceMappingURL=post.css.map */

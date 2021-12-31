@@ -46,10 +46,10 @@
   main .project-preview {
     margin-left: 0;
     margin-right: 0;
-    border-radius: 0.5em;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #252526;
+    border-radius: 0.75em;
+    border-width: 2px;
+    border-style: outset;
+    border-color: #1E1E1E;
     min-height: unset;
     height: 10em;
   }

@@ -43,7 +43,14 @@ let render = (req, res, path, options = {}) => {
 }
 
 let includeFunc = (path, options = {}) => {
-    return pug.renderFile(path, options);
+    if(path.slice(-4, ) == ".pug") {
+        return pug.renderFile(path, Object.assign({}, options, {
+            include: includeFunc
+        }));
+    }
+    else {
+        return fs.readFileSync(path);
+    }
 }
 
 let notFoundFunc = (req, res) => {
@@ -141,7 +148,7 @@ app.post("/contact/", function(req, res) {
 
 
 app.get("/user-data/", function(req, res) {
-    render(req, res, "user-data.pug", {
+    var options = req.headers["x-forwarded-for"] != null ? {
         ip: req.headers["x-forwarded-for"],
         user_agent: req.headers["user-agent"],
         country: lookup(req.headers["x-forwarded-for"])["country"],
@@ -149,7 +156,17 @@ app.get("/user-data/", function(req, res) {
         city: lookup(req.headers["x-forwarded-for"])["city"],
         coordinates: lookup(req.headers["x-forwarded-for"])["ll"][0] + " " + lookup(req.headers["x-forwarded-for"])["ll"][1],
         timezone: lookup(req.headers["x-forwarded-for"])["timezone"]
-    });
+    } : {
+        ip: "N/A",
+        user_agent: "N/A",
+        country: "N/A",
+        region: "N/A",
+        city: "N/A",
+        coordinates: "N/A",
+        timezone: "N/A"
+    };
+
+    render(req, res, "user-data.pug", options);
 });
 
 

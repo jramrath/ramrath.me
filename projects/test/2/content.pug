@@ -1,9 +1,7 @@
-include ../../../views/template/postMixins.pug
+include ../../../views/template/postTemplates.pug
 
 section
-    h2 
-        span 1
-        | Introduction 
+    +sectionTitle("Introduction", "1")
     
     p.
         Lorem <a href="#">ipsum</a> dolor sit amet, consectetur adipiscing elit, sed do
@@ -16,9 +14,7 @@ section
 
 
 section
-    h2 
-        span 2
-        | Project Revision 
+    +sectionTitle("Project Revision", "2")
     
     p.
         Nam faucibus mollis nulla, rutrum semper urna auctor vitae. Mauris in
@@ -29,9 +25,7 @@ section
         justo dolor, laoreet vitae ante ut, rutrum ullamcorper risus. Sed
         commodo tincidunt luctus. Aenean elementum diam eu dictum pulvinar.
 
-    +terminalMixin.
-        sudo apt install python3-pip
-        sudo python3-pip install tqdm
+    +terminalMixin(["sudo -v", "sudo -k", "sudo -v", "sudo -v", "sudo -k", "sudo -v"], "1").
 
     p.
         Duis vel lorem quis sem pretium porta. Nullam rutrum rutrum lacus, vel
@@ -66,5 +60,32 @@ section
         at, faucibus mauris. Aenean vel fringilla erat.
 
 
-    +codeMixin("/programs/test-2-example.py", "/programs/test-2-example.txt")
-        include ../../../public/programs/test-2-example.txt
+    +codeMixin("/programs/test-2-example.og.py")
+    hr
+    +codeMixin("/programs/test-2-html.og.html")
+
+hr
+
+
+section 
+    +sectionTitle("Baum", "3")
+
+    +imgp("/img/projects/test-2-beach.png").
+        Nam faucibus mollis nulla, rutrum semper urna auctor vitae. Mauris in
+        molestie diam. Fusce id consequat velit. Morbi accumsan nulla vitae
+        enim efficitur, eget ornare nibh bibendum. Mauris eget lacinia lacus.
+        Proin nec purus non sem faucibus feugiat id quis neque. Suspendisse
+        sed lorem tincidunt, luctus ligula ac, sollicitudin ex. Phasellus
+        justo dolor, laoreet vitae ante ut, rutrum ullamcorper risus. Sed
+        commodo tincidunt luctus. Aenean elementum diam eu dictum pulvinar.
+
+    +terminalMixin(["sudo -v"], "4")
+
+    +pimg("/img/projects/test-2-beach.png").
+        Phasellus in ex commodo, porta
+        magna non, eleifend dui. Donec velit purus, pulvinar eget maximus in,
+        condimentum hendrerit sem. Vivamus sit amet metus in magna gravida
+        posuere at in nisi. Pellentesque in arcu vitae augue euismod tempus.
+        Phasellus non gravida dui. Morbi felis metus, facilisis ut est at,
+        fermentum tincidunt nisi. Nunc in quam scelerisque, ullamcorper neque
+        at, faucibus mauris. Aenean vel fringilla erat.

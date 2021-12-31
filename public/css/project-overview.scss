@@ -57,10 +57,10 @@ $color-green: #4EC9B0;        /* Post-name part of h1 in posts */
 
         .project-preview {
             margin-left: 0; margin-right: 0;
-            border-radius: .5em;
-            border-width: 1px;
-            border-style: solid;
-            border-color: $color-black-medium;
+            border-radius: .75em;
+            border-width: 2px;
+            border-style: outset;
+            border-color: $color-black-dark;
             min-height: unset;
             height: 10em;
 

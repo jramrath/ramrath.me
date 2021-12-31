@@ -1,0 +1,95 @@
+script.
+    function copyFunc(id) {
+        navigator.clipboard.writeText(document.getElementById(id).innerHTML.replaceAll("&lt;", "<").replaceAll("&gt;", ">"));
+    } 
+
+
+mixin sectionTitle(content, num)
+    h2
+        span= num
+        |#{content}
+
+
+mixin img(src, alt)
+    .img_wrapper
+        img(src=src, alt=alt)
+
+
+
+mixin codeMixin(filename)
+    .codeOrTerminal.code
+        ul.buttons
+
+            li.copy
+                a
+                    button(onclick="copyFunc('" + filename.split(".").slice(0, -2).join(".") + "')").copy
+                        .tooltip 
+                            span Copy
+                        .icon
+
+            li.seeRaw
+                - var rawFilename = filename.split(".").slice(0, -2).join(".") + ".raw.txt"
+                a(href= rawFilename)
+                    button.seeRaw
+                        .tooltip 
+                            span See raw
+                        .icon   
+
+            li.downloadCode
+                a(href= filename download= filename.replace("/programs/", ""))
+                    button.downloadCode
+                        .tooltip 
+                            span Download code
+                        .icon
+
+        
+        - var path = "./public" + filename.split(".").slice(0, -2).join(".") + ".web.html"
+        |!{include(path)}
+                
+        div(id= filename.split(".").slice(0, -2).join(".")).textToCopy
+            - var path = "./public" + filename.split(".").slice(0, -2).join(".") + ".raw.txt"
+            = include(path)
+
+        
+
+mixin terminalMixin(commands, num)
+    .codeOrTerminal.terminal 
+        ul.buttons
+            li.copy
+                a
+                    button(onclick="copyFunc(" + num + ")").copy
+                        .tooltip 
+                            span Copy
+                        .icon
+
+        table
+            tr
+                td.linenos
+                    pre
+                        code
+                            each command in commands
+                                | $
+                                br
+
+                td.code
+                    pre
+                        code(id= num)
+                            each command in commands
+                                |#{command + "\n"}
+                    
+        
+
+
+mixin pimg(imgFile)
+    .doubleContents
+        p 
+            block
+        
+        img(src= imgFile)
+
+mixin imgp(imgFile)
+    .doubleContents
+        img(src= imgFile)
+
+        p 
+            block

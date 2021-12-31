@@ -1,22 +1,3 @@
-$main-bg-color: #1E1E1E;
-$header-bg-color:  #252526;
-$header-bg-color-hover: #2A2D2E;
-$header-bg-color-current: #37373D;
-$header-bg-color-current-pc: #1E1E1E;
-
-$text-color: #D4D4D4;
-$hyperlink-color: #569CD6;
-$h1-color-project: #569CD6;
-$h1-color-divider: #CE9178;
-$h1-color-blog: #4EC9B0;
-$h2-color: #9CDCFE;
-$text-color-dark: #949494;
-
-$color-blue: #1a52a0;
-
-
-
-
 $color-black-dark: #1E1E1E;   /* main background color & header current color */
 $color-black-medium: #252526; /* header background */
 $color-black-light: #2A2D2E;  /* hover color */
@@ -34,7 +15,7 @@ $color-green: #4EC9B0;        /* Post-name part of h1 in posts */
 
 
 
-
+$buttons-animation: width .3s ease-out .2s;
 
 
 
@@ -43,17 +24,22 @@ main {
         padding: 0.5em;
         margin-top: 0.5em;
         margin-bottom: .5em;
+        line-height: 1.25em;
 
         .project {
-            color: $h1-color-project;
+            color: $color-blue-medium;
             font-weight: bold;
         }
         .divider {
-            color: $h1-color-divider;
+            color: $color-orange
         }
         .blog {
-            color: $h1-color-blog;
+            color: $color-green;
         }
+    }
+
+    hr {
+        margin: 2.5em 0;
     }
 
     section {
@@ -62,9 +48,9 @@ main {
 
         h2 {
             margin: 0 .3em;
-            color: $h2-color;
+            color: $color-blue-light;
             span {
-                color: $text-color-dark;
+                color: $color-white-dark;
                 font-size: 0.6em;
         
                 display: block;
@@ -87,73 +73,193 @@ main {
                 margin: .5em auto;
                 width: 90%;
             }
-        } 
-
-        pre.terminal {
-            background-color: $color-black-medium;
-            padding: 1em 1.5em;
-            margin: 1em 3em;
-            border: 1px solid $color-black-medium;
-            border-radius: 1.25em;
-            white-space: pre-line;
-
-            code {
-                font-size: 1.1em;
-                line-height: 1.75em;
-            }
         }
 
-        pre.code {
+        .codeOrTerminal {
             background-color: $color-black-medium;
             padding: 1em 1.5em;
-            margin: 1em 0;
             border: 1px solid $color-black-medium;
-            border-radius: 1.25em;
+            border-radius: 1.25em;  
             position: relative;
 
-            code {
-                font-size: 1.1em;
-                line-height: 1.75em;
-            }
-
-            .buttons {
-                display: block;
+            ul.buttons {
                 position: absolute;
+                display: flex;
                 top: 0;
                 right: 0;
                 margin: 1em;
+                padding: 0;
+                list-style-type: none;
+                flex-direction: column;
+                width: auto;
 
-                a button {
-                    background-color: $color-black-dark;
-                    border-color: $color-black-dark;
-                    border-radius: .75em;
-                    border-width: 2px;
-                    width: 2.5em;
-                    height: 2.5em;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: 1.5em;
-                    margin-left: .25em;
+                li {
+                    margin-bottom: .5em;
+
+                    a {
+                        button {
+                            background-color: $color-black-dark;
+                            border-color: $color-black-dark;
+                            border-radius: .75em;
+                            border-width: 2px;
+                            display: flex;
+                            position: relative;
+                            overflow: hidden;
+                            padding: 0;
+                            float: right;
+
+                            transition: $buttons-animation;
+                            width: 3em;
+                            height: 3em;
+
+                            .tooltip {
+                                overflow: hidden;
+                                display: flex;
+                                margin: auto 0;
+
+                                transition: $buttons-animation;
+                                width: 0;
+
+                                span {
+                                    white-space: nowrap;
+                                    font-family: sans-serif;
+                                    color: $color-blue-dark;
+                                    font-size: .75em;
+                                    width: auto;
+                                    margin: auto;
+                                }
+                            }
+
+                            .icon {
+                                background-repeat: no-repeat;
+                                background-position: center;
+                                background-size: 1.5em;
+                                height: 2.5em;
+                                width: 2.5em;
+                                margin: auto;
+                            }
+
+                            &.copy .icon {
+                                background-image: url("/img/icons/copy-white.png");
+                            }
+
+                            &.downloadCode .icon {
+                                background-image: url("/img/icons/download-white.png");
+                            }
+
+                            &.seeRaw .icon {
+                                background-image: url("/img/icons/raw-white.png");
+                            }
+                        }
+                    }
 
                     &:hover {
-                        border-color: $color-blue-dark;
+                        a {
+                            text-decoration: none;
+
+                            button {
+                                border-color: $color-blue-dark;
+                                width: 100%;
+
+                                .tooltip {
+                                    width: 100%;
+                                }
+
+                                &.copy .icon {
+                                    background-image: url("/img/icons/copy-blue.png");
+                                }
+
+                                &.downloadCode .icon {
+                                    background-image: url("/img/icons/download-blue.png");
+                                }
+
+                                &.seeRaw .icon {
+                                    background-image: url("/img/icons/raw-blue.png");
+                                }
+                            }
+                        }
                     }
                 }
-    
-                a.downloadCode  button {
-                    background-image: url("/img/icons/download-white.png");
-                    
-                    &:hover {
-                        background-image: url("/img/icons/download-blue.png");
+            }
+
+            table {
+                display: block;
+                overflow: auto;
+
+                tbody {
+                    tr {
+                        td {
+                            pre, code {
+                                margin: 0;
+                                font-size: 1.1em;
+                                line-height: 1.5em;
+                            }
+
+                            &.linenos {
+                                .linenodiv {
+                                    border-right-color: $color-black-dark;
+                                    border-right-width: 3px;
+                                    border-right-style: solid;
+                                    margin-right: .5em;
+                                    padding-right: .5em;
+                                }
+
+                                pre {
+                                    code {
+                                        color: $color-blue-dark;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
+            }
 
-                a.seeRaw button {
-                    background-image: url("/img/icons/raw-white.png");
-                    
-                    &:hover {
-                        background-image: url("/img/icons/raw-blue.png");
-                    }
+            .textToCopy {
+                display: none;
+            }
+
+            &.terminal {
+                margin: 1em 3em;
+
+                ul.buttons {
+                    margin: .25em;
+                    margin-right: .5em;
+                }
+
+                table tbody tr td.left pre code {
+                    font-weight: bold;
+                }
+            }
+
+            &.code {
+                margin: 1em 0;
+            }
+        }
+
+        .doubleContents {
+            img {
+                width: 90%;
+                margin: .5em 5%;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 600px) {
+    main {
+        section {
+            .doubleContents {
+                display: flex;
+                img {
+                    width: 45%;
+                    margin: 2.5%;
+                }
+
+                p {
+                    width: 45%;
+                    margin: 2.5%;
                 }
             }
         }

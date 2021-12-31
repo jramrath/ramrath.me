@@ -1,22 +1,21 @@
-$main-bg-color: #1E1E1E;
-$header-bg-color:  #252526;
-$header-bg-color-hover: #2A2D2E;
-$header-bg-color-current: #37373D;
-$header-bg-color-current-pc: #1E1E1E;
+$color-black-dark: #1E1E1E;   /* main background color & header current color */
+$color-black-medium: #252526; /* header background */
+$color-black-light: #2A2D2E;  /* hover color */
 
-$text-color: #D4D4D4;
-$hyperlink-color: #569CD6;
-$h1-color-project: #569CD6;
-$h1-color-divider: #CE9178;
-$h1-color-blog: #4EC9B0;
-$h2-color: #9CDCFE;
-$text-color-dark: #949494;
+$color-white-dark: #949494;   /* dark text color */
+$color-white-light: #D4D4D4;  /* normal text color */
 
-$dark-blue: #1a52a0;
+$color-blue-dark: #1a52a0;
+$color-blue-medium: #569CD6;  /* Project part of h1 in posts */
+$color-blue-light: #9CDCFE;   /* h2 title of Project overview */
+
+$color-orange: #CE9178;       /* Divider Part of h1 in posts */
+
+$color-green: #4EC9B0;        /* Post-name part of h1 in posts */
 
 main {
     div.captcha-wrapper {
-        background-color: $header-bg-color;
+        background-color: $color-black-medium;
         padding: 2em;
         margin-top: 2em;
 
@@ -56,11 +55,11 @@ main {
                         }
 
                         select {
-                            color: $text-color;
-                            background-color: $main-bg-color;
+                            color: $color-white-light;
+                            background-color: $color-black-dark;
                             border-width: 1px;
                             border-radius: .3em;
-                            border-color: $header-bg-color;
+                            border-color: $color-black-medium;
                             font-size: 1.5em;
                             text-align: center;
 
@@ -80,16 +79,16 @@ main {
                         input, button {
                             margin: 0 auto;
                             padding: .2em .4em;
-                            color: $text-color;
-                            background: $main-bg-color;
+                            color: $color-white-light;
+                            background: $color-black-dark;
                             border-width: 1px;
                             border-radius: .3em;
-                            border-color: $dark-blue;
+                            border-color: $color-blue-dark;
                             font-size: 1.5em;
                             text-align: center;
 
                             &:hover {
-                                background: $header-bg-color;
+                                background: $color-black-medium;
                             }
                         }
                     }
