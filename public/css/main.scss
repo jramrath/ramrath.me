@@ -151,16 +151,18 @@ html {
             height: $height-footer;
 
             ul {
-                margin: auto;
+                margin: auto 0;
                 list-style-type: none;
                 display: flex;
                 padding: 0;
+                width: 100%;
 
                 li {
-                    margin: 0 1em;
+                    margin: 0 auto;
 
                     a, span {
                         color: $color-white-dark;
+                        font-size: 0.775em;
                     }
                 }
             }
@@ -200,6 +202,21 @@ html {
                             &.current {
                                 outline: $color-black-dark solid 1px;
                             }
+                        }
+                    }
+                }
+            }
+
+            footer {
+                ul {
+                    margin: auto;
+                    width: unset;
+
+                    li {
+                        margin: 0 1em;
+
+                        a, span {
+                            font-size: unset;
                         }
                     }
                 }
