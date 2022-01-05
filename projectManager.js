@@ -1,5 +1,14 @@
 const fs = require("fs");
 
+Array.prototype.sortByDate = function() {
+    return this.slice(0).sort(function(a, b) {
+        return (a.details["creationDate"] < b.details["creationDate"]) ? 1 : (a.details["creationDate"] > b.details["creationDate"]) ? -1 : 0;
+    });
+}
+
+
+
+
 let Project = class {
     constructor(dir) {
         this.dir = dir;
@@ -29,21 +38,31 @@ let Post = class {
 
 
 
-exports.projects = {};
 console.log("Importing projects ...");
+exports.projects = {};
+var allPosts = [];
 
-fs.readdir(__dirname + "/projects", function(err, dirs) {
-    dirs.forEach(dir => {
-        exports.projects[dir] = new Project("/projects/" + dir);
-        exports.projects[dir].getInfo();
 
-        fs.readdir(__dirname + "/projects/" + dir, function(err, posts) {
-            posts.forEach(post => {
-                if(post != "projectDetails.json") {
-                    exports.projects[dir].posts[post] = new Post("/projects/" + dir + "/" + post);
-                    exports.projects[dir].posts[post].getInfo();
-                }
-            });
-        });
+fs.readdirSync(__dirname + "/projects").forEach(dir => {
+    exports.projects[dir] = new Project("/projects/" + dir);
+    exports.projects[dir].getInfo();
+
+    fs.readdirSync(__dirname + "/projects/" + dir).forEach(post => {
+        if(post != "projectDetails.json") {
+            exports.projects[dir].posts[post] = new Post("/projects/" + dir + "/" + post);
+            exports.projects[dir].posts[post].getInfo();
+            allPosts.push(exports.projects[dir].posts[post]);
+        }
     });
 });
+
+
+
+console.log("Done importing projects.");
+
+
+console.log("Getting recent posts ...");
+
+exports.recentPosts = allPosts.sortByDate().slice(0, 2);
+
+console.log("Done getting recent posts.");
