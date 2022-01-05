@@ -43,6 +43,8 @@ main {
                 margin: 0;
                 padding: .5em;
                 float: left;
+                display: flex;
+                flex-direction: column;
         
                 h2 {
                     color: $color-green;
@@ -55,7 +57,15 @@ main {
                     margin: 0;
                     align-items: center;
                 }
+
+                span.date {
+                    font-size: .9em;
+                    color: $color-white-dark;
+                    bottom: 0;
+                    margin-top: auto;
+                }
             }
+
             .picture {
                 display: none;
             }

@@ -31,6 +31,8 @@ main section.posts .project-preview .description {
   margin: 0;
   padding: 0.5em;
   float: left;
+  display: flex;
+  flex-direction: column;
 }
 main section.posts .project-preview .description h2 {
   color: #4EC9B0;
@@ -41,6 +43,12 @@ main section.posts .project-preview .description p {
   color: #D4D4D4;
   margin: 0;
   align-items: center;
+}
+main section.posts .project-preview .description span.date {
+  font-size: 0.9em;
+  color: #949494;
+  bottom: 0;
+  margin-top: auto;
 }
 main section.posts .project-preview .picture {
   display: none;
