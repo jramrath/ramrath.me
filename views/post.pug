@@ -20,6 +20,10 @@ main
   - var path = path
   |!{include(path)}
 
+  if nextPost != ""
+    .nextPostButton
+      a(href= nextPost.dir)=  "Next Post 〉〉 #" + nextPost.details["slug"] + " " + nextPost.details["name"]
+
 
 footer
   include ./template/footer.pug
