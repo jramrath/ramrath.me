@@ -26,7 +26,11 @@ main
 
       a.project-preview(href=post.dir)
         section.description 
-          h2= ("#" + post.details["slug"] + ": " + post.details["name"])
+          h2
+            = "#"
+            span(style= "font-weight: bold")= post.details["slug"]
+            = ": " + post.details["name"]
+
           p= post.details["description"]
         section.picture 
           img(src= post.details["titleImagePath"], alt="title-image")
