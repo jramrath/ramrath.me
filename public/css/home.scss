@@ -23,6 +23,7 @@ main {
             h1 {
                 text-align: center;
                 font-size: 3em;
+                line-height: 1em;
             }
 
             h2 {
@@ -45,12 +46,20 @@ main {
             }
         }
     }
+
+    hr {
+        color: $color-blue-dark;
+    }
 }
 
 @media only screen and (min-width: 600px) {
     main {
         section.title {
             padding: 6em 0;
+        }
+
+        hr {
+            display: none;
         }
     }
 }
