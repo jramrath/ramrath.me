@@ -39,10 +39,12 @@ main {
         
             .description {
                 max-width: 100%;
-                min-height: 150px;
+                height: 150px;
                 margin: 0;
                 padding: .5em;
                 float: left;
+                display: flex;
+                flex-direction: column;
         
                 h2 {
                     color: $color-green;
@@ -54,8 +56,17 @@ main {
                     color: $color-white-light;
                     margin: 0;
                     align-items: center;
+                    overflow: hidden;
+                }
+
+                span.date {
+                    font-size: .9em;
+                    color: $color-white-dark;
+                    bottom: 0;
+                    margin-top: auto;
                 }
             }
+
             .picture {
                 display: none;
             }
