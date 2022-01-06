@@ -65,7 +65,8 @@ let notFoundFunc = (req, res) => {
 
 app.get("/", function(req, res) {
     render(req, res, "home.pug", { 
-        current: "home"
+        current: "home",
+        recentPosts: PM.recentPosts
     });
 });
 

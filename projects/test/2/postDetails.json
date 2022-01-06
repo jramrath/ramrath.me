@@ -1,7 +1,9 @@
 {
     "slug": "2",
-    "creationData": "27.11.2021",
+    "creationDate": "27.11.2021",
     "name": "Baum Post",
     "description": "Just a test post with a different description! Lorem ipsum bla bla bla",
-    "titleImagePath": "/img/projects/test-2-stones.png"
+    "titleImagePath": "/img/projects/test-2-stones.png",
+    "projectName": "Test",
+    "projectSlug": "test"
 }
