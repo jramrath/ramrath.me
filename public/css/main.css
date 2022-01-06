@@ -113,16 +113,18 @@ html body footer {
   height: 4em;
 }
 html body footer ul {
-  margin: auto;
+  margin: auto 0;
   list-style-type: none;
   display: flex;
   padding: 0;
+  width: 100%;
 }
 html body footer ul li {
-  margin: 0 1em;
+  margin: 0 auto;
 }
 html body footer ul li a, html body footer ul li span {
   color: #949494;
+  font-size: 0.775em;
 }
 
 @media only screen and (min-width: 600px) {
@@ -150,6 +152,16 @@ html body footer ul li a, html body footer ul li span {
   }
   html body header nav ul li.current {
     outline: #1E1E1E solid 1px;
+  }
+  html body footer ul {
+    margin: auto;
+    width: unset;
+  }
+  html body footer ul li {
+    margin: 0 1em;
+  }
+  html body footer ul li a, html body footer ul li span {
+    font-size: unset;
   }
 }
 @media only screen and (min-width: 1120px) {
