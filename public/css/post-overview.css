@@ -27,7 +27,7 @@ main section.posts .project-preview {
 }
 main section.posts .project-preview .description {
   max-width: 100%;
-  min-height: 150px;
+  height: 150px;
   margin: 0;
   padding: 0.5em;
   float: left;
@@ -43,6 +43,7 @@ main section.posts .project-preview .description p {
   color: #D4D4D4;
   margin: 0;
   align-items: center;
+  overflow: hidden;
 }
 main section.posts .project-preview .description span.date {
   font-size: 0.9em;
