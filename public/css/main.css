@@ -89,6 +89,7 @@ html body header nav ul li a img {
 html body header nav ul li.current a {
   color: #D4D4D4;
   background-color: #1E1E1E;
+  cursor: default;
 }
 html body header span.ip {
   display: inline-flex;
