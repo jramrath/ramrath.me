@@ -178,6 +178,19 @@ main section .doubleContents img {
   width: 90%;
   margin: 0.5em 5%;
 }
+main .nextPostButton {
+  display: flex;
+}
+main .nextPostButton a {
+  color: #949494;
+  margin: auto;
+  background-color: #252526;
+  padding: 0.5em 0.75em;
+  border-radius: 0.5em;
+  border-style: outset;
+  border-color: #1a52a0;
+  border-width: 2px;
+}
 
 @media only screen and (min-width: 600px) {
   main section .doubleContents {
@@ -190,5 +203,10 @@ main section .doubleContents img {
   main section .doubleContents p {
     width: 45%;
     margin: 2.5%;
+  }
+  main .nextPostButton a {
+    border: none;
+    background-color: transparent;
+    margin-right: 1.5em;
   }
 }/*# sourceMappingURL=post.css.map */

@@ -104,13 +104,15 @@ app.get("/projects/:name", function(req, res) {
 app.get("/projects/:name/:post", function(req, res) {
     const project = PM.projects[req.params.name];
     const post = project.posts[req.params.post];
+    const nextPost = project.posts[(parseInt(req.params.post) +1).toString()]
 
     if(project && post) {
         render(req, res, "post.pug", {
             project_name: project.details["name"],
             post_name: "#" + post.details["slug"] + ": " + post.details["name"],
             path: __dirname + post.dir + "/content.pug",
-            include: includeFunc
+            include: includeFunc,
+            nextPost: nextPost == undefined ? "" : nextPost 
         });
     }
     else {
