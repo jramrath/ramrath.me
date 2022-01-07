@@ -42,7 +42,6 @@ main section.posts .project-preview .description h2 {
 main section.posts .project-preview .description p {
   color: #D4D4D4;
   margin: 0;
-  align-items: center;
   overflow: hidden;
 }
 main section.posts .project-preview .description span.date {
@@ -98,8 +97,5 @@ main section.posts .project-preview .picture {
 @media only screen and (min-width: 1120px) {
   main {
     width: 100%;
-  }
-  main section.posts .project-preview {
-    height: 12em;
   }
 }/*# sourceMappingURL=post-overview.css.map */
