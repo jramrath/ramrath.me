@@ -1,8 +1,8 @@
 {
-    "slug": "test",
-    "creationDate": "25.11.2021",
-    "creationDateISO": "2023-11-25",
-    "name": "Test",
+    "slug": "a",
+    "creationDate": "10.1.2022",
+    "creationDateISO": "2022-01-10",
+    "name": "A",
     "description": "Just a test project! Lorem ipsum bla bla bla",
     "titleImagePath": "/img/projects/test-0-lakeSunset.png"
 }
