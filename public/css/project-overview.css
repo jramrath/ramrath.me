@@ -21,6 +21,8 @@
   margin: 0;
   padding: 0.5em;
   float: left;
+  display: flex;
+  flex-direction: column;
 }
 .project-preview .description h2 {
   color: #569CD6;
@@ -32,6 +34,19 @@
   color: #D4D4D4;
   margin: 0;
   align-items: center;
+}
+.project-preview .description .categories {
+  margin-top: auto;
+  display: flex;
+}
+.project-preview .description .categories span {
+  position: relative;
+  color: #949494;
+  padding: 0.1em 0.4em;
+  margin: 0.2em;
+  border-radius: 0.45em;
+  background-color: #1E1E1E;
+  font-size: 0.85em;
 }
 .project-preview .picture {
   display: none;
@@ -77,8 +92,5 @@
 @media only screen and (min-width: 1120px) {
   main {
     width: 100%;
-  }
-  main .project-preview {
-    height: 12em;
   }
 }/*# sourceMappingURL=project-overview.css.map */

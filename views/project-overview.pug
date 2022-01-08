@@ -18,6 +18,11 @@ main
       section.description 
         h2= project.details["name"]
         p= project.details["description"]
+
+        .categories
+          each category in project.categories
+            span= category
+
       section.picture 
         img(src= project.details["titleImagePath"], alt="title-image")
 
