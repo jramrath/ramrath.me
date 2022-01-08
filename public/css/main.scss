@@ -116,9 +116,11 @@ html {
                         }
 
                         &.current {
+                            background-color: $color-black-dark;
+
                             a {
-                                color: $color-white-light;
                                 background-color: $color-black-dark;
+                                color: $color-white-light;
                                 cursor: default;
                             }
                         }
@@ -191,6 +193,7 @@ html {
                     top: unset;
                     bottom: unset;
                     width: auto;
+                    overflow: visible;
 
                     ul {
                         display: flex;
@@ -201,7 +204,7 @@ html {
                             }
 
                             &.current {
-                                outline: $color-black-dark solid 1px;
+                                margin-bottom: -1px;
                             }
                         }
                     }
