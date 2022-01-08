@@ -14,10 +14,12 @@ let Project = class {
         this.dir = dir;
         this.posts = {};
         this.details;
+        this.categories
     }
 
     getInfo() {
         this.details = JSON.parse(fs.readFileSync(__dirname + "/" + this.dir + "/projectDetails.json", "utf8"));
+        this.categories = fs.readFileSync(__dirname + "/" + this.dir + "/categories", "utf8").split("\n");
     }
 }
 
@@ -26,12 +28,10 @@ let Post = class {
     constructor(dir) {
         this.dir = dir;
         this.details;
-        //this.contentPath;
     }
 
     getInfo() {
         this.details = JSON.parse(fs.readFileSync(__dirname + "/" + this.dir + "/postDetails.json", "utf8"));
-        //this.contentPath = this.dir + "/content.pug";
     }
 }
 
@@ -47,7 +47,7 @@ fs.readdirSync(__dirname + "/projects").forEach(dir => {
     exports.projects[dir].getInfo();
 
     fs.readdirSync(__dirname + "/projects/" + dir).forEach(post => {
-        if(post != "projectDetails.json") {
+        if(post != "projectDetails.json" && post != "categories") {
             exports.projects[dir].posts[post] = new Post("/projects/" + dir + "/" + post);
             exports.projects[dir].posts[post].getInfo();
             allPosts.push(exports.projects[dir].posts[post]);
