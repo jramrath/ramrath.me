@@ -1,8 +1,8 @@
 const fs = require("fs");
 
-Array.prototype.sortByDate = function() {
+Array.prototype.sortByDate = function() { // sorts projects or posts after date; newest first
     return this.slice(0).sort(function(a, b) {
-        return (a.details["creationDate"] < b.details["creationDate"]) ? 1 : (a.details["creationDate"] > b.details["creationDate"]) ? -1 : 0;
+        return (a.details["creationDateISO"] < b.details["creationDateISO"]) ? 1 : (a.details["creationDateISO"] > b.details["creationDateISO"]) ? -1 : 0;
     });
 }
 
@@ -42,7 +42,6 @@ console.log("Importing projects ...");
 exports.projects = {};
 var allPosts = [];
 
-
 fs.readdirSync(__dirname + "/projects").forEach(dir => {
     exports.projects[dir] = new Project("/projects/" + dir);
     exports.projects[dir].getInfo();
@@ -60,9 +59,10 @@ fs.readdirSync(__dirname + "/projects").forEach(dir => {
 
 console.log("Done importing projects.");
 
+console.log("Sorting projects after creation date ...");
+exports.sortedProjects = Object.values(exports.projects).sortByDate();
+console.log("Done sorting projects.");
 
 console.log("Getting recent posts ...");
-
 exports.recentPosts = allPosts.sortByDate().slice(0, 2);
-
 console.log("Done getting recent posts.");

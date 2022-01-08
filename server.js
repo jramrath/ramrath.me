@@ -80,7 +80,7 @@ app.get("/about/", function(req, res) {
 
 app.get("/projects/", function(req, res) {
     render(req, res, "project-overview.pug", { 
-        projects: PM.projects, 
+        projects: PM.sortedProjects,
         current: "projects"
     });
 });
