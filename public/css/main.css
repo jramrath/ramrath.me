@@ -86,9 +86,13 @@ html body header nav ul li a img {
   height: 1.25em;
   margin-right: 0.25em;
 }
-html body header nav ul li.current a {
-  color: #D4D4D4;
+html body header nav ul li.current {
   background-color: #1E1E1E;
+}
+html body header nav ul li.current a {
+  background-color: #1E1E1E;
+  color: #D4D4D4;
+  cursor: default;
 }
 html body header span.ip {
   display: inline-flex;
@@ -142,6 +146,7 @@ html body footer ul li a, html body footer ul li span {
     top: unset;
     bottom: unset;
     width: auto;
+    overflow: visible;
   }
   html body header nav ul {
     display: flex;
@@ -150,7 +155,7 @@ html body footer ul li a, html body footer ul li span {
     padding: 0.5em 0.7em;
   }
   html body header nav ul li.current {
-    outline: #1E1E1E solid 1px;
+    margin-bottom: -1px;
   }
   html body footer ul {
     margin: auto;

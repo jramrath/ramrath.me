@@ -31,7 +31,7 @@ main {
             font-weight: bold;
         }
         .divider {
-            color: $color-orange
+            color: $color-orange;
         }
         .blog {
             color: $color-green;
@@ -244,6 +244,21 @@ main {
             }
         }
     }
+
+    .nextPostButton {
+        display: flex;
+
+        a {
+            color: $color-white-dark;
+            margin: auto;
+            background-color: $color-black-medium;
+            padding: .5em .75em;
+            border-radius: .5em;
+            border-style: outset;
+            border-color: $color-blue-dark;
+            border-width: 2px;
+        }
+    }
 }
 
 
@@ -262,6 +277,12 @@ main {
                     margin: 2.5%;
                 }
             }
+        }
+
+        .nextPostButton a {
+            border: none;
+            background-color: transparent;
+            margin-right: 1.5em;
         }
     }
 }

@@ -28,6 +28,8 @@ $color-green: #4EC9B0;        /* Post-name part of h1 in posts */
         margin: 0;
         padding: .5em;
         float: left;
+        display: flex;
+        flex-direction: column;
 
         h2 {
             color: $color-blue-medium;
@@ -40,6 +42,21 @@ $color-green: #4EC9B0;        /* Post-name part of h1 in posts */
             color: $color-white-light;
             margin: 0;
             align-items: center;
+        }
+
+        .categories {
+            margin-top: auto;
+            display: flex;
+
+            span {
+                position: relative;
+                color: $color-white-dark;
+                padding: .1em .4em;
+                margin: .2em;
+                border-radius: .45em;
+                background-color: $color-black-dark;
+                font-size: .85em;
+            }
         }
     }
     .picture {
@@ -95,9 +112,5 @@ $color-green: #4EC9B0;        /* Post-name part of h1 in posts */
 @media only screen and (min-width: 1120px) {
     main {
         width: 100%;
-
-        .project-preview {
-            height: 12em;
-        }
     }
 }

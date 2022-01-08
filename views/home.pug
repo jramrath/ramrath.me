@@ -2,13 +2,39 @@ doctype html5
 head
   include ./template/head.pug
   link(rel="stylesheet", href="/css/home.css")
+  link(rel="stylesheet", href="/css/post-overview.css")
   title ramrath.me
 
 header
   include ./template/header.pug
 
 main 
-  h1 HOME
+  section.title
+    h1 Under Development
+    h1 Welcome
+    h2 Don't know what's going on? Check out
+      | 
+      a(href="/about") /about
+      | !
+
+  hr
+
+  section.posts
+    each post in recentPosts
+
+      a(href= post.dir).project-preview 
+        section.description 
+          h2
+            span.projectName= post.details["projectName"]
+            span.divider  | 
+            span.postName= ("#" + post.details["slug"] + ": " + post.details["name"])
+
+          p= post.details["description"]
+
+          span.date= post.details["creationDate"]
+
+        section.picture 
+          img(src= post.details["titleImagePath"], alt="title-image")
 
 
 footer

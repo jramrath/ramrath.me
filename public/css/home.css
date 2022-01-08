@@ -9,4 +9,37 @@
 /* Post-name part of h1 in posts */
 main {
   color: #D4D4D4;
+}
+main section.title {
+  padding: 2.5em 0;
+}
+main section.title h1 {
+  text-align: center;
+  font-size: 3em;
+  line-height: 1em;
+}
+main section.title h2 {
+  text-align: center;
+}
+main section.posts .project-preview h2 .projectName {
+  color: #569CD6;
+  font-weight: bold;
+}
+main section.posts .project-preview h2 .divider {
+  color: #CE9178;
+}
+main section.posts .project-preview h2 .postName {
+  color: #4EC9B0;
+}
+main hr {
+  color: #1a52a0;
+}
+
+@media only screen and (min-width: 600px) {
+  main section.title {
+    padding: 6em 0;
+  }
+  main hr {
+    display: none;
+  }
 }/*# sourceMappingURL=home.css.map */

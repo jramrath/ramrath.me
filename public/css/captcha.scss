@@ -80,16 +80,21 @@ main {
                             margin: 0 auto;
                             padding: .2em .4em;
                             color: $color-white-light;
-                            background: $color-black-dark;
-                            border-width: 1px;
+                            background-color: transparent;
+                            border-width: 2px;
                             border-radius: .3em;
                             border-color: $color-blue-dark;
+                            border-style: outset;
                             font-size: 1.5em;
                             text-align: center;
 
                             &:hover {
-                                background: $color-black-medium;
+                                background: $color-black-dark;
                             }
+                        }
+
+                        &:hover {
+                            text-decoration: none;
                         }
                     }
 
