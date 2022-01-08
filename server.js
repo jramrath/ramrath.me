@@ -6,10 +6,11 @@ const path = require("path");
 const crypto = require("crypto"); // hashing algorithm
 const pug = require("pug"); // pug rendering Engine
 const { lookup }  = require("geoip-lite");
-
-const PM = require("./projectManager.js");
 const { check } = require("node_cloudflare");
 const { EDESTADDRREQ } = require("constants");
+
+const PM = require("./projectManager.js");
+const search = require("./search.js");
 
 const app = express();
 const directoryToServer = __dirname + "/public";
@@ -180,8 +181,15 @@ app.get("/donations/", function(req, res) {
 });
 
 
-app.get("/downloadCode/", function(req, res) {
-    res.sendFile(req.body["path"]);
+app.get("/search/", function(req, res) {
+    render(req, res, "search.pug");
+});
+
+app.post("/search/", function(req, res) {
+    render(req, res, "search.pug", {
+        searchResults: search.searchFunc(PM, req.body["search-input"]),
+        searchInput: req.body["search-input"]
+    })
 });
 
 
