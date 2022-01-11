@@ -93,3 +93,14 @@ mixin imgp(imgFile)
 
         p 
             block
+
+
+mixin video(filename, ytMirror)
+    .video
+        video(controls) 
+            source(src= "/videos/" + filename + ".mp4" type="video/mp4")
+            source(src= "/videos/" + filename + ".ogg" type="video/ogg")
+            = "Your browser does not support the video tag! Please use another mirror."
+        
+        if ytMirror != undefined 
+            a.mirror(href= ytMirror target="_blank" rel="noreferrer noopener")= "Youtube Mirror"

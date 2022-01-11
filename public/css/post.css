@@ -178,6 +178,19 @@ main section .doubleContents img {
   width: 90%;
   margin: 0.5em 5%;
 }
+main section .video {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0;
+}
+main section .video video {
+  width: 95%;
+  margin: auto;
+}
+main section .video a.mirror {
+  text-align: center;
+}
 main .nextPostButton {
   display: flex;
 }
@@ -208,5 +221,10 @@ main .nextPostButton a {
     border: none;
     background-color: transparent;
     margin-right: 1.5em;
+  }
+}
+@media only screen and (min-width: 1120px) {
+  main section .video video {
+    width: 85%;
   }
 }/*# sourceMappingURL=post.css.map */
