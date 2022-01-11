@@ -19,7 +19,9 @@ main
 
     section.searchresults
 
-        if Object.entries(searchResults).length != 0
+        if searchResults == undefined 
+
+        else if Object.entries(searchResults).length != 0
             each resultType in Object.keys(searchResults)
                 if searchResults[resultType] != ""
 
@@ -32,13 +34,16 @@ main
                             each result in searchResults[resultType]
 
                                 if resultType == "categories"
-                                    li= result
+                                    li
+                                        a(href="/categories/" + result.toLowerCase())= result
 
-                                if resultType == "projects"
-                                    li= result.details["name"]
+                                else if resultType == "projects"
+                                    li 
+                                        a(href= result.dir)= result.details["name"]
                                 
-                                if resultType == "posts"
-                                    li= result.details["projectName"] + " | #" + result.details["slug"] + ": " + result.details["name"]
+                                else if resultType == "posts"
+                                    li
+                                        a(href= result.dir)= result.details["projectName"] + " | #" + result.details["slug"] + ": " + result.details["name"]
                                 
                                 
         
