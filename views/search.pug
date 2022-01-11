@@ -1,0 +1,66 @@
+doctype html5
+head
+    include ./template/head.pug
+    link(rel="stylesheet", href="/css/search.css")
+    title About - ramrath.me
+
+header
+    include ./template/header.pug
+
+
+
+main 
+    section.searchbar
+        form(action="/search/" method="post")
+            input#search-input(type="text" name="search-input" placeholder="Search" value= searchInput)
+            input#search-submit(type="submit" value="")
+
+
+
+    section.searchresults
+
+        if searchResults == undefined 
+
+        else if Object.entries(searchResults).length != 0
+            each resultType in Object.keys(searchResults)
+                if searchResults[resultType] != ""
+
+                    section(class= resultType)
+
+                        - var resultTitleString = resultType.replace(/^\w/, (c) => c.toUpperCase());
+                        .resultTitle(class= resultType)= resultTitleString
+
+                        ul.result(class= resultType)
+                            each result in searchResults[resultType]
+
+                                if resultType == "categories"
+                                    li
+                                        a(href="/categories/" + result.toLowerCase())= result
+
+                                else if resultType == "projects"
+                                    li 
+                                        a(href= result.dir)= result.details["name"]
+                                
+                                else if resultType == "posts"
+                                    li
+                                        a(href= result.dir)= result.details["projectName"] + " | #" + result.details["slug"] + ": " + result.details["name"]
+                                
+                                
+        
+
+        else 
+            .nothingFound
+                h2= "No results found for " 
+                    span= searchInput
+                    = "."
+                span= "Things you can try:"
+                ul 
+                    li= "Make sure all words are spelled correctly."
+                    li= "Try more general keywords."
+                    li= "Try different keywords."
+
+
+
+
+footer
+    include ./template/footer.pug

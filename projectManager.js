@@ -41,10 +41,18 @@ let Post = class {
 console.log("Importing projects ...");
 exports.projects = {};
 var allPosts = [];
+exports.allCategories = [];
 
 fs.readdirSync(__dirname + "/projects").forEach(dir => {
     exports.projects[dir] = new Project("/projects/" + dir);
     exports.projects[dir].getInfo();
+
+    // only add category if it doesn't already exist
+    exports.projects[dir].categories.forEach(newCategory => {
+        if(!exports.allCategories.includes(newCategory)) {
+            exports.allCategories.push(newCategory);
+        }
+    });
 
     fs.readdirSync(__dirname + "/projects/" + dir).forEach(post => {
         if(post != "projectDetails.json" && post != "categories") {

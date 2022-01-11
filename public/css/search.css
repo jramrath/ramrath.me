@@ -1,0 +1,74 @@
+/* main background color & header current color */
+/* header background */
+/* hover color */
+/* dark text color */
+/* normal text color */
+/* Project part of h1 in posts */
+/* h2 title of Project overview */
+/* Divider Part of h1 in posts */
+/* Post-name part of h1 in posts */
+main {
+  display: flex;
+  flex-direction: column;
+}
+main section.searchbar {
+  margin: 2em 0;
+}
+main section.searchbar form {
+  width: 90%;
+  height: 3em;
+  margin: auto;
+  padding: 0 0.5em;
+  display: flex;
+  background-color: #252526;
+  border-radius: 0.75em;
+}
+main section.searchbar form input#search-input {
+  background-color: transparent;
+  border-color: transparent;
+  width: 100%;
+  color: #D4D4D4;
+  font-size: 1.15em;
+}
+main section.searchbar form input#search-input:focus {
+  outline: none;
+}
+main section.searchbar form input#search-input:-ms-input-placeholder {
+  color: #949494;
+  opacity: 1;
+}
+main section.searchbar form input#search-input::placeholder, main section.searchbar form input#search-input :-ms-input-placeholder {
+  color: #949494;
+  opacity: 1;
+}
+main section.searchbar form input#search-submit {
+  background-color: transparent;
+  background-image: url("/img/icons/search-white.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 2em;
+  border-color: transparent;
+  width: 2.5em;
+  height: 2.5em;
+  margin: auto 0;
+}
+main section.searchbar form input#search-submit:hover {
+  background-image: url("/img/icons/search-blue.png");
+}
+main section.searchresults {
+  width: 90%;
+  margin: auto;
+}
+main section.searchresults section {
+  margin: 1.5em 0;
+}
+main section.searchresults section .resultTitle {
+  color: #949494;
+  width: 50%;
+  border-bottom-color: #949494;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+main section.searchresults .nothingFound h2 span {
+  font-weight: bold;
+}/*# sourceMappingURL=search.css.map */
