@@ -7,17 +7,19 @@
 /* h2 title of Project overview */
 /* Divider Part of h1 in posts */
 /* Post-name part of h1 in posts */
-main h1 {
-  padding: 0.5em;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+main .post-details {
+  margin: 1em;
+}
+main .post-details h1 {
+  padding: 0;
+  margin: 0;
   line-height: 1.25em;
 }
-main h1 .project {
+main .post-details h1 .project {
   color: #569CD6;
   font-weight: bold;
 }
-main h1 .blog {
+main .post-details h1 .blog {
   color: #4EC9B0;
 }
 main hr {
@@ -203,6 +205,10 @@ main .nextPostButton a {
 }
 
 @media only screen and (min-width: 600px) {
+  main .post-details {
+    margin: 3em;
+    text-align: center;
+  }
   main section .doubleContents {
     display: flex;
   }
