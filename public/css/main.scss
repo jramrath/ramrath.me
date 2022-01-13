@@ -128,9 +128,20 @@ html {
                 }
             }
 
+            span.search {
+                margin: auto 0 auto auto;
+
+                a {
+                    img {
+                        padding: .5em;
+                        width: 1.3em;
+                        height: 1.3em;
+                    }
+                }
+            }
+
             span.ip {
                 display: inline-flex;
-                margin-left: auto;
                 overflow: hidden;
 
                 a {

@@ -9,10 +9,11 @@ from tqdm import tqdm
 
 
 class Gen():
-    def __init__(self):
-        self.numOfCaptchas = 50
+    def __init__(self, numOfCaptchas):
+        self.numOfCaptchas = numOfCaptchas
         self.directory = "../public/captcha-img"
         print(self.directory)
+
 
     def reDoCaptchas(self):
         print("Deleting old Captchas!")
@@ -131,5 +132,5 @@ class Gen():
 
 
 if __name__ == "__main__":
-    gen = Gen()
+    gen = Gen(int(input("Number of new Captchas: ")))
     gen.reDoCaptchas()

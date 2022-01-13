@@ -94,9 +94,16 @@ html body header nav ul li.current a {
   color: #D4D4D4;
   cursor: default;
 }
+html body header span.search {
+  margin: auto 0 auto auto;
+}
+html body header span.search a img {
+  padding: 0.5em;
+  width: 1.3em;
+  height: 1.3em;
+}
 html body header span.ip {
   display: inline-flex;
-  margin-left: auto;
   overflow: hidden;
 }
 html body header span.ip a {

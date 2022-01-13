@@ -7,30 +7,17 @@
 /* h2 title of Project overview */
 /* Divider Part of h1 in posts */
 /* Post-name part of h1 in posts */
-main section.project-details {
+main section.category-details {
   margin: 0 0.5em;
 }
-main section.project-details h1.project-name {
-  color: #569CD6;
+main section.category-details h1.category-name {
+  color: #1a52a0;
   font-weight: bold;
-}
-main section.project-details .categories {
-  margin-top: auto;
-  display: flex;
-}
-main section.project-details .categories span {
-  position: relative;
-  color: #949494;
-  padding: 0.1em 0.4em;
-  margin: 0.2em;
-  border-radius: 0.45em;
-  background-color: #252526;
-  font-size: 0.85em;
 }
 main hr.seperator {
   color: #1a52a0;
 }
-main section.posts .project-preview {
+main section.projects .project-preview {
   display: inline-block;
   margin: 0.75em 0;
   min-height: 10em;
@@ -38,32 +25,40 @@ main section.posts .project-preview {
   background: #252526;
   width: 100%;
 }
-main section.posts .project-preview .description {
+main section.projects .project-preview .description {
   max-width: 100%;
-  height: 150px;
+  min-height: 150px;
   margin: 0;
   padding: 0.5em;
   float: left;
   display: flex;
   flex-direction: column;
 }
-main section.posts .project-preview .description h2 {
-  color: #4EC9B0;
+main section.projects .project-preview .description h2 {
+  color: #569CD6;
   margin-bottom: 0.25em;
   margin-top: 0;
+  font-weight: bold;
 }
-main section.posts .project-preview .description p {
+main section.projects .project-preview .description p {
   color: #D4D4D4;
   margin: 0;
-  overflow: hidden;
+  align-items: center;
 }
-main section.posts .project-preview .description span.date {
-  font-size: 0.9em;
-  color: #949494;
-  bottom: 0;
+main section.projects .project-preview .description .categories {
   margin-top: auto;
+  display: flex;
 }
-main section.posts .project-preview .picture {
+main section.projects .project-preview .description .categories span {
+  position: relative;
+  color: #949494;
+  padding: 0.1em 0.4em;
+  margin: 0.2em;
+  border-radius: 0.45em;
+  background-color: #1E1E1E;
+  font-size: 0.85em;
+}
+main section.projects .project-preview .picture {
   display: none;
 }
 
@@ -73,10 +68,10 @@ main section.posts .project-preview .picture {
     width: 95%;
     margin: auto;
   }
-  main section.project-details {
+  main section.category-details {
     margin: 0;
   }
-  main section.posts .project-preview {
+  main section.projects .project-preview {
     margin-left: 0;
     margin-right: 0;
     border-radius: 0.75em;
@@ -86,21 +81,21 @@ main section.posts .project-preview .picture {
     min-height: unset;
     height: 10em;
   }
-  main section.posts .project-preview:hover {
+  main section.projects .project-preview:hover {
     border-color: #1a52a0;
   }
-  main section.posts .project-preview .description {
+  main section.projects .project-preview .description {
     max-width: 65%;
     padding: 0.5em;
   }
-  main section.posts .project-preview .picture {
+  main section.projects .project-preview .picture {
     display: flex;
     max-width: 45%;
     height: inherit;
     margin: 0;
     float: right;
   }
-  main section.posts .project-preview .picture img {
+  main section.projects .project-preview .picture img {
     margin: auto 0;
     width: auto;
     height: 100%;
@@ -111,4 +106,4 @@ main section.posts .project-preview .picture {
   main {
     width: 100%;
   }
-}/*# sourceMappingURL=post-overview.css.map */
+}/*# sourceMappingURL=category.css.map */

@@ -6,10 +6,11 @@ const path = require("path");
 const crypto = require("crypto"); // hashing algorithm
 const pug = require("pug"); // pug rendering Engine
 const { lookup }  = require("geoip-lite");
-
-const PM = require("./projectManager.js");
 const { check } = require("node_cloudflare");
 const { EDESTADDRREQ } = require("constants");
+
+const PM = require("./projectManager.js");
+const search = require("./search.js");
 
 const app = express();
 const directoryToServer = __dirname + "/public";
@@ -108,8 +109,8 @@ app.get("/projects/:name/:post", function(req, res) {
 
     if(project && post) {
         render(req, res, "post.pug", {
-            project_name: project.details["name"],
-            post_name: "#" + post.details["slug"] + ": " + post.details["name"],
+            project: project,
+            post: post,
             path: __dirname + post.dir + "/content.pug",
             include: includeFunc,
             nextPost: nextPost == undefined ? "" : nextPost 
@@ -180,9 +181,52 @@ app.get("/donations/", function(req, res) {
 });
 
 
-app.get("/downloadCode/", function(req, res) {
-    res.sendFile(req.body["path"]);
+app.get("/search/", function(req, res) {
+    render(req, res, "search.pug");
 });
+
+
+app.post("/search/", function(req, res) {
+    render(req, res, "search.pug", {
+        searchResults: search.searchFunc(PM, req.body["search-input"]),
+        searchInput: req.body["search-input"]
+    });
+});
+
+
+app.get("/categories/", function(req, res) {
+    render(req, res, "category-overview.pug", {
+        categories: PM.allCategories
+    });
+});
+
+
+app.get("/categories/:category", function(req, res) {
+    var category = req.params.category.toLowerCase();
+
+    if(PM.allCategories[category]) {
+        var projects = [];
+        Object.values(PM.projects).forEach(project => {
+            if(Object.keys(project.categories).find(currentCategory => {
+                return currentCategory == category;
+            })) {
+                projects.push(project);
+            }
+        });
+
+        render(req, res, "category.pug", {
+            category: category,
+            allCategories: PM.allCategories,
+            projectsInCategory: projects
+        });
+    }
+    else {
+        notFoundFunc(req, res);
+    }
+});
+
+
+
 
 
 

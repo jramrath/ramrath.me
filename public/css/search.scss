@@ -1,0 +1,92 @@
+$color-black-dark: #1E1E1E;   /* main background color & header current color */
+$color-black-medium: #252526; /* header background */
+$color-black-light: #2A2D2E;  /* hover color */
+
+$color-white-dark: #949494;   /* dark text color */
+$color-white-light: #D4D4D4;  /* normal text color */
+
+$color-blue-dark: #1a52a0;
+$color-blue-medium: #569CD6;  /* Project part of h1 in posts */
+$color-blue-light: #9CDCFE;   /* h2 title of Project overview */
+
+$color-orange: #CE9178;       /* Divider Part of h1 in posts */
+
+$color-green: #4EC9B0;        /* Post-name part of h1 in posts */
+
+
+main {
+    display: flex;
+    flex-direction: column;
+
+    section.searchbar {
+        margin: 2em 0;
+
+        form {
+            width: 90%;
+            height: 3em;
+            margin: auto;
+            padding: 0 .5em;
+            display: flex;
+            background-color: $color-black-medium;
+            border-radius: .75em;
+
+            input#search-input {
+                background-color: transparent;
+                border-color: transparent;
+                width: 100%;
+                color: $color-white-light;
+                font-size: 1.15em;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &::placeholder, :-ms-input-placeholder {
+                    color: $color-white-dark;
+                    opacity: 1;
+                }
+            }
+
+            input#search-submit {
+                background-color: transparent;
+                background-image: url("/img/icons/search-white.png");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 2em;
+                border-color: transparent;
+                width: 2.5em;
+                height: 2.5em;
+                margin: auto 0;
+
+                &:hover {
+                    background-image: url("/img/icons/search-blue.png");
+                }
+            }
+        }
+    }
+
+    section.searchresults {
+        width: 90%;
+        margin: auto;
+
+        section {
+            margin: 1.5em 0;
+
+            .resultTitle {
+                color: $color-white-dark;
+                width: 50%;
+                border-bottom-color: $color-white-dark;
+                border-bottom-style: solid;
+                border-bottom-width: 1px;
+            }
+        }
+
+        .nothingFound {
+            h2 {
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

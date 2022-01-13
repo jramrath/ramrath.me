@@ -20,21 +20,21 @@ $buttons-animation: width .3s ease-out .2s;
 
 
 main {
-    h1 {
-        padding: 0.5em;
-        margin-top: 0.5em;
-        margin-bottom: .5em;
-        line-height: 1.25em;
+    .post-details {
+        margin: 1em;
 
-        .project {
-            color: $color-blue-medium;
-            font-weight: bold;
-        }
-        .divider {
-            color: $color-orange;
-        }
-        .blog {
-            color: $color-green;
+        h1 {
+            padding: 0;
+            margin: 0;
+            line-height: 1.25em;
+
+            .project {
+                color: $color-blue-medium;
+                font-weight: bold;
+            }
+            .blog {
+                color: $color-green;
+            }
         }
     }
 
@@ -243,6 +243,22 @@ main {
                 margin: .5em 5%;
             }
         }
+
+        .video {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 1em 0;
+
+            video {
+                width: 95%;
+                margin: auto;
+            }
+
+            a.mirror {
+                text-align: center;
+            }
+        }
     }
 
     .nextPostButton {
@@ -264,6 +280,11 @@ main {
 
 @media only screen and (min-width: 600px) {
     main {
+        .post-details {
+            margin: 3em;
+            text-align: center;
+        }
+
         section {
             .doubleContents {
                 display: flex;
@@ -283,6 +304,20 @@ main {
             border: none;
             background-color: transparent;
             margin-right: 1.5em;
+        }
+    }
+}
+
+
+
+@media only screen and (min-width: 1120px) {
+    main {
+        section {
+            .video {
+                video {
+                    width: 85%;
+                }
+            }
         }
     }
 }

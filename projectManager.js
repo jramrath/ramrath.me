@@ -14,12 +14,14 @@ let Project = class {
         this.dir = dir;
         this.posts = {};
         this.details;
-        this.categories
+        this.categories = {};
     }
 
     getInfo() {
         this.details = JSON.parse(fs.readFileSync(__dirname + "/" + this.dir + "/projectDetails.json", "utf8"));
-        this.categories = fs.readFileSync(__dirname + "/" + this.dir + "/categories", "utf8").split("\n");
+        this.details["categories"].split(" ").forEach(category => {
+            this.categories[category] = exports.allCategories[category];
+        });
     }
 }
 
@@ -36,6 +38,10 @@ let Post = class {
 }
 
 
+
+console.log("Importing categories ...");
+exports.allCategories = JSON.parse(fs.readFileSync(__dirname + "/categories.json", "utf8"));
+console.log("Done importing categories.");
 
 
 console.log("Importing projects ...");

@@ -1,0 +1,9 @@
+{
+    "arduino": "Arduino",
+    "raspberrypi": "RaspberryPi",
+    "drone": "Drone",
+    "ast": "Ast",
+    "busch": "Busch",
+    "blatt": "Blatt",
+    "baum": "Baum"
+}

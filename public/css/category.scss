@@ -15,27 +15,12 @@ $color-green: #4EC9B0;        /* Post-name part of h1 in posts */
 
 
 main {
-    section.project-details {
+    section.category-details {
         margin: 0 .5em;
 
-        h1.project-name {
-            color: $color-blue-medium;
+        h1.category-name {
+            color: $color-blue-dark;
             font-weight: bold;
-        }
-
-        .categories {
-            margin-top: auto;
-            display: flex;
-
-            span {
-                position: relative;
-                color: $color-white-dark;
-                padding: .1em .4em;
-                margin: .2em;
-                border-radius: .45em;
-                background-color: $color-black-medium;
-                font-size: .85em;
-            }
         }
     }
 
@@ -43,7 +28,7 @@ main {
         color: $color-blue-dark
     }
 
-    section.posts {
+    section.projects {
         .project-preview {
             display: inline-block;
             margin: .75em 0;
@@ -54,7 +39,7 @@ main {
         
             .description {
                 max-width: 100%;
-                height: 150px;
+                min-height: 150px;
                 margin: 0;
                 padding: .5em;
                 float: left;
@@ -62,25 +47,33 @@ main {
                 flex-direction: column;
         
                 h2 {
-                    color: $color-green;
+                    color: $color-blue-medium;
                     margin-bottom: .25em;
                     margin-top: 0;
+                    font-weight: bold;
                 }
         
                 p {
                     color: $color-white-light;
                     margin: 0;
-                    overflow: hidden;
+                    align-items: center;
                 }
-
-                span.date {
-                    font-size: .9em;
-                    color: $color-white-dark;
-                    bottom: 0;
+        
+                .categories {
                     margin-top: auto;
+                    display: flex;
+        
+                    span {
+                        position: relative;
+                        color: $color-white-dark;
+                        padding: .1em .4em;
+                        margin: .2em;
+                        border-radius: .45em;
+                        background-color: $color-black-dark;
+                        font-size: .85em;
+                    }
                 }
             }
-
             .picture {
                 display: none;
             }
@@ -91,21 +84,17 @@ main {
 
 
 
-
-
-
-
 @media only screen and (min-width: 600px) {
     main {
         display: block;
         width: 95%;
         margin: auto;
 
-        section.project-details {
+        section.category-details {
             margin: 0;
         }
 
-        section.posts .project-preview {
+        section.projects .project-preview {
             margin-left: 0; margin-right: 0;
             border-radius: .75em;
             border-width: 2px;
@@ -115,7 +104,7 @@ main {
             height: 10em;
 
             &:hover {
-                border-color: $color-blue-dark
+                border-color: $color-blue-dark;
             }
 
             .description {
