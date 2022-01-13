@@ -185,12 +185,48 @@ app.get("/search/", function(req, res) {
     render(req, res, "search.pug");
 });
 
+
 app.post("/search/", function(req, res) {
     render(req, res, "search.pug", {
         searchResults: search.searchFunc(PM, req.body["search-input"]),
         searchInput: req.body["search-input"]
-    })
+    });
 });
+
+
+app.get("/categories/", function(req, res) {
+    render(req, res, "category-overview.pug", {
+        categories: PM.allCategories
+    });
+});
+
+
+app.get("/categories/:category", function(req, res) {
+    var category = req.params.category.toLowerCase();
+
+    if(PM.allCategories[category]) {
+        var projects = [];
+        Object.values(PM.projects).forEach(project => {
+            if(Object.keys(project.categories).find(currentCategory => {
+                return currentCategory == category;
+            })) {
+                projects.push(project);
+            }
+        });
+
+        render(req, res, "category.pug", {
+            category: category,
+            allCategories: PM.allCategories,
+            projectsInCategory: projects
+        });
+    }
+    else {
+        notFoundFunc(req, res);
+    }
+});
+
+
+
 
 
 

@@ -1,0 +1,19 @@
+doctype html5
+head
+    include ./template/head.pug
+    link(rel="stylesheet", href="/css/category-overview.css")
+    title Categories - ramrath.me
+
+header
+    include ./template/header.pug
+
+main 
+    h1= "All categories:"
+    ul
+        each category in Object.keys(categories)
+            li
+                a(href= "/categories/" + category)= categories[category]
+
+
+footer
+    include ./template/footer.pug
