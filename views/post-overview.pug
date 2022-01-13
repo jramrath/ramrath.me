@@ -15,6 +15,10 @@ main
   section.project-details 
     h1.project-name= project.details["name"]
 
+    .categories
+      each category in project.categories
+        span= category
+
     p.project-description= project.details["description"]
 
 

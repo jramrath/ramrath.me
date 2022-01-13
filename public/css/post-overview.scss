@@ -22,6 +22,21 @@ main {
             color: $color-blue-medium;
             font-weight: bold;
         }
+
+        .categories {
+            margin-top: auto;
+            display: flex;
+
+            span {
+                position: relative;
+                color: $color-white-dark;
+                padding: .1em .4em;
+                margin: .2em;
+                border-radius: .45em;
+                background-color: $color-black-medium;
+                font-size: .85em;
+            }
+        }
     }
 
     hr.seperator {
