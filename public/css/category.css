@@ -1,0 +1,109 @@
+/* main background color & header current color */
+/* header background */
+/* hover color */
+/* dark text color */
+/* normal text color */
+/* Project part of h1 in posts */
+/* h2 title of Project overview */
+/* Divider Part of h1 in posts */
+/* Post-name part of h1 in posts */
+main section.category-details {
+  margin: 0 0.5em;
+}
+main section.category-details h1.category-name {
+  color: #1a52a0;
+  font-weight: bold;
+}
+main hr.seperator {
+  color: #1a52a0;
+}
+main section.projects .project-preview {
+  display: inline-block;
+  margin: 0.75em 0;
+  min-height: 10em;
+  position: relative;
+  background: #252526;
+  width: 100%;
+}
+main section.projects .project-preview .description {
+  max-width: 100%;
+  min-height: 150px;
+  margin: 0;
+  padding: 0.5em;
+  float: left;
+  display: flex;
+  flex-direction: column;
+}
+main section.projects .project-preview .description h2 {
+  color: #569CD6;
+  margin-bottom: 0.25em;
+  margin-top: 0;
+  font-weight: bold;
+}
+main section.projects .project-preview .description p {
+  color: #D4D4D4;
+  margin: 0;
+  align-items: center;
+}
+main section.projects .project-preview .description .categories {
+  margin-top: auto;
+  display: flex;
+}
+main section.projects .project-preview .description .categories span {
+  position: relative;
+  color: #949494;
+  padding: 0.1em 0.4em;
+  margin: 0.2em;
+  border-radius: 0.45em;
+  background-color: #1E1E1E;
+  font-size: 0.85em;
+}
+main section.projects .project-preview .picture {
+  display: none;
+}
+
+@media only screen and (min-width: 600px) {
+  main {
+    display: block;
+    width: 95%;
+    margin: auto;
+  }
+  main section.category-details {
+    margin: 0;
+  }
+  main section.projects .project-preview {
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0.75em;
+    border-width: 2px;
+    border-style: outset;
+    border-color: #1E1E1E;
+    min-height: unset;
+    height: 10em;
+  }
+  main section.projects .project-preview:hover {
+    border-color: #1a52a0;
+  }
+  main section.projects .project-preview .description {
+    max-width: 65%;
+    padding: 0.5em;
+  }
+  main section.projects .project-preview .picture {
+    display: flex;
+    max-width: 45%;
+    height: inherit;
+    margin: 0;
+    float: right;
+  }
+  main section.projects .project-preview .picture img {
+    margin: auto 0;
+    width: auto;
+    height: 100%;
+    border-radius: 0 0.5em 0.5em 0;
+  }
+}
+@media only screen and (min-width: 1120px) {
+  main {
+    width: 100%;
+  }
+}/*# sourceMappingURL=category.css.map */

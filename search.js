@@ -10,7 +10,7 @@ exports.searchFunc = function(PM, keywords) {
     keywords.split(" ").forEach(keyword => {
 
         // Search in Categories
-        PM.allCategories.forEach(category => {
+        Object.values(PM.allCategories).forEach(category => {
             if(category.toLowerCase().search(keyword.toLowerCase()) != -1) {
                 if(!results["categories"].includes(category)) {
                     results["categories"].push(category);
@@ -54,8 +54,6 @@ exports.searchFunc = function(PM, keywords) {
             delete results[resultKey];
         }
     });
-
-    console.log(results);
 
     return results;
 }

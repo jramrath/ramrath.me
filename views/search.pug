@@ -35,7 +35,7 @@ main
 
                                 if resultType == "categories"
                                     li
-                                        a(href="/categories/" + result.toLowerCase())= result
+                                        a(href="/categories/" + result.toLowerCase())= result.replace(/^\w/, (c) => c.toUpperCase())
 
                                 else if resultType == "projects"
                                     li 
