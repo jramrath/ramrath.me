@@ -138,6 +138,10 @@ html {
                         height: 1.3em;
                     }
                 }
+
+                &:hover {
+                    background-color: $color-black-light;
+                }
             }
 
             span.ip {

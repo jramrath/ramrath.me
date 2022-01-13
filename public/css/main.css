@@ -102,6 +102,9 @@ html body header span.search a img {
   width: 1.3em;
   height: 1.3em;
 }
+html body header span.search:hover {
+  background-color: #2A2D2E;
+}
 html body header span.ip {
   display: inline-flex;
   overflow: hidden;
