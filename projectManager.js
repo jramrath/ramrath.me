@@ -14,7 +14,7 @@ let Project = class {
         this.dir = dir;
         this.posts = {};
         this.details;
-        this.categories
+        this.categories;
     }
 
     getInfo() {
