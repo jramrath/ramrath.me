@@ -22,7 +22,7 @@ main
 
   section.posts 
   
-    each post in project.posts
+    each post in Object.values(project.posts).reverse()
 
       a.project-preview(href=post.dir)
         section.description 
