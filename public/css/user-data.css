@@ -24,6 +24,7 @@ main ul.ip-details li .container {
   border-width: 1px;
   border-style: solid;
   border-color: #252526;
+  border-radius: 0.5em;
 }
 main ul.ip-details li .container .content {
   color: #D4D4D4;
