@@ -39,6 +39,10 @@ let Post = class {
 
 
 
+var versionNumber = JSON.parse(fs.readFileSync(__dirname + "/package.json"))["version"];
+console.log("Starting Website with version " + versionNumber);
+console.log();
+
 console.log("Importing categories ...");
 exports.allCategories = JSON.parse(fs.readFileSync(__dirname + "/categories.json", "utf8"));
 console.log("Done importing categories.");
@@ -72,3 +76,4 @@ console.log("Done sorting projects.");
 console.log("Getting recent posts ...");
 exports.recentPosts = allPosts.sortByDate().slice(0, 2);
 console.log("Done getting recent posts.");
+console.log();
