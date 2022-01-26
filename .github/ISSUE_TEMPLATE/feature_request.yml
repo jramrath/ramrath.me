@@ -19,6 +19,6 @@ body:
   attributes:
     label: Related issue
     description: Is your feature request related to a Problem? Please state the Issue id.
-    placeholder: e.g. \#69
+    placeholder: e.g. #69
   validations:
     required: false
