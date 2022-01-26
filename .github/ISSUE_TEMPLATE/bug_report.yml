@@ -17,7 +17,8 @@ body:
 - type: input
   id: device
   attributes:
-    label: What device are you using?
+    label: Device
+    description: What device are you using?
     placeholder: e.g. iPhone 12, Framework Laptop
   validations:
     required: false
