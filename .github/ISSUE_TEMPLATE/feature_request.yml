@@ -11,7 +11,7 @@ body:
     label: Description
     description: A clear and concise description of what the bug is, including steps to reproduce.
     placeholder: Description ...
-  validations:
+  validations:  
     required: true
 
 - type: input
