@@ -5,36 +5,36 @@ labels: [bug]
 
 body:
 
-	- type: textarea
-		id: description
-		attributes: 
-			label: Description
-			description: A clear and concise description of what the bug is, including steps to reproduce.
-			placeholder: Description ...
-		validations:
-			required: true
-	
-	- type: input
-		id: device
-		attributes:
-			label: What device are you using?
-			placeholder: e.g. iPhone 12, Framework Laptop
-		validations:
-			required: false
-		
-	- type: input
-		id: browser
-		attributes:
-			label: Browser
-			description: What browser are you using?
-			placeholder: e.g. Firefox, Chrome
-		validations:
-			required: true
+- type: textarea
+	id: description
+	attributes: 
+		label: Description
+		description: A clear and concise description of what the bug is, including steps to reproduce.
+		placeholder: Description ...
+	validations:
+		required: true
 
-	- type: textarea
-		id: notes
-		attributes:
-			label: Additional information
-			description: Any other information that might be useful. workarounds or stuff you've already tried that didn't work.
-		validations:
-			required: false
+- type: input
+	id: device
+	attributes:
+		label: What device are you using?
+		placeholder: e.g. iPhone 12, Framework Laptop
+	validations:
+		required: false
+	
+- type: input
+	id: browser
+	attributes:
+		label: Browser
+		description: What browser are you using?
+		placeholder: e.g. Firefox, Chrome
+	validations:
+		required: true
+
+- type: textarea
+	id: notes
+	attributes:
+		label: Additional information
+		description: Any other information that might be useful. workarounds or stuff you've already tried that didn't work.
+	validations:
+		required: false

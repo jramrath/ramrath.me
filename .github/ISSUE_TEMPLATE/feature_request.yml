@@ -5,20 +5,20 @@ labels: [enhancement]
 
 body:
 
-	- type: textarea
-		id: description
-		attributes: 
-			label: Description
-			description: A clear and concise description of what the bug is, including steps to reproduce.
-			placeholder: Description ...
-		validations:
-			required: true
+- type: textarea
+  id: description
+  attributes: 
+    label: Description
+    description: A clear and concise description of what the bug is, including steps to reproduce.
+    placeholder: Description ...
+  validations:
+    required: true
 
-  - type: input
-    id: related-issue
-    attributes:
-      label: Related issue
-      description: Is your feature request related to a Problem? Please state the Issue id.
-      placeholder: e.g. \#69
-    validations:
-      required: false
+- type: input
+  id: related-issue
+  attributes:
+    label: Related issue
+    description: Is your feature request related to a Problem? Please state the Issue id.
+    placeholder: e.g. \#69
+  validations:
+    required: false
