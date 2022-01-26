@@ -21,7 +21,7 @@ body:
     placeholder: e.g. iPhone 12, Framework Laptop
   validations:
     required: false
-	
+
 - type: input
   id: browser
   attributes:
@@ -29,7 +29,7 @@ body:
     description: What browser are you using?
     placeholder: e.g. Firefox, Chrome
   validations:
-	  required: true
+    required: true
 
 - type: textarea
   id: notes
