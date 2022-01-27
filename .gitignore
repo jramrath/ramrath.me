@@ -1,0 +1,6 @@
+# NodeJS specific #
+node_modules/
+
+# css and their map files #
+public/css/*.css
+public/css/*.css.map
