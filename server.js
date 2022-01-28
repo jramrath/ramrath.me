@@ -30,9 +30,8 @@ app.set("views", __dirname + "/views");
 // If the server can't find the ssl-certificates this will be set to true
 const devMode = false;
 
-const httpsOptions = {};
 try {
-    httpsOptions = {
+    const httpsOptions = {
         cert: fs.readFileSync(__dirname + "/ssl/server.crt"), 
         key: fs.readFileSync(__dirname + "/ssl/server.key")
     };
@@ -42,6 +41,8 @@ try {
     https.createServer(httpsOptions, app).listen(port, function() {
         console.log(`listening at port ${port}`);
     });
+
+    scssRenderer.render();
 
 } catch (e) {
     console.log("Couldn't find SSL-Keys => Starting in developer mode!");
