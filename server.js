@@ -245,6 +245,18 @@ app.get("/categories/:category", function(req, res) {
 });
 
 
+app.get("/perma/:permaId", function(req, res) {
+    var post = PM.permaLinks[req.params.permaId];
+
+    if(post == undefined) {
+        notFoundFunc(req, res);
+    }
+    else {
+        res.redirect(post);
+    }
+});
+
+
 
 
 
