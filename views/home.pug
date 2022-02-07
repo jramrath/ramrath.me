@@ -27,8 +27,11 @@ main
       a(href= post.dir).project-preview 
         section.description 
           h2
-            span.projectName= post.details["projectName"]
-            span.postName= ("#" + post.details["slug"] + ": " + post.details["name"])
+            if post.details["projectSlug"] == "uncategorized"
+              span.postName= post.details["name"]
+            else
+              span.projectName= post.details["projectName"]
+              span.postName= ("#" + post.details["slug"] + ": " + post.details["name"])
 
           p= post.details["description"]
 

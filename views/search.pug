@@ -43,7 +43,10 @@ main
                                 
                                 else if resultType == "posts"
                                     li
-                                        a(href= result.dir)= result.details["projectName"] + "#" + result.details["slug"] + ": " + result.details["name"]
+                                        if result.details["projectSlug"] == "uncategorized"
+                                            a(href= result.dir)= result.details["name"] 
+                                        else
+                                            a(href= result.dir)= result.details["projectName"] + "#" + result.details["slug"] + ": " + result.details["name"]
                                 
                                 
         
