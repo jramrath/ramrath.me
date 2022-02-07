@@ -36,6 +36,15 @@ main {
                 color: $color-green;
             }
         }
+
+        .date {
+            color: $color-white-dark;
+        }
+
+        .permaLink {
+            color: $color-white-dark;
+        }
+
     }
 
     hr {
@@ -261,10 +270,17 @@ main {
         }
     }
 
-    .nextPostButton {
+    .bottomButtons {
         display: flex;
+        flex-direction: column;
 
-        a {
+        .permaLink {
+            color: $color-white-dark;
+            margin: auto;
+            margin-bottom: 1em;
+        }
+
+        a.nextPost {
             color: $color-white-dark;
             margin: auto;
             background-color: $color-black-medium;
@@ -300,10 +316,19 @@ main {
             }
         }
 
-        .nextPostButton a {
-            border: none;
-            background-color: transparent;
-            margin-right: 1.5em;
+        .bottomButtons {
+            flex-direction: row;
+
+            .permaLink {
+                margin: auto;
+                margin-left: 1.5em;
+            }
+
+            a.nextPost {
+                border: none;
+                background-color: transparent;
+                margin-right: 1.5em;
+            }
         }
     }
 }
