@@ -3,7 +3,11 @@ head
   include ./template/head.pug
   link(rel="stylesheet", href="/css/post.css")
   link(rel="stylesheet", href="/css/code.css")
-  title= project.details["name"] + " - " + "#" + post.details["slug"] + ": " + post.details["name"]
+  
+  if post.details["projectSlug"] == "uncategorized"
+    title= post.details["name"]
+  else
+    title= post.details["projectName"] + " - " + "#" + post.details["slug"] + ": " + post.details["name"]
 
 
 header
@@ -13,8 +17,12 @@ header
 main 
   .post-details
     h1
-      span.project= project.details["name"]
-      span.blog= "#" + post.details["slug"] + ": " + post.details["name"]
+      if post.details["projectSlug"] == "uncategorized"
+        span.blog= post.details["name"]
+      else
+        span.project= post.details["projectName"]
+        span.blog= "#" + post.details["slug"] + ": " + post.details["name"]
+
     span.date= post.details["creationDate"]
     
 

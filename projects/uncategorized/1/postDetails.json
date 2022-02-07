@@ -1,0 +1,10 @@
+{
+    "slug": "1",
+    "creationDate": "07.02.2022",
+    "creationDateISO": "2022-2-7",
+    "name": "Baum Post",
+    "description": "Just a test post with a different description! Lorem ipsum bla bla bla",
+    "titleImagePath": "/img/projects/test-2-stones.png",
+    "projectName": "Uncategorized",
+    "projectSlug": "uncategorized"
+}
