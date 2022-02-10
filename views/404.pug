@@ -13,7 +13,10 @@ main
     | NOT FOUND
   
   h2 This page unfortunately isn't available.
-  h2 Try searching for something else.
+  h2 
+    = "Try "
+    a(href="/search/")= "searching"
+    = " for something else."
 
 
 footer
