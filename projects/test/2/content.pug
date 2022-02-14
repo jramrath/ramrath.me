@@ -1,20 +1,18 @@
 include ../../../views/template/postTemplates.pug
 
-section
-    +sectionTitle("Introduction", "1")
++section("Introduction")    
     
     p.
-        Lorem <a href="#">ipsum</a> dolor sit amet, consectetur adipiscing elit, sed do
+        Lorem <a href="#baum">ipsum</a> dolor sit amet, consectetur adipiscing elit, sed do
         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
         minim veniam, quis nostrud exercitation ullamco laboris nisi ut
         aliquip ex ea commodo consequat. Duis aute irure dolor in
         reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
         pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-        culpa qui officia deserunt mollit anim id est laborum. Busch
+        culpa qui officia deserunt mollit anim id est laborum.
 
 
-section
-    +sectionTitle("Project Revision", "2")
++section("Project Revision")
     
     p.
         Nam faucibus mollis nulla, rutrum semper urna auctor vitae. Mauris in
@@ -25,7 +23,7 @@ section
         justo dolor, laoreet vitae ante ut, rutrum ullamcorper risus. Sed
         commodo tincidunt luctus. Aenean elementum diam eu dictum pulvinar.
 
-    +terminalMixin(["sudo -v", "sudo -k", "sudo -v", "sudo -v", "sudo -k", "sudo -v"], "1").
+    +terminalMixin(["sudo -v", "sudo -k", "sudo -v", "sudo -v", "sudo -k", "sudo -v"]).
 
     p.
         Duis vel lorem quis sem pretium porta. Nullam rutrum rutrum lacus, vel
@@ -67,9 +65,8 @@ section
 hr
 
 
-section 
-    +sectionTitle("Baum", "3")
-
++section("Baum")
+    
     +imgp("/img/projects/test-2-beach.png").
         Nam faucibus mollis nulla, rutrum semper urna auctor vitae. Mauris in
         molestie diam. Fusce id consequat velit. Morbi accumsan nulla vitae
@@ -79,7 +76,7 @@ section
         justo dolor, laoreet vitae ante ut, rutrum ullamcorper risus. Sed
         commodo tincidunt luctus. Aenean elementum diam eu dictum pulvinar.
 
-    +terminalMixin(["sudo -v"], "4")
+    +terminalMixin(["sudo -v"])
 
     +pimg("/img/projects/test-2-beach.png").
         Phasellus in ex commodo, porta
@@ -90,10 +87,8 @@ section
         fermentum tincidunt nisi. Nunc in quam scelerisque, ullamcorper neque
         at, faucibus mauris. Aenean vel fringilla erat.
 
-
 hr
 
-section 
-    +sectionTitle("Videos", "4")
++section("Video") 
 
     +video("test-2-bear", "https://www.youtube.com/watch?v=rbE53XUtVw0")
