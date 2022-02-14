@@ -45,6 +45,15 @@ main {
                 color: $color-green
             }
         }
+
+        &.typo {
+            display: flex;
+
+            a {
+                color: $color-white-dark;
+                margin: auto;
+            }
+        }
     }
 
     hr {
