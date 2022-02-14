@@ -49,9 +49,6 @@ class Main():
         with open(dst, 'w') as f:
             f.write(highlight(code, lexer, formatter).replace("<pre>", "<pre><code>").replace("</pre>", "</code></pre>"))
         
-        with open("style.css", "w") as f:
-            f.write(formatter.get_style_defs())
-        
 
 if __name__ == "__main__":
     main = Main()
