@@ -46,7 +46,9 @@ fs.readdirSync(__dirname + "/projects").forEach(dir => {
 
     exports.projects[dir].details = JSON.parse(fs.readFileSync(__dirname + "/" + exports.projects[dir].dir + "/projectDetails.json", "utf8"));
     exports.projects[dir].details["categories"].split(" ").forEach(category => {
-        exports.projects[dir].categories[category] = exports.allCategories[category];
+        if(category != "") {
+            exports.projects[dir].categories[category] = exports.allCategories[category];   
+        }
     });
 
     fs.readdirSync(__dirname + "/projects/" + dir).forEach(post => {
