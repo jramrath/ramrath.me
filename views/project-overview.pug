@@ -1,33 +1,33 @@
 doctype html5
 head
-  include ./template/head.pug
-  link(rel="stylesheet", href="/css/project-overview.css")
-  title Projects - ramrath.me
+    include ./template/head.pug
+    link(rel="stylesheet", href="/css/project-overview.css")
+    title Projects - ramrath.me
 
 header
-  include ./template/header.pug
+    include ./template/header.pug
 
 
 
 
 main 
 
-  each project in projects
+    each project in projects
 
-    a.project-preview(href=project.dir)
-      section.description 
-        h2= project.details["name"]
-        p= project.details["description"]
+        a.project-preview(href=project.dir)
+            section.description 
+                h2= project.details["name"]
+                p= project.details["description"]
 
-        .categories
-          each category in project.categories
-            span= category
+                .categories
+                    each category in project.categories
+                        span= category
 
-      section.picture 
-        img(src= project.details["titleImagePath"])
+            section.picture 
+                img(src= project.details["titleImagePath"])
 
 
 
 
 footer
-  include ./template/footer.pug
+    include ./template/footer.pug

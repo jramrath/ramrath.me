@@ -1,47 +1,47 @@
 doctype html5
 head
-  include ./template/head.pug
-  link(rel="stylesheet", href="/css/post-overview.css")
-  title= project.details["name"]
-    |
-    | - ramrath.me
+    include ./template/head.pug
+    link(rel="stylesheet", href="/css/post-overview.css")
+    title= project.details["name"]
+        |
+        | - ramrath.me
 
 header
-  include ./template/header.pug
+    include ./template/header.pug
 
 
 main 
 
-  section.project-details 
-    h1.project-name= project.details["name"]
+    section.project-details 
+        h1.project-name= project.details["name"]
 
-    .categories
-      each category in project.categories
-        span= category
+        .categories
+            each category in project.categories
+                span= category
 
-    p.project-description= project.details["description"]
+        p.project-description= project.details["description"]
 
 
-  hr.seperator
+    hr.seperator
 
-  section.posts 
-  
-    each post in Object.values(project.posts).reverse()
+    section.posts 
+    
+        each post in Object.values(project.posts).reverse()
 
-      a.project-preview(href=post.dir)
-        section.description 
-          h2
-            = "#"
-            span(style= "font-weight: bold")= post.details["slug"]
-            = ": " + post.details["name"]
+            a.project-preview(href=post.dir)
+                section.description 
+                    h2
+                        = "#"
+                        span(style= "font-weight: bold")= post.details["slug"]
+                        = ": " + post.details["name"]
 
-          p= post.details["description"]
-          span.date= post.details["creationDate"]
-        section.picture 
-          img(src= post.details["titleImagePath"], alt="title-image")
+                    p= post.details["description"]
+                    span.date= post.details["creationDate"]
+                section.picture 
+                    img(src= post.details["titleImagePath"], alt="title-image")
 
 
 
 
 footer
-  include ./template/footer.pug
+    include ./template/footer.pug
