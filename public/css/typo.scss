@@ -32,6 +32,57 @@ main {
     p {
         text-align: justify;
     }
+
+    .formWrapper {
+        display: flex;
+
+        form {
+            background-color: $color-black-medium;
+            margin: auto;
+            padding: 1.5em;
+            border-radius: 1em;
+            width: 85%;
+
+            div {
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    text-align: center;
+                    font-size: 1.25em;
+                }
+
+                input, textarea {
+                    width: 80%;
+                    margin: 1em auto 3em auto;
+                    background-color: $color-black-dark;
+                    border-color: $color-blue-dark;
+                    border-width: 2px;
+                    border-radius: .5em;
+                    padding: .5em;
+                    color: $color-white-light;
+
+                    &:focus {
+                        outline: none;
+                    }
+    
+                    &::placeholder, :-ms-input-placeholder {
+                        color: $color-white-dark;
+                        opacity: 1;
+                    }
+
+                    &.submit {
+                        width: 5em;
+                        margin: auto;
+                    }
+                }
+
+                textarea {
+                    height: 10em;
+                }
+            }
+        }
+    }
 }
 
 

@@ -37,23 +37,27 @@ main
 	section.reportForm
 		h2= "Typo Report Form"
 
-		form(action="/typo/", method="post") 
+		.formWrapper
 
-			.typo_location
+			form(action="/typo/", method="post") 
 
-				label(for="typo_location")= "On what page/post is the typo?"
+				.typo_location
 
-				input#typo_location(type="text" name="typo_location" placeholder="ex. '/projects/uncategorized/1', 'contact' ..." value= location required)
+					label(for="typo_location")= "On what page/post is the typo?"
+
+					input#typo_location(type="text" name="typo_location" placeholder="ex. '/projects/uncategorized/1', 'contact' ..." value= location required)
 
 
-			.typo_description
+				.typo_description
 
-				label(for="typo_description")= "Describe the typo (Where is it? What would be correct?)"
+					label(for="typo_description")= "Describe the typo (Where is it? What would be correct?)"
+					
+					textarea#typo_description(name="typo_description" placeholder="ex. 'your after the lake image should be you're'" required).typo_description
+
+
+				.typo_submit
 				
-				textarea#typo_description(name="typo_description" placeholder="ex. 'your after the lake image should be you're'" required).typo_description
-
-
-			input#submit(type="submit" name="submit" value="Submit")
+					input#submit(type="submit" name="submit" value="Submit").submit
 
 
 
