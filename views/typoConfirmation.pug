@@ -1,0 +1,28 @@
+doctype html5
+head
+    include ./template/head.pug
+    link(rel="stylesheet", href="/css/typo.css")
+
+    title= "typo - ramrath.me"
+
+
+header
+    include ./template/header.pug
+
+
+main
+
+    h1= "Typo report submitted"
+
+    p
+        = "Thank you for helping to improve this website by reporting typos. I will take a look at your submission and implement your correction."
+
+    br
+    br
+
+    .anotherTypo
+        a(href= "/typo")= "Want to submit another typo?"
+
+
+footer
+    include ./template/footer.pug

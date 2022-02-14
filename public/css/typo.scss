@@ -22,6 +22,7 @@ main {
         text-align: center;
         padding: 1em;
         margin-top: 2em;
+        line-height: 1.5;
     } 
     
     h2 {
@@ -31,6 +32,16 @@ main {
 
     p {
         text-align: justify;
+    }
+
+    .anotherTypo {
+        display: flex;
+        
+        a {
+            color: $color-white-dark;
+            text-align: center;
+            margin: auto;
+        }
     }
 
     .formWrapper {
@@ -53,10 +64,10 @@ main {
                 }
 
                 input, textarea {
-                    width: 80%;
+                    width: 100%;
                     margin: 1em auto 3em auto;
                     background-color: $color-black-dark;
-                    border-color: $color-blue-dark;
+                    border-color: $color-black-dark;
                     border-width: 2px;
                     border-radius: .5em;
                     padding: .5em;
@@ -74,6 +85,7 @@ main {
                     &.submit {
                         width: 5em;
                         margin: auto;
+                        border-color: $color-blue-dark;
                     }
                 }
 
@@ -91,5 +103,11 @@ main {
     main {
         margin: auto;
         width: 80%;
+
+        .formWrapper form div {
+            input, textarea {
+                width: 80%;
+            }
+        }
     }
 }

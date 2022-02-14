@@ -258,7 +258,9 @@ app.get("/typo", function(req, res) {
 
 
 app.post("/typo", function(req, res) {
+    var typo = [req.body["typo_location"], req.body["typo_description"]];
 
+    render(req, res, "typoConfirmation.pug");
 });
 
 
