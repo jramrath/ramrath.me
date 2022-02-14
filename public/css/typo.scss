@@ -1,0 +1,44 @@
+$color-black-dark: #1E1E1E;   /* main background color & header current color */
+$color-black-medium: #252526; /* header background */
+$color-black-light: #2A2D2E;  /* hover color */
+
+$color-white-dark: #949494;   /* dark text color */
+$color-white-light: #D4D4D4;  /* normal text color */
+
+$color-blue-dark: #1a52a0;
+$color-blue-medium: #569CD6;  /* Project part of h1 in posts */
+$color-blue-light: #9CDCFE;   /* h2 title of Project overview */
+
+$color-orange: #CE9178;       /* Divider Part of h1 in posts */
+
+$color-green: #4EC9B0;        /* Post-name part of h1 in posts */
+
+
+
+main {
+    h1{
+        color: $color-blue-medium;
+        font-weight: bold;
+        text-align: center;
+        padding: 1em;
+        margin-top: 2em;
+    } 
+    
+    h2 {
+        color: $color-blue-light;
+        margin-top: 2em;
+    }
+
+    p {
+        text-align: justify;
+    }
+}
+
+
+
+@media only screen and (min-width: 600px) {
+    main {
+        margin: auto;
+        width: 80%;
+    }
+}

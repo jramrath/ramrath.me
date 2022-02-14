@@ -246,12 +246,20 @@ app.get("/categories/:category", function(req, res) {
 
 
 app.get("/typo", function(req, res) {
+    var location = ""
+    if(req.query.project != undefined && req.query.post != undefined) {
+        location = "/projects/" + req.query.project + "/" + req.query.post;
+    }
+
     render(req, res, "typo.pug", {
-        project: req.query.project || "",
-        post: req.query.post || ""
+        location: location || ""
     });
 });
 
+
+app.post("/typo", function(req, res) {
+
+});
 
 
 

@@ -12,6 +12,50 @@ header
 
 main
 
+	h1= "Typo report"
+
+	p= "There are two ways to report a typo:"
+
+	ul 
+		li= "GitHub (preferred)"
+		li= "Typo report form"
+
+	
+
+	section.github
+
+		h2= "GitHub"
+		p
+			= "The code of this website is hosted on GitHub and completely open-source. If you know how GitHub works, you can fork the "
+			a(href="https://github.com/jramrath/ramrath.me" target="_blank" rel="noreferrer noopener")= "repository"
+			= ", edit the file and submit a pull request. To avoid duplicates make sure to check all open pull requests for an already existing fix."
+
+		p 
+			= "If all that sound confusing, try the report form below"
+
+
+	section.reportForm
+		h2= "Typo Report Form"
+
+		form(action="/typo/", method="post") 
+
+			.typo_location
+
+				label(for="typo_location")= "On what page/post is the typo?"
+
+				input#typo_location(type="text" name="typo_location" placeholder="ex. '/projects/uncategorized/1', 'contact' ..." value= location required)
+
+
+			.typo_description
+
+				label(for="typo_description")= "Describe the typo (Where is it? What would be correct?)"
+				
+				textarea#typo_description(name="typo_description" placeholder="ex. 'your after the lake image should be you're'" required).typo_description
+
+
+			input#submit(type="submit" name="submit" value="Submit")
+
+
 
 footer
 	include ./template/footer.pug
