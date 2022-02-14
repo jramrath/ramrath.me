@@ -11,3 +11,7 @@ ssl/server.key
 
 # Typo files
 typos/*
+
+# Code files
+public/programs/*.raw.txt
+public/programs/*.web.html
