@@ -36,10 +36,6 @@ console.log("Importing categories ...");
 exports.allCategories = JSON.parse(fs.readFileSync(__dirname + "/categories.json", "utf8"));
 console.log("Done importing categories.");
 
-console.log("Getting perma links ...");
-exports.permaLinks = JSON.parse(fs.readFileSync(__dirname + "/permaLinks.json"), "utf8");
-console.log("Done getting perma links.");
-
 
 console.log("Importing projects ...");
 exports.projects = {};
@@ -60,11 +56,6 @@ fs.readdirSync(__dirname + "/projects").forEach(dir => {
             exports.projects[dir].posts[post].details = JSON.parse(fs.readFileSync(__dirname + "/" + exports.projects[dir].posts[post].dir + "/postDetails.json", "utf8"));
             exports.projects[dir].posts[post].details["projectName"] = exports.projects[dir].details["name"];
             exports.projects[dir].posts[post].details["projectSlug"] = exports.projects[dir].details["slug"];
-            for (var key in exports.permaLinks) {
-                if(exports.permaLinks.hasOwnProperty(key) && exports.permaLinks[key] == exports.projects[dir].posts[post].dir) {
-                    exports.projects[dir].posts[post].details["permaLink"] = "/perma/" + key;
-                }
-            }
 
             allPosts.push(exports.projects[dir].posts[post]);
         }

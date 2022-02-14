@@ -40,11 +40,6 @@ main {
         .date {
             color: $color-white-dark;
         }
-
-        .permaLink {
-            color: $color-white-dark;
-        }
-
     }
 
     hr {
@@ -274,12 +269,6 @@ main {
         display: flex;
         flex-direction: column;
 
-        .permaLink {
-            color: $color-white-dark;
-            margin: auto;
-            margin-bottom: 1em;
-        }
-
         a.nextPost {
             color: $color-white-dark;
             margin: auto;
@@ -318,11 +307,6 @@ main {
 
         .bottomButtons {
             flex-direction: row;
-
-            .permaLink {
-                margin: auto;
-                margin-left: 1.5em;
-            }
 
             a.nextPost {
                 border: none;
