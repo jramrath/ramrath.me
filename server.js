@@ -245,6 +245,12 @@ app.get("/categories/:category", function(req, res) {
 });
 
 
+app.get("/typo", function(req, res) {
+    render(req, res, "typo.pug", {
+        project: req.query.project || "",
+        post: req.query.post || ""
+    });
+});
 
 
 
