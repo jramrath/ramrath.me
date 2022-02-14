@@ -23,11 +23,6 @@ main
 				span.project= post.details["projectName"]
 				span.blog= "#" + post.details["slug"] + ": " + post.details["name"]
 
-
-		span.permaLink= "permalink: " + "ramrath.me" + post.details["permaLink"]
-
-		br
-
 		span.date= post.details["creationDate"]
 
 
@@ -35,9 +30,8 @@ main
 	|!{include(path)}
 
 
-	.bottomButtons
-		span.permaLink= "permalink: " + "ramrath.me" + post.details["permaLink"]
-		if nextPost != ""
+	if nextPost != ""
+		.bottomButtons
 			a(href= nextPost.dir).nextPost=  "Next Post 〉〉 #" + nextPost.details["slug"] + " " + nextPost.details["name"]
 
 
