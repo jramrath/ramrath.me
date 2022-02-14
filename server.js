@@ -260,6 +260,10 @@ app.get("/typo", function(req, res) {
 app.post("/typo", function(req, res) {
     var typo = [req.body["typo_location"], req.body["typo_description"]];
 
+    if(!fs.existsSync(__dirname + "/typos")) {
+        fs.mkdirSync(__dirname + "/typos");
+    }
+
     fs.writeFile(__dirname + "/typos/" + crypto.createHash("sha256").update(typo[0] + typo[1]).digest("hex"), "location: " + typo[0] + "\nDescription: " + typo[1], err => {
         console.error(err);
     });

@@ -10,4 +10,4 @@ ssl/server.crt
 ssl/server.key
 
 # Typo files
-typos/*
+typos/
