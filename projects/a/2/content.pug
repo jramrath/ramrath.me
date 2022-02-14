@@ -1,7 +1,6 @@
 include ../../../views/template/postTemplates.pug
 
-section
-    +sectionTitle("Introduction", "1")
++section("Introduction")    
     
     p.
         Lorem <a href="#baum">ipsum</a> dolor sit amet, consectetur adipiscing elit, sed do
@@ -13,8 +12,7 @@ section
         culpa qui officia deserunt mollit anim id est laborum.
 
 
-section
-    +sectionTitle("Project Revision", "2")
++section("Project Revision")
     
     p.
         Nam faucibus mollis nulla, rutrum semper urna auctor vitae. Mauris in
@@ -25,7 +23,7 @@ section
         justo dolor, laoreet vitae ante ut, rutrum ullamcorper risus. Sed
         commodo tincidunt luctus. Aenean elementum diam eu dictum pulvinar.
 
-    +terminalMixin(["sudo -v", "sudo -k", "sudo -v", "sudo -v", "sudo -k", "sudo -v"], "1").
+    +terminalMixin(["sudo -v", "sudo -k", "sudo -v", "sudo -v", "sudo -k", "sudo -v"]).
 
     p.
         Duis vel lorem quis sem pretium porta. Nullam rutrum rutrum lacus, vel
@@ -67,9 +65,8 @@ section
 hr
 
 
-section 
-    +sectionTitle("Baum", "3")
-
++section("Baum")
+    
     +imgp("/img/projects/test-2-beach.png").
         Nam faucibus mollis nulla, rutrum semper urna auctor vitae. Mauris in
         molestie diam. Fusce id consequat velit. Morbi accumsan nulla vitae
@@ -79,7 +76,7 @@ section
         justo dolor, laoreet vitae ante ut, rutrum ullamcorper risus. Sed
         commodo tincidunt luctus. Aenean elementum diam eu dictum pulvinar.
 
-    +terminalMixin(["sudo -v"], "4")
+    +terminalMixin(["sudo -v"])
 
     +pimg("/img/projects/test-2-beach.png").
         Phasellus in ex commodo, porta
