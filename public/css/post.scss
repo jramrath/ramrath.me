@@ -268,8 +268,9 @@ main {
     .bottomButtons {
         display: flex;
         flex-direction: column;
+        height: 7.5em;
 
-        a.nextPost {
+        a {
             color: $color-white-dark;
             margin: auto;
             background-color: $color-black-medium;
@@ -307,11 +308,19 @@ main {
 
         .bottomButtons {
             flex-direction: row;
+            height: auto;
 
-            a.nextPost {
+            a {
                 border: none;
                 background-color: transparent;
-                margin-right: 1.5em;
+
+                &.nextpost {
+                    margin-right: 1.5em;
+                }
+
+                &.typo {
+                    margin-left: 1.5em;
+                }
             }
         }
     }

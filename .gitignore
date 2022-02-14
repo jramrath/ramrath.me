@@ -8,3 +8,6 @@ public/css/*.css.map
 # ssl certificates #
 ssl/server.crt
 ssl/server.key
+
+# Typo files
+typos/*
