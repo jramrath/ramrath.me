@@ -1,4 +1,4 @@
-# NodeJS specific #
+# nodejs specific #
 node_modules/
 
 # css and their map files #
@@ -9,5 +9,9 @@ public/css/*.css.map
 ssl/server.crt
 ssl/server.key
 
-# Typo files
-typos/*
+# typo files #
+typos/
+
+# code files #
+public/programs/*.raw.txt
+public/programs/*.web.html

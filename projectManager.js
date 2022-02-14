@@ -1,4 +1,5 @@
 const fs = require("fs");
+const cp = require("child_process");
 
 Array.prototype.sortByDate = function() { // sorts projects or posts after date; newest first
     return this.slice(0).sort(function(a, b) {
@@ -73,4 +74,8 @@ console.log("Done sorting projects.");
 console.log("Getting recent posts ...");
 exports.recentPosts = allPosts.sortByDate().slice(0, 3);
 console.log("Done getting recent posts.");
+
+console.log("Generating new code files ...");
+cp.execSync("python3 ./codeFileManager.py", {cwd: __dirname});
+console.log("Done generating new code files");
 console.log();
