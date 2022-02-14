@@ -69,6 +69,6 @@ exports.sortedProjects = Object.values(exports.projects).sortByDate();
 console.log("Done sorting projects.");
 
 console.log("Getting recent posts ...");
-exports.recentPosts = allPosts.sortByDate().slice(0, 2);
+exports.recentPosts = allPosts.sortByDate().slice(0, 3);
 console.log("Done getting recent posts.");
 console.log();
