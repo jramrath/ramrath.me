@@ -1,30 +1,45 @@
 doctype html5
 head
-  include ./template/head.pug
-  link(rel="stylesheet", href="/css/post.css")
-  link(rel="stylesheet", href="/css/code.css")
-  title= project.details["name"] + " - " + "#" + post.details["slug"] + ": " + post.details["name"]
+	include ./template/head.pug
+	link(rel="stylesheet", href="/css/post.css")
+	link(rel="stylesheet", href="/css/code.css")
+
+	if post.details["projectSlug"] == "uncategorized"
+		title= post.details["name"]
+	else
+		title= post.details["projectName"] + " - " + "#" + post.details["slug"] + ": " + post.details["name"]
 
 
 header
-  include ./template/header.pug
+	include ./template/header.pug
 
 
-main 
-  .post-details
-    h1
-      span.project= project.details["name"]
-      span.blog= "#" + post.details["slug"] + ": " + post.details["name"]
-    span.date= post.details["creationDate"]
-    
+main
+	.post-details
+		h1
+			if post.details["projectSlug"] == "uncategorized"
+				span.blog= post.details["name"]
+			else
+				span.project= post.details["projectName"]
+				span.blog= "#" + post.details["slug"] + ": " + post.details["name"]
 
-  - var path = path
-  |!{include(path)}
+		span.date= post.details["creationDate"]
 
-  if nextPost != ""
-    .nextPostButton
-      a(href= nextPost.dir)=  "Next Post 〉〉 #" + nextPost.details["slug"] + " " + nextPost.details["name"]
+
+	- var path = path
+	|!{include(path)}
+
+
+	.bottomButtons
+
+		if nextPost != ""
+			a(href= "/typo?project=" + post.details["projectSlug"] + "&post=" + post.details["slug"]).typo= "Found a typo? Report it"
+
+			a(href= nextPost.dir).nextPost=  "Next Post 〉〉 #" + nextPost.details["slug"] + " " + nextPost.details["name"]
+		
+		else 
+			a(href= "/typo?project=" + post.details["projectSlug"] + "&post=" + post.details["slug"])= "Found a typo? Report it"
 
 
 footer
-  include ./template/footer.pug
+	include ./template/footer.pug

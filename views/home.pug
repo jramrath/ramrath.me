@@ -1,42 +1,47 @@
 doctype html5
 head
-  include ./template/head.pug
-  link(rel="stylesheet", href="/css/home.css")
-  link(rel="stylesheet", href="/css/post-overview.css")
-  title ramrath.me
+    include ./template/head.pug
+    link(rel="stylesheet", href="/css/home.css")
+    link(rel="stylesheet", href="/css/post-overview.css")
+    title ramrath.me
 
 header
-  include ./template/header.pug
+    include ./template/header.pug
 
-main 
-  section.title
-    h1 Currently under development!
-    br
-    br
-    h1 Welcome
-    h2 Don't know what's going on? Check out
-      | 
-      a(href="/about") /about
-      | !
+main
+    section.title
+        h1 Currently under development!
+        br
+        br
+        h1 Welcome
+        h2= "Don't know what's going on? Check out "
+            a(href="/about")= "/about"
+            = "!"
 
-  hr
+    hr
 
-  section.posts
-    each post in recentPosts
+    section.posts
+        each post in recentPosts
 
-      a(href= post.dir).project-preview 
-        section.description 
-          h2
-            span.projectName= post.details["projectName"]
-            span.postName= ("#" + post.details["slug"] + ": " + post.details["name"])
+            a(href= post.dir).project-preview
+                section.description
+                    h2
+                        if post.details["projectSlug"] == "uncategorized"
+                            span.postName= post.details["name"]
+                        else
+                            span.projectName= post.details["projectName"]
+                            span.postName= ("#" + post.details["slug"] + ": " + post.details["name"])
 
-          p= post.details["description"]
+                    p= post.details["description"]
 
-          span.date= post.details["creationDate"]
+                    span.date= post.details["creationDate"]
 
-        section.picture 
-          img(src= post.details["titleImagePath"], alt="title-image")
+                section.picture
+                    img(src= post.details["titleImagePath"], alt="title-image")
+
+    section.typo 
+        a(href= "/typo")= "Found a typo? Report it"
 
 
 footer
-  include ./template/footer.pug
+    include ./template/footer.pug

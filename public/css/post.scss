@@ -36,6 +36,10 @@ main {
                 color: $color-green;
             }
         }
+
+        .date {
+            color: $color-white-dark;
+        }
     }
 
     hr {
@@ -47,7 +51,7 @@ main {
         margin: .5em .75em;
 
         h2 {
-            margin: 0 .3em;
+            margin: 0 .3em 0 0;
             color: $color-blue-light;
             span {
                 color: $color-white-dark;
@@ -261,8 +265,10 @@ main {
         }
     }
 
-    .nextPostButton {
+    .bottomButtons {
         display: flex;
+        flex-direction: column;
+        height: 7.5em;
 
         a {
             color: $color-white-dark;
@@ -300,10 +306,22 @@ main {
             }
         }
 
-        .nextPostButton a {
-            border: none;
-            background-color: transparent;
-            margin-right: 1.5em;
+        .bottomButtons {
+            flex-direction: row;
+            height: auto;
+
+            a {
+                border: none;
+                background-color: transparent;
+
+                &.nextpost {
+                    margin-right: 1.5em;
+                }
+
+                &.typo {
+                    margin-left: 1.5em;
+                }
+            }
         }
     }
 }

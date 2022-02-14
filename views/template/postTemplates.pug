@@ -3,11 +3,15 @@ script.
         navigator.clipboard.writeText(document.getElementById(id).innerHTML.replaceAll("&lt;", "<").replaceAll("&gt;", ">"));
     } 
 
-
-mixin sectionTitle(content, num)
-    h2
-        span= num
-        |#{content}
+- var sectionNumber = 1
+mixin section(content)
+    section
+        h2(id= content.replaceAll(" ", "-").toLowerCase())
+            span= sectionNumber
+            |#{content}
+        - sectionNumber += 1
+        
+        block 
 
 
 mixin img(src, alt)
@@ -52,12 +56,13 @@ mixin codeMixin(filename)
 
         
 
-mixin terminalMixin(commands, num)
+- var terminalMixinCopyId = 1
+mixin terminalMixin(commands)
     .codeOrTerminal.terminal 
         ul.buttons
             li.copy
                 a
-                    button(onclick="copyFunc(" + num + ")").copy
+                    button(onclick="copyFunc(" + terminalMixinCopyId + ")").copy
                         .tooltip 
                             span Copy
                         .icon
@@ -73,10 +78,12 @@ mixin terminalMixin(commands, num)
 
                 td.code
                     pre
-                        code(id= num)
+                        code(id= terminalMixinCopyId)
                             each command in commands
-                                |#{command + "\n"}
-                    
+                                = command + "\n"
+
+    - terminalMixinCopyId += 1                
+    
         
 
 

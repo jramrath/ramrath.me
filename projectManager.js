@@ -16,13 +16,6 @@ let Project = class {
         this.details;
         this.categories = {};
     }
-
-    getInfo() {
-        this.details = JSON.parse(fs.readFileSync(__dirname + "/" + this.dir + "/projectDetails.json", "utf8"));
-        this.details["categories"].split(" ").forEach(category => {
-            this.categories[category] = exports.allCategories[category];
-        });
-    }
 }
 
 
@@ -30,10 +23,6 @@ let Post = class {
     constructor(dir) {
         this.dir = dir;
         this.details;
-    }
-
-    getInfo() {
-        this.details = JSON.parse(fs.readFileSync(__dirname + "/" + this.dir + "/postDetails.json", "utf8"));
     }
 }
 
@@ -54,26 +43,32 @@ var allPosts = [];
 
 fs.readdirSync(__dirname + "/projects").forEach(dir => {
     exports.projects[dir] = new Project("/projects/" + dir);
-    exports.projects[dir].getInfo();
+
+    exports.projects[dir].details = JSON.parse(fs.readFileSync(__dirname + "/" + exports.projects[dir].dir + "/projectDetails.json", "utf8"));
+    exports.projects[dir].details["categories"].split(" ").forEach(category => {
+        exports.projects[dir].categories[category] = exports.allCategories[category];
+    });
 
     fs.readdirSync(__dirname + "/projects/" + dir).forEach(post => {
         if(post != "projectDetails.json" && post != "categories") {
             exports.projects[dir].posts[post] = new Post("/projects/" + dir + "/" + post);
-            exports.projects[dir].posts[post].getInfo();
+
+            exports.projects[dir].posts[post].details = JSON.parse(fs.readFileSync(__dirname + "/" + exports.projects[dir].posts[post].dir + "/postDetails.json", "utf8"));
+            exports.projects[dir].posts[post].details["projectName"] = exports.projects[dir].details["name"];
+            exports.projects[dir].posts[post].details["projectSlug"] = exports.projects[dir].details["slug"];
+
             allPosts.push(exports.projects[dir].posts[post]);
         }
     });
 });
-
-
-
 console.log("Done importing projects.");
+
 
 console.log("Sorting projects after creation date ...");
 exports.sortedProjects = Object.values(exports.projects).sortByDate();
 console.log("Done sorting projects.");
 
 console.log("Getting recent posts ...");
-exports.recentPosts = allPosts.sortByDate().slice(0, 2);
+exports.recentPosts = allPosts.sortByDate().slice(0, 3);
 console.log("Done getting recent posts.");
 console.log();

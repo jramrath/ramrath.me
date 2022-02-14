@@ -129,7 +129,6 @@ app.get("/projects/:name/:post", function(req, res) {
 
     if(project && post) {
         render(req, res, "post.pug", {
-            project: project,
             post: post,
             path: __dirname + post.dir + "/content.pug",
             include: includeFunc,
@@ -246,6 +245,27 @@ app.get("/categories/:category", function(req, res) {
 });
 
 
+app.get("/typo", function(req, res) {
+    var location = ""
+    if(req.query.project != undefined && req.query.post != undefined) {
+        location = "/projects/" + req.query.project + "/" + req.query.post;
+    }
+
+    render(req, res, "typo.pug", {
+        location: location || ""
+    });
+});
+
+
+app.post("/typo", function(req, res) {
+    var typo = [req.body["typo_location"], req.body["typo_description"]];
+
+    fs.writeFile(__dirname + "/typos/" + crypto.createHash("sha256").update(typo[0] + typo[1]).digest("hex"), "location: " + typo[0] + "\nDescription: " + typo[1], err => {
+        console.error(err);
+    });
+
+    render(req, res, "typoConfirmation.pug");
+});
 
 
 

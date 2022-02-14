@@ -4,3 +4,10 @@ node_modules/
 # css and their map files #
 public/css/*.css
 public/css/*.css.map
+
+# ssl certificates #
+ssl/server.crt
+ssl/server.key
+
+# Typo files
+typos/*

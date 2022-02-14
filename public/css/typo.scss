@@ -1,0 +1,120 @@
+$color-black-dark: #1E1E1E;   /* main background color & header current color */
+$color-black-medium: #252526; /* header background */
+$color-black-light: #2A2D2E;  /* hover color */
+
+$color-white-dark: #949494;   /* dark text color */
+$color-white-light: #D4D4D4;  /* normal text color */
+
+$color-blue-dark: #1a52a0;
+$color-blue-medium: #569CD6;  /* Project part of h1 in posts */
+$color-blue-light: #9CDCFE;   /* h2 title of Project overview */
+
+$color-orange: #CE9178;       /* Divider Part of h1 in posts */
+
+$color-green: #4EC9B0;        /* Post-name part of h1 in posts */
+
+
+
+main {
+    padding: .5em;
+
+    h1{
+        color: $color-blue-medium;
+        font-size: 2.5em;
+        font-weight: bold;
+        text-align: center;
+        padding: 1em;
+        line-height: 1.5;
+    } 
+    
+    h2 {
+        color: $color-blue-light;
+        margin-top: 2em;
+    }
+
+    p {
+        text-align: justify;
+    }
+
+    .anotherTypo {
+        display: flex;
+
+        a {
+            color: $color-white-dark;
+            text-align: center;
+            margin: auto;
+        }
+    }
+
+    .formWrapper {
+        display: flex;
+
+        form {
+            background-color: $color-black-medium;
+            margin: auto;
+            padding: 1.5em;
+            border-radius: 1em;
+            width: 85%;
+
+            div {
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    text-align: center;
+                    font-size: 1.25em;
+                }
+
+                input, textarea {
+                    width: 100%;
+                    margin: 1em auto 3em auto;
+                    background-color: $color-black-dark;
+                    border-color: $color-black-dark;
+                    border-width: 2px;
+                    border-radius: .5em;
+                    padding: .5em;
+                    color: $color-white-light;
+
+                    &:focus {
+                        outline: none;
+                    }
+    
+                    &::placeholder, :-ms-input-placeholder {
+                        color: $color-white-dark;
+                        opacity: 1;
+                    }
+
+                    &.submit {
+                        width: 5em;
+                        margin: auto;
+                        border-color: $color-blue-dark;
+                    }
+                }
+
+                textarea {
+                    height: 10em;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (min-width: 600px) {
+    main {
+        margin: auto;
+        width: 80%;
+        padding: 0;
+
+        h1 {
+            margin-top: 1.5em;
+        }
+
+        .formWrapper form div {
+            input, textarea {
+                width: 80%;
+            }
+        }
+    }
+}
