@@ -6,11 +6,22 @@ This repository stores the content and code of my [website](https://ramrath.me).
 # How you can help / Contributing
 
 ## Typo
-First check all open pull requests. If you didn't find your typo, use Github's inline editor to make the fix and submit a pull request.
+There are two ways to report a typo:
+
+### GitHub (preferred)
+
+The code of this website is completely open-source. If you know how GitHub works, you can fork the repository, edit the file and submit a pull request. To avoid duplicates make sure to check all open pull requests for an already existing fix.
+
+### Report Form
+
+If all that sounds confusing, try the [report form](https://ramrath.me/typo).
+
+<hr>
 
 ## Bug
 For bugs or any other major issues go to [Issues](https://github.com/jramrath/ramrath.me/issues), click on **New issue** >> **Bug report** and fill out the template.
 
+<hr>
 
 ## Feature idea
 If you have an idea for a new feature go to [Issues](https://github.com/jramrath/ramrath.me/issues), click on **New issue** >> **Feature request** and fill out the template. Please describe your idea in detail and explain why your feature could improve the website.
