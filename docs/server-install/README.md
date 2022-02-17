@@ -6,7 +6,7 @@ This webisite is hosted on a server from [IONOS](https://ionos.de). The followin
 First install an Image to the VPS by going to IONOS' cloudpanel and selecting the VPS. Press on *Actions* >> *Reinstall Image*. Choose *Debain* and press *Reinstall Image*.
 
 
-## (2) user, password and ssh setup
+## (2) user, passwords and ssh setup
 
 After the image has been successfully installed, connect through ssh with the root user (password and server-ip are displayed on the cloudpanel):
 ```
@@ -66,7 +66,26 @@ Subsystem       sftp    /usr/lib/openssh/sftp-server
 PasswordAuthentication no
 ```
 
-<hr>
+
+## (3) Repository setup
+
+Clone this repository to your home folder and install nodejs, npm and pip:
+```
+git clone https://github.com/jramrath/ramrath.me.git
+sudo apt install nodejs npm
+```
+
+Now you can enter the repository folder, checkout to the master branch and install all necessary dependencies for nodejs and python:
+```
+cd ramrath.me
+git checkout master
+npm ci
+pip3 install pillow numpy tqdm
+```
+
+
+
+
 
 
 
