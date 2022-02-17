@@ -126,3 +126,63 @@ If everything looks fine exit journalctl (ctrl + c) and enable the service:
 ```
 sudo systemctl enable wbesite
 ```
+
+
+## (6) Nginx
+
+The server uses the proxy feature of nginx to implement easier and more secure SSL encryption to cloudflare. But first we have to install it:
+```
+sudo apt install nginx
+```
+
+Create and edit a new configuration file:
+```
+sudo nano /etc/nginx/conf.d/website.conf
+```
+and paste the following:
+```
+server {
+  listen 80;
+  listen [::]:80;
+
+  server_name 87.106.192.248;
+
+  location / {
+      proxy_pass http://localhost:8000/;
+  }
+}
+```
+
+To check the configuration you can do the following:
+```
+sudo nginx -t
+```
+
+If everything looks fine, reload nginx:
+```
+sudo nginx -s reload
+```
+
+If you open your browser an go to ```http://<server-ip>/```, you should get an unencrypted connection to the nodejs service.
+
+<br>
+<hr>
+<br>
+
+To enable cloudflare's encryption we have to again edit the configuration file:
+```
+sudo nano /etc/nginx/conf.d/website.conf
+```
+and make it look like the following:
+```
+server {
+  listen 80;
+  listen [::]:80;
+
+  server_name 87.106.192.248;
+
+  location / {
+      proxy_pass http://localhost:8000/;
+  }
+}
+```
