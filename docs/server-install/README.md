@@ -1,34 +1,73 @@
 # Steps to initialize the VPS
 This webisite is hosted on a server from [IONOS](https://ionos.de). The following are steps to initialize a VPS with this specific provider for this specific website.
 
-## (1) Default Gateway IP
+## (1) Install VPS Image
 
-To get the defaut gateway IP you first have to install an image provided by IONOS (ex. Debain, CentOS). After that, connect to the VPS over ssh and execute the following command:
-
-
+First install an Image to the VPS by going to IONOS' cloudpanel and selecting the VPS. Press on *Actions* >> *Reinstall Image*. Choose *Debain* and press *Reinstall Image*.
 
 
-## (2) Add Arch Image
+## (2) user, password and ssh setup
 
-To add the Arch Image, go to *Infrastructure* >> *Images*, on the cloudpanel of the VPS, and press *Create*. Choose a name and select *Import an image*.
-
-<img alt="Screenshot while creating a new Image on IONOS" src="create-image.png" width="80%">
-
-You can find
-
-
-
-
+After the image has been successfully installed, connect through ssh with the root user (password and server-ip are displayed on the cloudpanel):
 ```
-#cloud-config
-resize_rootfs: True
-users:
-  - name: arch
-    gecos: Server Admin
-    sudo: ALL=(ALL) NOPASSWD:ALL
-    groups: users, admin
-    ssh_import_id: None
-    lock_passwd: true
-    ssh_authorized_keys:
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC6+N4YJod2IMyNex6OmbeOhstEgaehiVoAgVIut5fFsQTfxfHEUjQI1JJNnguwJjApOenHmMfcIVJg5UF8Ct+IwmJ0n7cBXoQmI9U6UikU726j0iKCKVcQR/Ir6d//cP6DIbBTrYOeBUTYabwD+ZPXcaCmTl6ZkIk+elBoMsH6GGMChexpBWJ45sRFvQQOKNBrr55MZHAgoxbIcMmggGf1lN9PcFRePqrVcpfM79EXjHX9bXz6fLnlrYLS26dr5IzpzHkNsKteqoXR4Wr8dUBXi8zR9TYCjNe6Hsz/S7EgzneFDcm4SuC0tAXBKHVlNhMTqZyF2ql/CylSBtOeXY9+wjd3gl+BctxX+3lwtyjM7Tq8q61vyre8TKU4+WcX7RQrxeXPmF/LHta0ZBVWnudeJDdrX8MInNXkYm201q+eMFyoH7aDNeMVk7b2YzTdLRA5UCBtnXwdqejkiXKJhM8Ve633RNogxK9op4JiVwmqus3HMACqhILWTGvsuS70aygCV3RKWoqhV7mpZY5UBbZhOrUFlaviq9IuRYNY4NGkFTvCVPqFoS7rBPn320cOQFFtWh1ZmHG295hxFaX1MiK5l0/ux8Z6kcMYo+o38MjsGdHmZXb65OAr+8ZWVtWJTYlfl81AVGTCcyMjRnoqCSwJdKIZQDiYvyZRnEvrq/ZgXw== jannik@Axolotl
+ssh root@<server-ip>
 ```
+
+You should immediately change the root password:
+```
+passwd
+```
+
+Next, we create a new user and add it to the *sudo* group:
+```
+adduser <username>
+usermod -aG sudo <username>
+```
+
+<hr>
+
+To add your ssh keyfile, make a directory *.ssh* in \<username>'s home folder and add/edit the file *authorized_keys*:
+```
+mkdir /home/<username>/.ssh
+nano /home/<username>/.ssh/authorized_keys
+```
+
+Paste the contents of your public keyfile (ex: id_rsa.pub), save (ctrl + s) and exit the file (ctrl + x).
+
+To check if everything works logout and reconnect with your username and keyfile:
+```
+logout
+ssh -i <path-to-keyfile> <username>@<server-ip>
+```
+
+After a successful connection we can continue by editing the sshd config file:
+```
+sudo nano /etc/ssh/sshd_config
+```
+
+You can take a look at the file I used [here](./sshd_config).
+
+The output of
+```
+cat /etc/ssh/sshd_config | egrep -v "^\s*(#|$)"
+```
+should look something like this:
+```
+Include /etc/ssh/sshd_config.d/*.conf
+PermitRootLogin no
+PubkeyAuthentication yes
+AuthorizedKeysFile      .ssh/authorized_keys
+ChallengeResponseAuthentication no
+UsePAM yes
+X11Forwarding yes
+PrintMotd no
+AcceptEnv LANG LC_*
+Subsystem       sftp    /usr/lib/openssh/sftp-server
+PasswordAuthentication no
+```
+
+<hr>
+
+
+
+
