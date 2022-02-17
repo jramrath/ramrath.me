@@ -34,13 +34,13 @@ nano /home/<username>/.ssh/authorized_keys
 
 Paste the contents of your public keyfile (ex: id_rsa.pub), save (ctrl + s) and exit the file (ctrl + x).
 
-To check if everything works logout and reconnect with your username and keyfile:
+To check if everything works, logout and reconnect with your username and keyfile:
 ```
 logout
 ssh -i <path-to-keyfile> <username>@<server-ip>
 ```
 
-After a successful connection we can continue by editing the sshd config file:
+After a successful connection, we can continue by editing the sshd config file:
 ```
 sudo nano /etc/ssh/sshd_config
 ```
@@ -72,7 +72,7 @@ PasswordAuthentication no
 Clone this repository to your home folder and install nodejs, npm and pip:
 ```
 git clone https://github.com/jramrath/ramrath.me.git
-sudo apt install nodejs npm
+sudo apt install nodejs npm python3-pip
 ```
 
 Now you can enter the repository folder, checkout to the master branch and install all necessary dependencies for nodejs and python:
@@ -84,9 +84,40 @@ pip3 install pillow numpy tqdm
 ```
 
 
+## (4) systemd service
 
+Create and edit the systemd file:
+```
+sudo nano /etc/systemd/system/website.service
+```
 
+Paste the following:
+```
+[Unit]
+Description= Nodejs server for ramrath.me
+After=network.target
+StartLimitIntervalSec=0
 
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=jannik
+ExecStart=/usr/bin/env node /home/jannik/ramrath.me/server.js
 
+[Install]
+WantedBy=multi-user.target
+```
 
+Save (ctrl + s) and exit (ctrl + x) the file.
 
+Start the service and check it's output:
+```
+sudo systemctl start website
+journalctl -f -u website.service
+```
+
+If everything looks fine exit journalctl (ctrl + c) and enable the service:
+```
+sudo systemctl enable wbesite
+```
