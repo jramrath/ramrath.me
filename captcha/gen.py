@@ -11,7 +11,7 @@ from tqdm import tqdm
 class Gen():
     def __init__(self, numOfCaptchas):
         self.numOfCaptchas = numOfCaptchas
-        self.directory = "../public/captcha-img"
+        self.directory = os.path.realpath(__file__).replace("/captcha/gen.py", "/public/captcha-img")
         print(self.directory)
 
 
@@ -57,7 +57,7 @@ class Gen():
             arm_length[idx][1] = (a if section % 2 == 1 else b) * (-1 if section % 3 == 0 else 1)
 
 
-        img = Image.open("./background.png")
+        img = Image.open(os.path.realpath(__file__).replace("/gen.py", "/background.png"))
 
         draw = ImageDraw.Draw(img)
 
