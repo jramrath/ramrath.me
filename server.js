@@ -25,6 +25,7 @@ app.use(bodyParser.json());
 app.set("view engine", "pug");
 app.set("views", __dirname + "/views");
 
+scssRenderer.render();
 
 http.createServer(app).listen(port, () => {
     console.log(`listening on port ${port}`);
