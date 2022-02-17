@@ -15,3 +15,6 @@ typos/
 # code files #
 public/programs/*.raw.txt
 public/programs/*.web.html
+
+# captcha images # 
+public/captcha-img/*
