@@ -16,6 +16,11 @@ class Gen():
 
 
     def reDoCaptchas(self):
+
+        if not os.path.exists(os.path.realpath(__file__).replace("/captcha/gen.py", "/public/captcha-img")):
+            os.mkdir(os.path.realpath(__file__).replace("/captcha/gen.py", "/public/captcha-img"))
+
+
         print("Deleting old Captchas!")
 
         for f in os.listdir(self.directory):
