@@ -7,8 +7,6 @@ const path = require("path");
 const crypto = require("crypto"); // hashing algorithm
 const pug = require("pug"); // pug rendering Engine
 const { lookup }  = require("geoip-lite");
-const { check } = require("node_cloudflare");
-const { EDESTADDRREQ } = require("constants");
 
 const PM = require("./projectManager.js");
 const scssRenderer = require("./scssRenderer.js");
@@ -16,6 +14,7 @@ const search = require("./search.js");
 
 const app = express();
 const directoryToServer = __dirname + "/public";
+const port = 8000;
 
 var clients = {};
 
@@ -26,33 +25,11 @@ app.use(bodyParser.json());
 app.set("view engine", "pug");
 app.set("views", __dirname + "/views");
 
+scssRenderer.render();
 
-// If the server can't find the ssl-certificates this will be set to true
-const devMode = false;
-
-try {
-    const httpsOptions = {
-        cert: fs.readFileSync(__dirname + "/ssl/server.crt"), 
-        key: fs.readFileSync(__dirname + "/ssl/server.key")
-    };
-
-    const port = 443;
-
-    https.createServer(httpsOptions, app).listen(port, function() {
-        console.log(`listening at port ${port}`);
-    });
-
-    scssRenderer.render();
-
-} catch (e) {
-    console.log("Couldn't find SSL-Keys => Starting in developer mode!");
-    const devMode = true;
-    const port = 80;
-
-    http.createServer(app).listen(port, function() {
-        console.log(`listening at port ${port} (dev mode)`);
-    });
-}
+http.createServer(app).listen(port, () => {
+    console.log(`listening on port ${port}`);
+});
 
 
 // -------------------------------------------------------------------------------------------------------
