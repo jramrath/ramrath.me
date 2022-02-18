@@ -209,4 +209,4 @@ If everything looks fine, reload nginx:
 sudo nginx -s reload
 ```
 
-If you open your browser an go to ```https://<server-ip>/```, you should get an encrypted connection to the nodejs service. This should now also work with ```https://ramrath.me/```.
+If you open your browser an go to ```https://ramrath.me/```, you should get an encrypted connection to the server.
