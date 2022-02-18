@@ -86,7 +86,15 @@ pip3 install pillow numpy tqdm
 
 ## (4) Cloudflare Encryption keys
 
+To prepare for the encryption, go to Cloudflare's dashboard of your URL. Press on *SSL/TLS* >> *Origin Server* and create a new certificate.
 
+Open your ssh connection and create/edit the *server.crt* file in your home directory:
+```
+nano server.crt
+```
+Paste the *Origin Certificate* from cloudflare, save (crtl + s) and exit (ctrl + x).
+
+Repeat this process with the private key. The file's name should be ```server.key```.
 
 
 ## (5) Systemd service
