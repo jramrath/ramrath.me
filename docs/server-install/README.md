@@ -1,6 +1,7 @@
 # Steps to initialize the VPS
 This webisite is hosted on a server from [IONOS](https://ionos.de). The following are steps to initialize a VPS with this specific provider for this specific website.
 
+
 ## (1) Install VPS Image
 
 First install an Image to the VPS by going to IONOS' cloudpanel and selecting the VPS. Press on *Actions* >> *Reinstall Image*. Choose *Debain* and press *Reinstall Image*.
@@ -161,7 +162,7 @@ server {
 }
 ```
 
-To check the configuration you can do the following:
+You should check the configuration by doing the following:
 ```
 sudo nginx -t
 ```
@@ -184,13 +185,28 @@ sudo nano /etc/nginx/conf.d/website.conf
 and make it look like the following:
 ```
 server {
-  listen 80;
-  listen [::]:80;
+  listen 443 ssl;
+  listen [::]:443 ssl;
 
   server_name 87.106.192.248;
+
+  ssl_certificate /home/<username>/server.crt;
+  ssl_certificate_key /home/<username>/server.key;
 
   location / {
       proxy_pass http://localhost:8000/;
   }
 }
 ```
+
+You should check the configuration by doing the following:
+```
+sudo nginx -t
+```
+
+If everything looks fine, reload nginx:
+```
+sudo nginx -s reload
+```
+
+If you open your browser an go to ```https://<server-ip>/```, you should get an encrypted connection to the nodejs service. This should now also work with ```https://ramrath.me/```.
