@@ -1,7 +1,6 @@
 const bodyParser = require("body-parser"); 
 const express = require("express"); // Expressjs
 const fs = require("fs"); // easy access to the server File system
-const https = require("https"); // creates the Server with the ssl certificate
 const http = require("http");   // creates the Server without the ssl certificates (dev mode)
 const path = require("path");
 const crypto = require("crypto"); // hashing algorithm
