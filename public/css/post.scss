@@ -20,8 +20,10 @@ $buttons-animation: width .3s ease-out .2s;
 
 
 main {
+    position: relative;
+
     .post-details {
-        margin: 1em;
+        padding: 1em;
 
         h1 {
             padding: 0;
@@ -265,6 +267,10 @@ main {
         }
     }
 
+    .post-navbar-wrapper {
+        display: none;
+    }
+
     .bottomButtons {
         display: flex;
         flex-direction: column;
@@ -287,7 +293,7 @@ main {
 @media only screen and (min-width: 600px) {
     main {
         .post-details {
-            margin: 3em;
+            padding: 3em;
             text-align: center;
         }
 
@@ -334,6 +340,54 @@ main {
             .video {
                 video {
                     width: 85%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    main {
+        .post-navbar {
+            a {
+                color: $color-white-dark;
+            }
+            
+            ul {
+            }
+
+            display: unset;
+            position: fixed;
+            top: calc(2em + 46px);
+            right: calc(1120px + 5rem + ((100vw - 1120px) /2));
+
+            ul.posts {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    a {
+                        color: $color-green;
+                    }
+
+                    &.current {
+                        span {
+                            color: $color-green;
+                            font-weight: bold;
+                        }
+
+                        ul {
+                            list-style-type: none;
+                            padding: 0;
+                            margin: 0;
+                            padding-left: 1.75rem;
+
+                            li > a{
+                                color: $color-blue-light;
+                            }
+                        }
+                    }
                 }
             }
         }

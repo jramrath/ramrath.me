@@ -3,12 +3,19 @@ script.
         navigator.clipboard.writeText(document.getElementById(id).innerHTML.replaceAll("&lt;", "<").replaceAll("&gt;", ">"));
     } 
 
+
 - var sectionNumber = 1
-mixin section(content)
+- var sections = []
+
+mixin section(title)
+    - var titleSlug = title.replaceAll(" ", "-").toLowerCase()
+
+    - sections.push([titleSlug, title])
+
     section
-        h2(id= content.replaceAll(" ", "-").toLowerCase())
+        h2(id= titleSlug)
             span= sectionNumber
-            |#{content}
+            = title
         - sectionNumber += 1
         
         block 
@@ -111,3 +118,25 @@ mixin video(filename, ytMirror)
         
         if ytMirror != undefined 
             a.mirror(href= ytMirror target="_blank" rel="noreferrer noopener")= "Youtube Mirror"
+
+
+
+mixin post-navbar()
+    .post-navbar
+        ul.posts
+            for post in project.posts
+                - var postName = project.details["slug"] == "uncategorized" ? post.details["name"] : "#" + post.details["slug"] + ": " + post.details["name"]
+
+
+                if post.details["slug"] == currentPost.details["slug"]
+                    li.current
+                        span= postName
+                        
+                        ul
+                            for section in sections
+                                li
+                                    a(href= "#" + section[0])= section[1]
+
+                else if project.details["slug"] != "uncategorized"
+                    li 
+                        a(href= post.dir)= postName

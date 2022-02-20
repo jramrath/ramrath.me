@@ -106,6 +106,7 @@ app.get("/projects/:name/:post", function(req, res) {
     if(project && post) {
         render(req, res, "post.pug", {
             post: post,
+            project: project,
             path: __dirname + post.dir + "/content.pug",
             include: includeFunc,
             nextPost: nextPost == undefined ? "" : nextPost 
