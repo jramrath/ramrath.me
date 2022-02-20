@@ -70,7 +70,15 @@ PasswordAuthentication no
 
 ## (3) Repository setup
 
-Clone this repository to your home folder and install nodejs, npm and pip:
+First install nodejs and npm:
+```
+curl -sL https://deb.nodesource.com/setup_17.x -o nodesource_setup.sh
+sudo bash nodesource_setup.
+sudo apt install nodejs
+rm nodesource_setup.sh
+```
+
+Clone this repository to your home folder and install and pip:
 ```
 git clone https://github.com/jramrath/ramrath.me.git
 sudo apt install nodejs npm python3-pip
