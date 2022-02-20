@@ -123,6 +123,10 @@ mixin video(filename, ytMirror)
 
 mixin post-navbar()
     .post-navbar
+        if project.details["slug"] != "uncategorized"
+            a(href= project.dir).project= project.details["name"]
+            hr
+
         ul.posts
             for post in project.posts
                 - var postName = project.details["slug"] == "uncategorized" ? post.details["name"] : "#" + post.details["slug"] + ": " + post.details["name"]
@@ -131,7 +135,7 @@ mixin post-navbar()
                 if post.details["slug"] == currentPost.details["slug"]
                     li.current
                         span= postName
-                        
+
                         ul
                             for section in sections
                                 li

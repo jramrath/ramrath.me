@@ -267,7 +267,7 @@ main {
         }
     }
 
-    .post-navbar-wrapper {
+    .post-navbar {
         display: none;
     }
 
@@ -349,17 +349,20 @@ main {
 @media only screen and (min-width: 1500px) {
     main {
         .post-navbar {
-            a {
-                color: $color-white-dark;
-            }
-            
-            ul {
+            display: unset;
+            position: absolute;
+            top: 10.6rem;
+            right: calc(100% + 3em);
+
+            a.project {
+                color: $color-blue-medium;
+                font-weight: bold;
+                font-size: 1.25rem;
             }
 
-            display: unset;
-            position: fixed;
-            top: calc(2em + 46px);
-            right: calc(1120px + 5rem + ((100vw - 1120px) /2));
+            hr {
+                margin: 0 0 .25rem 0;
+            }
 
             ul.posts {
                 list-style-type: none;
@@ -368,13 +371,12 @@ main {
 
                 li {
                     a {
-                        color: $color-green;
+                        color: $color-white-dark;
                     }
 
                     &.current {
                         span {
                             color: $color-green;
-                            font-weight: bold;
                         }
 
                         ul {
