@@ -267,7 +267,7 @@ main {
         }
     }
 
-    .post-navbar {
+    .post-navbar-wrapper {
         display: none;
     }
 
@@ -348,45 +348,54 @@ main {
 
 @media only screen and (min-width: 1500px) {
     main {
-        .post-navbar {
-            display: unset;
+        .post-navbar-wrapper {
+            display: flex;
             position: absolute;
             top: 10.6rem;
             right: calc(100% + 3em);
+            bottom: 0;
+            left: calc(0px - (50vw - 560px));
 
-            a.project {
-                color: $color-blue-medium;
-                font-weight: bold;
-                font-size: 1.25rem;
-            }
+            .post-navbar {
+                position: sticky;
+                top: 2rem;
+                margin-left: auto;
+                height: min-content;
 
-            hr {
-                margin: 0 0 .25rem 0;
-            }
+                a.project {
+                    color: $color-blue-medium;
+                    font-weight: bold;
+                    font-size: 1.25rem;
+                }
 
-            ul.posts {
-                list-style-type: none;
-                padding: 0;
-                margin: 0;
+                hr {
+                    margin: 0 0 .25rem 0;
+                }
 
-                li {
-                    a {
-                        color: $color-white-dark;
-                    }
+                ul.posts {
+                    list-style-type: none;
+                    padding: 0;
+                    margin: 0;
 
-                    &.current {
-                        span {
-                            color: $color-green;
+                    li {
+                        a {
+                            color: $color-white-dark;
                         }
 
-                        ul {
-                            list-style-type: none;
-                            padding: 0;
-                            margin: 0;
-                            padding-left: 1.75rem;
+                        &.current {
+                            span {
+                                color: $color-green;
+                            }
 
-                            li > a{
-                                color: $color-blue-light;
+                            ul {
+                                list-style-type: none;
+                                padding: 0;
+                                margin: 0;
+                                padding-left: 1.75rem;
+
+                                li > a{
+                                    color: $color-blue-light;
+                                }
                             }
                         }
                     }
