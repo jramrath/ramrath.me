@@ -20,8 +20,10 @@ $buttons-animation: width .3s ease-out .2s;
 
 
 main {
+    position: relative;
+
     .post-details {
-        margin: 1em;
+        padding: 1em;
 
         h1 {
             padding: 0;
@@ -265,6 +267,10 @@ main {
         }
     }
 
+    .post-navbar-wrapper {
+        display: none;
+    }
+
     .bottomButtons {
         display: flex;
         flex-direction: column;
@@ -287,7 +293,7 @@ main {
 @media only screen and (min-width: 600px) {
     main {
         .post-details {
-            margin: 3em;
+            padding: 3em;
             text-align: center;
         }
 
@@ -334,6 +340,65 @@ main {
             .video {
                 video {
                     width: 85%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    main {
+        .post-navbar-wrapper {
+            display: flex;
+            position: absolute;
+            top: 10.6rem;
+            right: calc(100% + 3em);
+            bottom: 0;
+            left: calc(0px - (50vw - 560px));
+
+            .post-navbar {
+                position: sticky;
+                top: 2rem;
+                margin-left: auto;
+                height: min-content;
+
+                a.project {
+                    color: $color-blue-medium;
+                    font-weight: bold;
+                    font-size: 1.25rem;
+                }
+
+                hr {
+                    margin: 0 0 .25rem 0;
+                }
+
+                ul.posts {
+                    list-style-type: none;
+                    padding: 0;
+                    margin: 0;
+
+                    li {
+                        a {
+                            color: $color-white-dark;
+                        }
+
+                        &.current {
+                            span {
+                                color: $color-green;
+                            }
+
+                            ul {
+                                list-style-type: none;
+                                padding: 0;
+                                margin: 0;
+                                padding-left: 1.75rem;
+
+                                li > a{
+                                    color: $color-blue-light;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
