@@ -1,24 +1,41 @@
+mixin crypto(name, iconPath, qrPath, address)
+    section.crypto
+        .details
+            h2.name= name
+
+            label(for="qrCode" + name).qrCodeCheckboxLabel
+                .icon
+            
+
+        span.address= address
+
+        input(type="checkbox" id= "qrCode" + name).qrCodeCheckbox
+        .qrCode
+            img(src= qrPath)
+
+
+
 doctype html5
 head
-  include ./template/head.pug
-  link(rel="stylesheet", href="/css/donations.css")
-  title Donations - ramrath.me
+    include ./template/head.pug
+    link(rel="stylesheet", href="/css/donations.css")
+    title= "Donations - ramrath.me"
 
 header
-  include ./template/header.pug
+    include ./template/header.pug
 
-main 
-  h1 DONATIONS
+main
+    h1= "DONATIONS"
 
-  h2 Bitcoin
-  a(href="#") * BTC - Adress
+    +crypto("Bitcoin", "/img/icon/bitcoin.png", "/img/bitcoinAddress.png", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
 
-  h2 Monero 
-  a(href="#") * XMR - Adress
+    +crypto("Monero", "/img/icon/monero.png", "/img/moneroAddress.png", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
 
-  h2 buymeacoffee
-  a(href="https://www.buymeacoffee.com/ramrath.me" target="_blank" rel="noreferrer noopener") buymeacoffee.com/ramrath.me
+    +crypto("Etherium", "/img/icon/etherium.png", "/img/etheriumAddress.png", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+
+    h2 buymeacoffee
+    a(href="https://www.buymeacoffee.com/ramrath.me" target="_blank" rel="noreferrer noopener")= "buymeacoffee.com/ramrath.me"
 
 
 footer
-  include ./template/footer.pug
+    include ./template/footer.pug
