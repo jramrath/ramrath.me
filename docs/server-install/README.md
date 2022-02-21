@@ -162,7 +162,7 @@ server {
   listen 80;
   listen [::]:80;
 
-  server_name 87.106.192.248;
+  server_name <server-ip>;
 
   location / {
       proxy_pass http://localhost:8000/;
@@ -196,7 +196,7 @@ server {
   listen 443 ssl;
   listen [::]:443 ssl;
 
-  server_name 87.106.192.248;
+  server_name <server-ip>;
 
   ssl_certificate /home/<username>/server.crt;
   ssl_certificate_key /home/<username>/server.key;
