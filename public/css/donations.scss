@@ -31,6 +31,10 @@ main {
             font-size: 1.5rem;
         }
 
+        a.buymeacoffee {
+            margin-bottom: 2rem;
+        }
+
         &.crypto {
             .details {
                 display: flex;
@@ -100,7 +104,7 @@ main {
             margin: 1rem 3rem;
 
             &.crypto {
-                
+
                 input.qrCodeCheckbox:checked + .qrCode {
                     height: 500px;
                 }
