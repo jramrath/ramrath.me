@@ -13,9 +13,25 @@ $color-orange: #CE9178;       /* Divider Part of h1 in posts */
 
 $color-green: #4EC9B0;        /* Post-name part of h1 in posts */
 
+
+
 main {
-    h1 {
-        color: $color-white-light;
+
+    .description {
+        margin: 0 1rem 3.75rem 1rem;
+
+        h1 {
+            color: $color-blue-medium;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 2.5rem 0;
+            line-height: 3.75rem;
+        }
+    
+        p {
+            text-align: justify;
+        }
     }
     
     section {
@@ -67,7 +83,8 @@ main {
             }
 
             span.address {
-                word-wrap: break-word
+                word-wrap: break-word;
+                margin-bottom: 2rem;
             }
 
             input {
@@ -100,6 +117,11 @@ main {
 
 @media only screen and (min-width: 600px) {
     main {
+
+        .description {
+            margin: 3.75rem 3rem;
+        }
+
         section {
             margin: 1rem 3rem;
 
@@ -110,8 +132,6 @@ main {
                 }
 
                 .qrCode {
-                    margin-top: 3rem;
-
                     img {
                         width: 500px;
                     }

@@ -25,7 +25,14 @@ header
     include ./template/header.pug
 
 main
-    h1= "DONATIONS"
+    .description
+        h1= "Donations"
+
+        p= "Thank you for considering to support this blog. Your donation allows me to publish posts more frequently and to experiment with new hardware or software."
+
+        p= "I've chosen three popular crypto curencies (Bitcoin, Monero and Etherium), to handle most of the transactions. You can find my addresses for these crypto currencies below. If you don't want to use crypto currencies, you can also support me on PayPal"
+        
+        p= "Note: All donations are one-time-donations; No refund."
 
     +crypto("Bitcoin", "/img/icon/bitcoin.png", "/img/bitcoinAddress.png", "bc1q4nyyea4tuutqv3jlhedznrv2u6yqclruul525s")
 
