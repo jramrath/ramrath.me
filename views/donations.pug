@@ -1,15 +1,50 @@
+mixin crypto(name, iconPath, qrPath, address)
+    section.crypto
+        .details
+            h2.name= name
+
+            label(for="qrCode" + name).qrCodeCheckboxLabel
+                .icon
+            
+
+        span.address= address
+
+        input(type="checkbox" id= "qrCode" + name).qrCodeCheckbox
+        .qrCode
+            img(src= qrPath)
+
+
+
 doctype html5
 head
-  include ./template/head.pug
-  link(rel="stylesheet", href="/css/donations.css")
-  title Donations - ramrath.me
+    include ./template/head.pug
+    link(rel="stylesheet", href="/css/donations.css")
+    title= "Donations - ramrath.me"
 
 header
-  include ./template/header.pug
+    include ./template/header.pug
 
-main 
-  h1 DONATIONS
+main
+    .description
+        h1= "Donations"
+
+        p= "Thank you for considering to support this blog. Your donation allows me to publish posts more frequently and to experiment with new hardware or software."
+
+        p= "I've chosen three popular crypto curencies (Bitcoin, Monero and Etherium), to handle most of the transactions. You can find my addresses for these crypto currencies below. If you don't want to use crypto currencies, you can also support me on PayPal"
+        
+        p= "Note: All donations are one-time-donations; No refund."
+
+    +crypto("Bitcoin", "/img/icon/bitcoin.png", "/img/bitcoinAddress.png", "bc1q4nyyea4tuutqv3jlhedznrv2u6yqclruul525s")
+
+    +crypto("Monero", "/img/icon/monero.png", "/img/moneroAddress.png", "44fYXsrmED7LJuhMh9BJcmDGon7a9knEr4Q5vrTdxnB6UZfzbzDzbNYHknVzPgXiTC6PWetSvzBWRgKhxUMLJ4nDC3pM1y3")
+
+    +crypto("Etherium", "/img/icon/etherium.png", "/img/etheriumAddress.png", "0x032D8E008e40641792E9d81ca1f04B4a0Bf7bE09")
+
+    section
+        .details
+            h2 PayPal
+        a(href="#" target="_blank" rel="noreferrer noopener").buymeacoffee= "paypal"
 
 
 footer
-  include ./template/footer.pug
+    include ./template/footer.pug

@@ -13,6 +13,130 @@ $color-orange: #CE9178;       /* Divider Part of h1 in posts */
 
 $color-green: #4EC9B0;        /* Post-name part of h1 in posts */
 
+
+
 main {
-    color: $color-white-light;
+
+    .description {
+        margin: 0 1rem 3.75rem 1rem;
+
+        h1 {
+            color: $color-blue-medium;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 2.5rem 0;
+            line-height: 3.75rem;
+        }
+    
+        p {
+            text-align: justify;
+        }
+    }
+    
+    section {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+        padding: 1rem 2rem;
+        border-radius: .75rem;
+        background-color: $color-black-medium;
+
+        h2 {
+            color: $color-white-light;
+            font-size: 1.5rem;
+        }
+
+        a.buymeacoffee {
+            margin-bottom: 2rem;
+        }
+
+        &.crypto {
+            .details {
+                display: flex;
+
+                label {
+                    padding: .5rem;
+                    background-color: $color-black-dark;
+                    border-radius: .5rem;
+                    margin: auto 0 auto auto;
+
+                    .icon {
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: 1.5em;
+                        height: 2em;
+                        width: 2em;
+                        margin: auto;
+                    }
+
+                    &.qrCodeCheckboxLabel {
+                        .icon {
+                            background-image: url("/img/icons/qrcode-white.png");
+                        }
+
+                        &:hover > .icon {
+                            background-image: url("/img/icons/qrcode-blue.png");
+                        }
+                    }
+                }
+            }
+
+            span.address {
+                word-wrap: break-word;
+                margin-bottom: 2rem;
+            }
+
+            input {
+                display: none;
+
+                &.qrCodeCheckbox:checked + .qrCode {
+                    height: 90vw;
+                }
+            }
+
+            .qrCode {
+                height: 0;
+                transition: height 0.5s cubic-bezier(.17,.84,.44,1);
+
+                overflow: hidden;
+                width: 120%;
+                margin-left: - 10%;
+                display: flex;
+
+                img {
+                    margin: auto;
+                    width: 90vw;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (min-width: 600px) {
+    main {
+
+        .description {
+            margin: 3.75rem 3rem;
+        }
+
+        section {
+            margin: 1rem 3rem;
+
+            &.crypto {
+
+                input.qrCodeCheckbox:checked + .qrCode {
+                    height: 500px;
+                }
+
+                .qrCode {
+                    img {
+                        width: 500px;
+                    }
+                }
+            }
+        }
+    }
 }
