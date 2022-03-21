@@ -23,8 +23,9 @@ main
                     each category in project.categories
                         span= category
 
-            section.picture 
-                img(src= project.details["titleImagePath"])
+            if project.details["slug"] != "uncategorized"
+                section.picture 
+                    img(src= "/projects/" + project.details["slug"] + "/0/img/cover.png", alt="cover")
 
 
 
