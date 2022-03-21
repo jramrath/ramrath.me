@@ -115,7 +115,18 @@ app.get("/projects/:name/:post", function(req, res) {
     else {
         notFoundFunc(req, res);
     }
-})
+});
+
+
+app.get("/projects/:name/:post/:type/:file", function(req, res) {
+    const filePath = __dirname + "/projects/" + req.params.name + "/" + req.params.post + "/assets/" + req.params.type + "/" + req.params.file;
+    
+    console.log(filePath);
+
+    res.sendFile(filePath, err => {
+        notFoundFunc(req, res);
+    });
+});
 
 
 app.get("/contact/", function(req, res) {
