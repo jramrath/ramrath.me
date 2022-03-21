@@ -53,7 +53,7 @@ fs.readdirSync(__dirname + "/projects").forEach(dir => {
     });
 
     fs.readdirSync(__dirname + "/projects/" + dir).forEach(post => {
-        if(post != "projectDetails.json" && post != "categories") {
+        if(post != "projectDetails.json" && post != "categories" && post != "0") {
             exports.projects[dir].posts[post] = new Post("/projects/" + dir + "/" + post);
 
             exports.projects[dir].posts[post].details = JSON.parse(fs.readFileSync(__dirname + "/" + exports.projects[dir].posts[post].dir + "/postDetails.json", "utf8"));
