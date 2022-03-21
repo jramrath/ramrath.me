@@ -17,7 +17,7 @@ main
 
         .categories
             each category in project.categories
-                span= category
+                a(href= "/categories/" + category.toLowerCase())= category
 
         p.project-description= project.details["description"]
 
