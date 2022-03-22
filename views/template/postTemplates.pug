@@ -23,43 +23,41 @@ mixin section(title)
 
 mixin img(src, alt)
     .img_wrapper
-        img(src=src, alt=alt)
+        img(src="/projects/" + project.details["slug"] + "/" + currentPost.details["slug"] + "/img/" + src, alt=alt)
 
 
 
 mixin codeMixin(filename)
+    - var filePath = "/projects/" + project.details["slug"] + "/" + currentPost.details["slug"] + "/code/" + filename;
+
     .codeOrTerminal.code
         ul.buttons
 
             li.copy
                 a
-                    button(onclick="copyFunc('" + filename.split(".").slice(0, -2).join(".") + "')").copy
+                    button(onclick="copyFunc('" + filePath.split(".").slice(0, -2).join(".") + "')").copy
                         .tooltip 
                             span Copy
                         .icon
 
             li.seeRaw
-                - var rawFilename = filename.split(".").slice(0, -2).join(".") + ".raw.txt"
-                a(href= rawFilename)
+                a(href= filePath.split(".").slice(0, -2).join(".") + ".raw.txt")
                     button.seeRaw
                         .tooltip 
                             span See raw
                         .icon   
 
             li.downloadCode
-                a(href= filename download= filename.replace("/programs/", ""))
+                a(href= filePath download= filePath)
                     button.downloadCode
                         .tooltip 
                             span Download code
                         .icon
 
-        
-        - var path = wdPath + "/public" + filename.split(".").slice(0, -2).join(".") + ".web.html"
-        |!{include(path)}
-                
-        div(id= filename.split(".").slice(0, -2).join(".")).textToCopy
-            - var path = wdPath + "/public" + filename.split(".").slice(0, -2).join(".") + ".raw.txt"
-            = include(path)
+        != include(wdPath + "/projects/" + project.details["slug"] + "/" + currentPost.details["slug"] + "/assets/code/" + filename.split(".").slice(0, -2).join(".") + ".web.html")
+
+        div(id= filePath.split(".").slice(0, -2).join(".")).textToCopy
+            = include(wdPath + "/projects/" + project.details["slug"] + "/" + currentPost.details["slug"] + "/assets/code/" + filename.split(".").slice(0, -2).join(".") + ".raw.txt")
 
         
 
@@ -99,21 +97,23 @@ mixin pimg(imgFile)
         p 
             block
         
-        img(src= imgFile)
+        img(src="/projects/" + project.details["slug"] + "/" + currentPost.details["slug"] + "/img/" + imgFile)
 
 mixin imgp(imgFile)
     .doubleContents
-        img(src= imgFile)
+        img(src="/projects/" + project.details["slug"] + "/" + currentPost.details["slug"] + "/img/" + imgFile)
 
         p 
             block
 
 
 mixin video(filename, ytMirror)
+    - var filePath = "/projects/" + project.details["slug"] + "/" + currentPost.details["slug"] + "/video/" + filename;
+
     .video
         video(controls) 
-            source(src= "/videos/" + filename + ".mp4" type="video/mp4")
-            source(src= "/videos/" + filename + ".ogg" type="video/ogg")
+            source(src= filePath + ".mp4" type="video/mp4")
+            source(src= filePath + ".ogg" type="video/ogg")
             = "Your browser does not support the video tag! Please use another mirror."
         
         if ytMirror != undefined 

@@ -40,7 +40,7 @@ include ../../../views/template/postTemplates.pug
         fermentum tincidunt nisi. Nunc in quam scelerisque, ullamcorper neque
         at, faucibus mauris. Aenean vel fringilla erat.
 
-    +img("/img/projects/test-2-lake.png", "lake")
+    +img("lake.png", "lake")
 
     p.
         Duis vel lorem quis sem pretium porta. Nullam rutrum rutrum lacus, vel
@@ -58,16 +58,16 @@ include ../../../views/template/postTemplates.pug
         at, faucibus mauris. Aenean vel fringilla erat.
 
 
-    +codeMixin("/programs/test-2-example.og.py")
+    +codeMixin("example.og.py")
     hr
-    +codeMixin("/programs/test-2-html.og.html")
+    +codeMixin("html.og.html")
 
 hr
 
 
 +section("Baum")
     
-    +imgp("/img/projects/test-2-beach.png").
+    +imgp("beach.png").
         Nam faucibus mollis nulla, rutrum semper urna auctor vitae. Mauris in
         molestie diam. Fusce id consequat velit. Morbi accumsan nulla vitae
         enim efficitur, eget ornare nibh bibendum. Mauris eget lacinia lacus.
@@ -78,7 +78,7 @@ hr
 
     +terminalMixin(["sudo -v"])
 
-    +pimg("/img/projects/test-2-beach.png").
+    +pimg("beach.png").
         Phasellus in ex commodo, porta
         magna non, eleifend dui. Donec velit purus, pulvinar eget maximus in,
         condimentum hendrerit sem. Vivamus sit amet metus in magna gravida
@@ -91,7 +91,7 @@ hr
 
 +section("Video") 
 
-    +video("test-2-bear", "https://www.youtube.com/watch?v=rbE53XUtVw0")
+    +video("bear", "https://www.youtube.com/watch?v=rbE53XUtVw0")
 
 
 

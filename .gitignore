@@ -9,8 +9,8 @@ public/css/*.css.map
 typos/
 
 # code files #
-public/programs/*.raw.txt
-public/programs/*.web.html
+projects/*/*/assets/code/*.raw.txt
+projects/*/*/assets/code/*.web.html
 
 # captcha images # 
 public/captcha-img/*
