@@ -89,7 +89,7 @@ Now you can enter the repository folder, checkout to the master branch and insta
 cd ramrath.me
 git checkout master
 npm ci
-pip3 install pillow numpy tqdm pygments
+pip3 install pillow numpy tqdm pygments textColor
 ```
 
 
