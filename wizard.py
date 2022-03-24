@@ -170,14 +170,6 @@ class Main():
         os.system("sudo -v")
 
         print()
-        print(tc.info("Update npm dependencies"))
-        x = os.system("npm ci")
-        if x == 0:
-            print(tc.output("Successfully updated npm dependencies."))
-        else:
-            print(tc.error("Error while updating npm dependencies [{}]".format(x)))
-
-        print()
         print(tc.info("Checkout to the develop branch:"))
         x = os.system("git checkout develop")
         if x == 0:
@@ -200,6 +192,14 @@ class Main():
             print(tc.output("Successfully pulled from github."))
         else:
             print(tc.error("Error while pulling from github! [{}]".format(x)))
+
+        print()
+        print(tc.info("Update npm dependencies"))
+        x = os.system("npm ci")
+        if x == 0:
+            print(tc.output("Successfully updated npm dependencies."))
+        else:
+            print(tc.error("Error while updating npm dependencies [{}]".format(x)))
 
         print()
         print(tc.info("Restarting website.service"))
