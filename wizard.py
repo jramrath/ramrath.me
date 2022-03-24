@@ -13,7 +13,8 @@ class Main():
             print("    (1) Show Projects & Posts")
             print("    (2) Add Project")
             print("    (3) Add Post")
-            print("    (4) Exit")
+            print("    (4) Update")
+            print("    (5) Exit")
 
             x = input(tc.input(" "))
 
@@ -26,6 +27,8 @@ class Main():
             elif x == "3":
                 self.addPost()
             elif x == "4":
+                self.update()
+            elif x == "5":
                 print(tc.info("Exiting ..."))
                 self.running = False
             else:
@@ -162,6 +165,33 @@ class Main():
             print("    2. Add a cover image to '{}'".format("./projects/" + project + "/" + postDetails["slug"] + "/0/assets/img/cover.png"))
             print("    3. Add content to content.pug")
 
+
+    def update(self):
+        os.system("sudo -v")
+
+        print()
+        print(tc.info("Fetching from github:"))
+        x = os.system("git fetch")
+        if x == 0:
+            print(tc.output("Successfully fetched from github."))
+        else:
+            print(tc.error("Error while fetching from github! [{}]".format(x)))
+
+        print()
+        print(tc.info("Pulling from github:"))
+        x = os.system("git pull")
+        if x == 0:
+            print(tc.output("Successfully pulled from github."))
+        else:
+            print(tc.error("Error while pulling from github! [{}]".format(x)))
+
+        print()
+        print(tc.info("Restarting website.service"))
+        x = os.system("sudo systemctl restart website")
+        if x == 0:
+            print(tc.output("Successfully restarted website.service."))
+        else:
+            print(tc.error("Error while restarting website.service [{}]".format(x)))
 
 
 
