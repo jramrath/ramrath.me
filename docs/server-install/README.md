@@ -73,21 +73,21 @@ PasswordAuthentication no
 First install nodejs and npm:
 ```
 curl -sL https://deb.nodesource.com/setup_17.x -o nodesource_setup.sh
-sudo bash nodesource_setup.
+sudo bash nodesource_setup.sh
 sudo apt install nodejs
 rm nodesource_setup.sh
 ```
 
-Clone this repository to your home folder and install and pip:
+Clone this repository to your home folder and install npm and pip:
 ```
 git clone https://github.com/jramrath/ramrath.me.git
 sudo apt install nodejs npm python3-pip
 ```
 
-Now you can enter the repository folder, checkout to the master branch and install all necessary dependencies for nodejs and python:
+Now you can enter the repository folder, checkout to the develop branch and install all necessary dependencies for nodejs and python:
 ```
 cd ramrath.me
-git checkout master
+git checkout develop
 npm ci
 pip3 install pillow numpy tqdm pygments
 ```
@@ -131,7 +131,7 @@ ExecStart=/usr/bin/env node /home/jannik/ramrath.me/server.js
 WantedBy=multi-user.target
 ```
 
-Save (ctrl + s) and exit (ctrl + x) the file.
+Save (ctrl + s) and exit (ctrl + x).
 
 Start the service and check it's output:
 ```
@@ -141,7 +141,7 @@ journalctl -f -u website.service
 
 If everything looks fine exit journalctl (ctrl + c) and enable the service:
 ```
-sudo systemctl enable wbesite
+sudo systemctl enable website
 ```
 
 
@@ -170,7 +170,7 @@ server {
 }
 ```
 
-You should check the configuration by doing the following:
+You should check the configuration:
 ```
 sudo nginx -t
 ```
@@ -207,7 +207,7 @@ server {
 }
 ```
 
-You should check the configuration by doing the following:
+You should check the configuration:
 ```
 sudo nginx -t
 ```
