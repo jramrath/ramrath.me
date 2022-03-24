@@ -170,6 +170,14 @@ class Main():
         os.system("sudo -v")
 
         print()
+        print(tc.info("Checkout to the develop branch:"))
+        x = os.system("git checkout develop")
+        if x == 0:
+            print(tc.output("Successfully checked out to develop."))
+        else:
+            print(tc.error("Error while checking out to develop [{}]".format(x)))
+
+        print()
         print(tc.info("Fetching from github:"))
         x = os.system("git fetch")
         if x == 0:
