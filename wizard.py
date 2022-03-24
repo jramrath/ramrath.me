@@ -13,7 +13,7 @@ class Main():
             print("    (1) Show Projects & Posts")
             print("    (2) Add Project")
             print("    (3) Add Post")
-            print("    (4) Update")
+            print("    (4) Update/Install")
             print("    (5) Exit")
 
             x = input(tc.input(" "))
@@ -168,6 +168,14 @@ class Main():
 
     def update(self):
         os.system("sudo -v")
+
+        print()
+        print(tc.info("Update npm dependencies"))
+        x = os.system("npm ci")
+        if x == 0:
+            print(tc.output("Successfully updated npm dependencies."))
+        else:
+            print(tc.error("Error while updating npm dependencies [{}]".format(x)))
 
         print()
         print(tc.info("Checkout to the develop branch:"))
