@@ -90,7 +90,7 @@ cd ramrath.me
 git checkout develop
 npm ci
 cd ..
-pip3 install pillow numpy tqdm pygments
+pip3 install pillow numpy tqdm pygments textColor
 ```
 
 
