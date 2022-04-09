@@ -115,7 +115,11 @@ main {
             height: 10em;
 
             &:hover {
-                border-color: $color-blue-dark
+                border-color: $color-blue-dark;
+
+                .picture {
+                    opacity: .7;
+                }
             }
 
             .description {
@@ -130,6 +134,8 @@ main {
                 height: inherit;
                 margin: 0;
                 float: right;
+                opacity: 1;
+                transition: opacity 0.3s;
 
                 img {
                     margin: auto 0;

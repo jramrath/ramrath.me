@@ -73,22 +73,23 @@ PasswordAuthentication no
 First install nodejs and npm:
 ```
 curl -sL https://deb.nodesource.com/setup_17.x -o nodesource_setup.sh
-sudo bash nodesource_setup.
+sudo bash nodesource_setup.sh
 sudo apt install nodejs
 rm nodesource_setup.sh
 ```
 
-Clone this repository to your home folder and install and pip:
+Install git and pip and clone this repository to your home folder:
 ```
+sudo apt install python3-pip git
 git clone https://github.com/jramrath/ramrath.me.git
-sudo apt install nodejs npm python3-pip
 ```
 
-Now you can enter the repository folder, checkout to the master branch and install all necessary dependencies for nodejs and python:
+Now you can enter the repository folder, checkout to the develop branch and install all necessary dependencies for nodejs and python:
 ```
 cd ramrath.me
-git checkout master
+git checkout develop
 npm ci
+cd ..
 pip3 install pillow numpy tqdm pygments textColor
 ```
 
@@ -131,7 +132,7 @@ ExecStart=/usr/bin/env node /home/jannik/ramrath.me/server.js
 WantedBy=multi-user.target
 ```
 
-Save (ctrl + s) and exit (ctrl + x) the file.
+Save (ctrl + s) and exit (ctrl + x).
 
 Start the service and check it's output:
 ```
@@ -141,7 +142,7 @@ journalctl -f -u website.service
 
 If everything looks fine exit journalctl (ctrl + c) and enable the service:
 ```
-sudo systemctl enable wbesite
+sudo systemctl enable website
 ```
 
 
@@ -170,7 +171,7 @@ server {
 }
 ```
 
-You should check the configuration by doing the following:
+You should check the configuration:
 ```
 sudo nginx -t
 ```
@@ -180,7 +181,7 @@ If everything looks fine, reload nginx:
 sudo nginx -s reload
 ```
 
-If you open your browser an go to ```http://<server-ip>/```, you should get an unencrypted connection to the nodejs service.
+If you open your browser an go to ```http://<server-ip>/```, you should get an unencrypted connection to the nodejs service. (Make sure your firewall is set accordingly)
 
 <br>
 <hr>
@@ -207,7 +208,7 @@ server {
 }
 ```
 
-You should check the configuration by doing the following:
+You should check the configuration:
 ```
 sudo nginx -t
 ```
@@ -218,3 +219,5 @@ sudo nginx -s reload
 ```
 
 If you open your browser an go to ```https://ramrath.me/```, you should get an encrypted connection to the server.
+
+Finally, you should set a firewall with the help of IONOS' Cloudpanel.
