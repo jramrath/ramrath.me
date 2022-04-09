@@ -78,9 +78,9 @@ sudo apt install nodejs
 rm nodesource_setup.sh
 ```
 
-Install npm, git and pip and clone this repository to your home folder:
+Install git and pip and clone this repository to your home folder:
 ```
-sudo apt install nodejs npm python3-pip git
+sudo apt install python3-pip git
 git clone https://github.com/jramrath/ramrath.me.git
 ```
 
