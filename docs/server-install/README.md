@@ -89,6 +89,7 @@ Now you can enter the repository folder, checkout to the develop branch and inst
 cd ramrath.me
 git checkout develop
 npm ci
+cd ..
 pip3 install pillow numpy tqdm pygments
 ```
 
@@ -180,7 +181,7 @@ If everything looks fine, reload nginx:
 sudo nginx -s reload
 ```
 
-If you open your browser an go to ```http://<server-ip>/```, you should get an unencrypted connection to the nodejs service.
+If you open your browser an go to ```http://<server-ip>/```, you should get an unencrypted connection to the nodejs service. (Make sure your firewall is set accordingly)
 
 <br>
 <hr>
@@ -218,3 +219,5 @@ sudo nginx -s reload
 ```
 
 If you open your browser an go to ```https://ramrath.me/```, you should get an encrypted connection to the server.
+
+Finally, you should set a firewall with the help of IONOS' Cloudpanel.
