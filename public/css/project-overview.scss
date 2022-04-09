@@ -83,6 +83,10 @@ $color-green: #4EC9B0;        /* Post-name part of h1 in posts */
 
             &:hover {
                 border-color: $color-blue-dark;
+
+                .picture {
+                    opacity: .7;
+                }
             }
 
             .description {
@@ -97,6 +101,8 @@ $color-green: #4EC9B0;        /* Post-name part of h1 in posts */
                 height: inherit;
                 margin: 0;
                 float: right;
+                opacity: 1;
+                transition: opacity 0.3s;
 
                 img {
                     margin: auto 0;
