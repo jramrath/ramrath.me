@@ -84,6 +84,27 @@ main {
             .picture {
                 display: none;
             }
+
+            .new-label {
+                position: absolute;
+                left: calc(100% + .75rem - 1.95rem);
+                top: -.5rem;
+
+                .img {
+                    background-image: url("/img/icons/new-label.png");
+                    background-repeat: no-repeat;
+                    background-position: left;
+                    background-size: cover;
+                    transition: width .2s ease-out .2s;
+                    height: 1.95rem;
+                    width: 1.95rem;
+                    border-radius: .75rem;
+
+                    &:hover {
+                        width: 5rem;
+                    }
+                }
+            }
         }
     }
 }
