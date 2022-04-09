@@ -87,22 +87,17 @@ main {
 
             .new-label {
                 position: absolute;
-                left: calc(100% + .75rem - 1.95rem);
-                top: -.5rem;
+                right: .5rem;
+                bottom: .5rem;
 
                 .img {
                     background-image: url("/img/icons/new-label.png");
                     background-repeat: no-repeat;
-                    background-position: left;
+                    background-position: center;
                     background-size: cover;
-                    transition: width .2s ease-out .2s;
-                    height: 1.95rem;
-                    width: 1.95rem;
-                    border-radius: .75rem;
-
-                    &:hover {
-                        width: 5rem;
-                    }
+                    height: 1.5rem;
+                    width: calc((237 * 1.5rem) / 90);
+                    border-radius: .5rem;
                 }
             }
         }
@@ -166,5 +161,22 @@ main {
 @media only screen and (min-width: 1120px) {
     main {
         width: 100%;
+
+        section.posts .project-preview .new-label {
+            left: calc(100% + .75rem - 1.95rem);
+            top: -.5rem;
+
+            .img {
+                background-position: left;
+                transition: width .2s ease-out .2s;
+                height: 1.95rem;
+                width: 1.95rem;
+                border-radius: .75rem;
+
+                &:hover {
+                    width: 5rem;
+                }
+            }
+        }
     }
 }
