@@ -78,10 +78,10 @@ sudo apt install nodejs
 rm nodesource_setup.sh
 ```
 
-Clone this repository to your home folder and install npm and pip:
+Install npm, git and pip and clone this repository to your home folder:
 ```
+sudo apt install nodejs npm python3-pip git
 git clone https://github.com/jramrath/ramrath.me.git
-sudo apt install nodejs npm python3-pip
 ```
 
 Now you can enter the repository folder, checkout to the develop branch and install all necessary dependencies for nodejs and python:
