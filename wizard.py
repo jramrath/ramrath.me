@@ -14,7 +14,8 @@ class Main():
             print("    (2) Add Project")
             print("    (3) Add Post")
             print("    (4) Update/Install")
-            print("    (5) Exit")
+            print("    (5) Generate new Captchas")
+            print("    (6) Exit")
 
             x = input(tc.input(" "))
 
@@ -29,6 +30,8 @@ class Main():
             elif x == "4":
                 self.update()
             elif x == "5":
+                self.generateCaptcha()
+            elif x == "6":
                 print(tc.info("Exiting ..."))
                 self.running = False
             else:
@@ -209,6 +212,15 @@ class Main():
         else:
             print(tc.error("Error while restarting website.service [{}]".format(x)))
 
+
+    def generateCaptcha(self):
+        print()
+        print(tc.info("Executing './captcha/gen.py':"))
+        x = os.system("python3 ./captcha/gen.py")
+        if x == 0:
+            print(tc.output("Successfully generated new captchas."))
+        else:
+            print(tc.error("Error while generating captchas [{}]".format(x)))
 
 
 if __name__ == "__main__":
