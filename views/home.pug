@@ -30,7 +30,11 @@ main
                             span.postName= post.details["name"]
                         else
                             span.projectName= post.details["projectName"]
-                            span.postName= ("#" + post.details["slug"] + ": " + post.details["name"])
+                            span.postName= "#"
+                                span.slug= post.details["slug"]
+                                = ": " + post.details["name"]
+
+                        label.new= "NEW"
 
                     p= post.details["description"]
 

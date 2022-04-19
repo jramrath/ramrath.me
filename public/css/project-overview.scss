@@ -36,6 +36,22 @@ $color-green: #4EC9B0;        /* Post-name part of h1 in posts */
             margin-bottom: .25em;
             margin-top: 0;
             font-weight: bold;
+            display: flex;
+
+            span {
+                margin: auto 0;
+            }
+
+            label.new {
+                margin: auto 0 auto 1rem;
+                padding: 0 .2rem;
+                color: $color-orange;
+                border-radius: .85rem;
+                border-width: 2px;
+                border-color: $color-orange;
+                border-style: solid;
+                font-size: .75rem;
+            }
         }
 
         p {

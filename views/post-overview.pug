@@ -31,9 +31,12 @@ main
             a.project-preview(href=post.dir)
                 section.description 
                     h2
-                        = "#"
-                        span(style= "font-weight: bold")= post.details["slug"]
-                        = ": " + post.details["name"]
+                        span.postName= "#"
+                            span.slug= post.details["slug"]
+                            = ": " + post.details["name"]
+
+                        if recentPosts.includes(post)
+                            label.new= "NEW"
 
                     p= post.details["description"]
                     span.date= post.details["creationDate"]
