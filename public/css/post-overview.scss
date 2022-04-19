@@ -65,6 +65,26 @@ main {
                     color: $color-green;
                     margin-bottom: .25em;
                     margin-top: 0;
+                    display: flex;
+
+                    span {
+                        margin: auto 0;
+
+                        span.slug {
+                            font-weight: bold;
+                        }
+                    }
+
+                    label.new {
+                        margin: auto 0 auto 1rem;
+                        padding: 0 .2rem;
+                        color: $color-orange;
+                        border-radius: .85rem;
+                        border-width: 2px;
+                        border-color: $color-orange;
+                        border-style: solid;
+                        font-size: .75rem;
+                    }
                 }
         
                 p {
