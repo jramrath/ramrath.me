@@ -76,9 +76,19 @@ app.get("/about/", function(req, res) {
 
 
 app.get("/projects/", function(req, res) {
+    var recentProjects = [];
+    PM.sortedProjects.forEach((project) => {
+        Object.entries(project.posts).forEach((post) => {
+            if(PM.recentPosts.includes(post[1])) {
+                recentProjects.push(project);
+            }
+        });
+    });
+
     render(req, res, "project-overview.pug", { 
         projects: PM.sortedProjects,
-        current: "projects"
+        current: "projects",
+        recentProjects: recentProjects
     });
 });
 
@@ -88,7 +98,8 @@ app.get("/projects/:name", function(req, res) {
 
     if(project) {
         render(req, res, "post-overview.pug", { 
-            project: project
+            project: project,
+            recentPosts: PM.recentPosts
         });
     }
     else {
