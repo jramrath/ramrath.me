@@ -78,8 +78,8 @@ app.get("/about/", function(req, res) {
 app.get("/projects/", function(req, res) {
     var recentProjects = [];
     PM.sortedProjects.forEach((project) => {
-        Object.entries(project.posts).forEach((post) => {
-            if(PM.recentPosts.includes(post[1])) {
+        Object.values(project.posts).forEach((post) => {
+            if(PM.recentPosts.includes(post)) {
                 recentProjects.push(project);
             }
         });
