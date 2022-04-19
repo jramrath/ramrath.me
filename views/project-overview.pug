@@ -16,7 +16,11 @@ main
 
         a.project-preview(href=project.dir)
             section.description 
-                h2= project.details["name"]
+                h2
+                    span.projectName= project.details["name"]
+                    if recentProjects.includes(project)
+                        label.new= "NEW"
+
                 p= project.details["description"]
 
                 .categories
