@@ -20,7 +20,8 @@ main
 			if post.details["projectSlug"] == "uncategorized"
 				span.blog= post.details["name"]
 			else
-				span.project= post.details["projectName"]
+				span.project
+					a(href="/projects/" + post.details["projectSlug"])= post.details["projectName"]
 				span.blog= "#" + post.details["slug"] + ": " + post.details["name"]
 
 		span.date= post.details["creationDate"]
