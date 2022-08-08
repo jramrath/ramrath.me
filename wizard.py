@@ -72,6 +72,8 @@ class Main():
 
         projectDetails["description"] = "This is a placeholder description. You can change it in this projects 'projectDetails.json' file"
 
+        projectDetails["workInProgress"] = True
+
         print()
         print(tc.info("This is the current Configuration:"))
         print(json.dumps(projectDetails, indent=4))
