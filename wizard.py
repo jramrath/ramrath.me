@@ -62,7 +62,7 @@ class Main():
         projectDetails["creationDateISO"] = time.strftime("%Y-%m-%d")
 
         projectDetails["name"] = input(tc.input("Name: "))
-        projectDetails["slug"] = projectDetails["name"].lower()
+        projectDetails["slug"] = projectDetails["name"].lower().replace(" ", "-")
 
         newCategories = {}
         for category in input(tc.input("Categories (sepearated by ' '): ")).split(" "):
