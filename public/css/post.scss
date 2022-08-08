@@ -310,6 +310,14 @@ main {
         .post-details {
             padding: 3em;
             text-align: center;
+
+            .lower-details {
+                flex-direction: column-reverse;
+
+                label.workInProgress {
+                    margin: .25rem auto;
+                }
+            }
         }
 
         section {
