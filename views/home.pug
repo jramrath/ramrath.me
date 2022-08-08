@@ -33,8 +33,9 @@ main
                             span.postName= "#"
                                 span.slug= post.details["slug"]
                                 = ": " + post.details["name"]
-
-                        label.new= "NEW"
+                        
+                        if lastSevenDays.includes(post)
+                            label.new= "NEW"
 
                     p= post.details["description"]
 

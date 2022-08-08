@@ -18,8 +18,8 @@ main
             section.description 
                 h2
                     span.projectName= project.details["name"]
-                    if recentProjects.includes(project)
-                        label.new= "NEW"
+                    if lastSevenDays.includes(project)
+                        label.new= "NEW POST"
 
                 p= project.details["description"]
 
