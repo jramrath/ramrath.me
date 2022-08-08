@@ -90,7 +90,7 @@ app.get("/projects/", function(req, res) {
         Object.values(project.posts).forEach((post) => {
             var creationDate = new Date(post.details["creationDateISO"])
             if(Math.floor(Date.now() / 86400000) - Math.floor(creationDate.getTime() / 86400000) <= 7) {
-                recentProjects.push(project);
+                lastSevenDays.push(project);
             }
         });
     });
