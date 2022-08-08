@@ -1,38 +1,47 @@
+mixin workInProgress()
+	label.workInProgress= "WORK IN PROGRESS"
+
+
+
 doctype html5
 head
-    include ./template/head.pug
-    link(rel="stylesheet", href="/css/project-overview.css")
-    title Projects - ramrath.me
+	include ./template/head.pug
+	link(rel="stylesheet", href="/css/project-overview.css")
+	title Projects - ramrath.me
 
 header
-    include ./template/header.pug
+	include ./template/header.pug
 
 
 
 
 main 
 
-    each project in projects
+	each project in projects
 
-        a.project-preview(href=project.dir)
-            section.description 
-                h2
-                    span.projectName= project.details["name"]
-                    if lastSevenDays.includes(project)
-                        label.new= "NEW POST"
+		a.project-preview(href=project.dir)
+			section.description 
+				h2
+					span.projectName= project.details["name"]
+					.labels
+						if lastSevenDays.includes(project)
+							label.new= "NEW"
 
-                p= project.details["description"]
+						if project.details["workInProgress"]
+							+workInProgress()
 
-                .categories
-                    each category in project.categories
-                        span= category
+				p= project.details["description"]
 
-            if project.details["slug"] != "uncategorized"
-                section.picture 
-                    img(src= "/projects/" + project.details["slug"] + "/0/img/cover.png", alt="cover")
+				.categories
+					each category in project.categories
+						span= category
+
+			if project.details["slug"] != "uncategorized"
+				section.picture 
+					img(src= "/projects/" + project.details["slug"] + "/0/img/cover.png", alt="cover")
 
 
 
 
 footer
-    include ./template/footer.pug
+	include ./template/footer.pug
