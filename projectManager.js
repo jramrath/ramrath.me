@@ -59,7 +59,10 @@ fs.readdirSync(__dirname + "/projects").forEach(dir => {
             exports.projects[dir].posts[post].details = JSON.parse(fs.readFileSync(__dirname + "/" + exports.projects[dir].posts[post].dir + "/postDetails.json", "utf8"));
             exports.projects[dir].posts[post].details["projectName"] = exports.projects[dir].details["name"];
             exports.projects[dir].posts[post].details["projectSlug"] = exports.projects[dir].details["slug"];
-
+            if(exports.projects[dir].details["slug"] != "uncategorized") {
+                exports.projects[dir].posts[post].details["workInProgress"] = exports.projects[dir].details["workInProgress"];
+            }
+            
             allPosts.push(exports.projects[dir].posts[post]);
         }
     });

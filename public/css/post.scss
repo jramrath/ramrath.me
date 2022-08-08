@@ -39,6 +39,21 @@ main {
             }
         }
 
+        .lower-details {
+            display: flex;
+
+            label.workInProgress {
+                margin: 0 0 0 auto;
+                padding: 0 .2rem;
+                color: $color-blue-dark;
+                border-radius: .85rem;
+                border-width: 2px;
+                border-color: $color-blue-dark;
+                border-style: solid;
+                font-size: .75rem;
+            }
+        }
+
         .date {
             color: $color-white-dark;
         }
@@ -295,6 +310,14 @@ main {
         .post-details {
             padding: 3em;
             text-align: center;
+
+            .lower-details {
+                flex-direction: column-reverse;
+
+                label.workInProgress {
+                    margin: .25rem auto;
+                }
+            }
         }
 
         section {
