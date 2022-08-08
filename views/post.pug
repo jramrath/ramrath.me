@@ -1,3 +1,10 @@
+mixin workInProgress()
+	label.workInProgress= "WORK IN PROGRESS"
+
+
+
+
+
 doctype html5
 head
 	include ./template/head.pug
@@ -24,7 +31,11 @@ main
 					a(href="/projects/" + post.details["projectSlug"])= post.details["projectName"]
 				span.blog= "#" + post.details["slug"] + ": " + post.details["name"]
 
-		span.date= post.details["creationDate"]
+		.lower-details
+			span.date= post.details["creationDate"]
+
+			if project.details["workInProgress"] || post.details["workInProgress"]
+				+workInProgress()
 
 
 	- var path = path
