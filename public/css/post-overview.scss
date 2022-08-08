@@ -91,16 +91,27 @@ main {
                             font-weight: bold;
                         }
                     }
+                    .labels {
+                        margin: auto 0 auto .5rem;
 
-                    label.new {
-                        margin: auto 0 auto 1rem;
-                        padding: 0 .2rem;
-                        color: $color-orange;
-                        border-radius: .85rem;
-                        border-width: 2px;
-                        border-color: $color-orange;
-                        border-style: solid;
-                        font-size: .75rem;
+                        label {
+                            margin-left: .5rem;
+                            padding: 0 .2rem;
+                            border-radius: .85rem;
+                            border-width: 2px;
+                            border-style: solid;
+                            font-size: .75rem;
+
+                            &.new {
+                                color: $color-orange;
+                                border-color: $color-orange;
+                            }
+
+                            &.workInProgress {
+                                color: $color-blue-dark;
+                                border-color: $color-blue-dark;
+                            }
+                        }
                     }
                 }
         

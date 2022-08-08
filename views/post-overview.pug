@@ -46,8 +46,12 @@ main
 							span.slug= post.details["slug"]
 							= ": " + post.details["name"]
 
-						if lastSevenDays.includes(post)
-							label.new= "NEW"
+						.labels
+							if lastSevenDays.includes(post)
+								label.new= "NEW"
+
+							if project.details["slug"] == "uncategorized" && post.details["workInProgress"]
+								+workInProgress()
 
 					p= post.details["description"]
 					span.date= post.details["creationDate"]
