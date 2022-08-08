@@ -4,5 +4,6 @@
     "creationDateISO": "2023-11-25",
     "name": "Test",
     "description": "Just a test project! Lorem ipsum bla bla bla",
-    "categories": "ast blatt busch"
+    "categories": "ast blatt busch",
+    "workInProgress": true
 }
