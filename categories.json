@@ -5,5 +5,10 @@
     "ast": "Ast",
     "busch": "Busch",
     "blatt": "Blatt",
-    "baum": "Baum"
+    "baum": "Baum",
+    "x-plane": "X-Plane",
+    "simulation": "Simulation",
+    "airplane": "Airplane",
+    "3d-printing": "3D-Printing",
+    "laser-cutting": "Laser-Cutting"
 }
