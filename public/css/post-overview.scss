@@ -18,9 +18,26 @@ main {
     section.project-details {
         margin: 0 .5em;
 
-        h1.project-name {
-            color: $color-blue-medium;
-            font-weight: bold;
+        .upper-details {
+            display: flex;
+            margin: 1.245rem 0;
+
+            label.workInProgress {
+                margin: 0 0 0 auto;
+                padding: 0 .2rem;
+                color: $color-blue-dark;
+                border-radius: .85rem;
+                border-width: 2px;
+                border-color: $color-blue-dark;
+                border-style: solid;
+                font-size: .75rem;
+            }
+
+            h1.project-name {
+                color: $color-blue-medium;
+                font-weight: bold;
+                margin: 0;
+            }
         }
 
         .categories {
