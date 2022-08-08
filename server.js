@@ -61,9 +61,18 @@ let notFoundFunc = (req, res) => {
 
 
 app.get("/", function(req, res) {
+    var lastSevenDays = [];
+    Object.values(PM.recentPosts).forEach(post => {
+        var creationDate = new Date(post.details["creationDateISO"])
+            if(Math.floor(Date.now() / 86400000) - Math.floor(creationDate.getTime() / 86400000) <= 7) {
+                lastSevenDays.push(post);
+            }
+    });
+
     render(req, res, "home.pug", { 
         current: "home",
-        recentPosts: PM.recentPosts
+        recentPosts: PM.recentPosts,
+        lastSevenDays: lastSevenDays
     });
 });
 
@@ -76,10 +85,11 @@ app.get("/about/", function(req, res) {
 
 
 app.get("/projects/", function(req, res) {
-    var recentProjects = [];
+    var lastSevenDays = [];
     PM.sortedProjects.forEach((project) => {
         Object.values(project.posts).forEach((post) => {
-            if(PM.recentPosts.includes(post)) {
+            var creationDate = new Date(post.details["creationDateISO"])
+            if(Math.floor(Date.now() / 86400000) - Math.floor(creationDate.getTime() / 86400000) <= 7) {
                 recentProjects.push(project);
             }
         });
@@ -88,7 +98,7 @@ app.get("/projects/", function(req, res) {
     render(req, res, "project-overview.pug", { 
         projects: PM.sortedProjects,
         current: "projects",
-        recentProjects: recentProjects
+        lastSevenDays: lastSevenDays
     });
 });
 
@@ -96,10 +106,18 @@ app.get("/projects/", function(req, res) {
 app.get("/projects/:name", function(req, res) {
     const project = PM.projects[req.params.name]
 
+    var lastSevenDays = [];
+    Object.values(project.posts).forEach(post => {
+        var creationDate = new Date(post.details["creationDateISO"])
+            if(Math.floor(Date.now() / 86400000) - Math.floor(creationDate.getTime() / 86400000) <= 7) {
+                lastSevenDays.push(post);
+            }
+    });
+
     if(project) {
         render(req, res, "post-overview.pug", { 
             project: project,
-            recentPosts: PM.recentPosts
+            lastSevenDays: lastSevenDays
         });
     }
     else {
