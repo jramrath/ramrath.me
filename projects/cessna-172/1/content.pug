@@ -98,7 +98,18 @@ include ../../../views/template/postTemplates.pug
 		This section will give you an overview of what I've spent for each individual post. As long as I haven't actually 
 		built the components from a post, the price will most likely change. These posts will be marked with "(expected)".
 
-	table(style="width: 75%")
+	style.
+		table.costs > tbody > tr > td:last-child {
+			text-align: center;
+		}
+
+		@media only screen and (min-width: 600px) {
+			table.costs {
+				width: 50%;
+			}
+		}
+
+	table.costs
 		tr 
 			th= "Post"
 			th= "Price"
