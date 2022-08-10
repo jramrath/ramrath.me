@@ -23,7 +23,7 @@ $color-green: #4EC9B0;        /* Post-name part of h1 in posts */
     width: 100%;
 
     .description {
-        max-width: 100%;
+        max-width: calc(100% - 1em); // 1em is 2x padding
         min-height: 150px;
         margin: 0;
         padding: .5em;
@@ -77,6 +77,7 @@ $color-green: #4EC9B0;        /* Post-name part of h1 in posts */
         .categories {
             margin-top: auto;
             display: flex;
+            overflow: scroll;
 
             span {
                 position: relative;
