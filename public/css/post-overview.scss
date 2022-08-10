@@ -43,6 +43,7 @@ main {
         .categories {
             margin-top: auto;
             display: flex;
+            overflow: scroll;
 
             a {
                 position: relative;
@@ -52,6 +53,7 @@ main {
                 border-radius: .45em;
                 background-color: $color-black-medium;
                 font-size: .85em;
+                white-space: nowrap;
             }
         }
     }
