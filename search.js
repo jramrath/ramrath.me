@@ -23,7 +23,7 @@ exports.searchFunc = function(PM, keywords) {
 
             // search in project.details (description, slug, name ...)
             if(Object.values(project.details).find(value => {
-                return value.toLowerCase().search(keyword.toLowerCase()) != -1;
+                return (typeof(value) === "boolean") ? false : value.toLowerCase().search(keyword.toLowerCase()) != -1;
             })) {
                 if(!results["projects"].includes(project)) {
                     results["projects"].push(project);
@@ -36,7 +36,7 @@ exports.searchFunc = function(PM, keywords) {
 
                 // ... post.details (description, slug, name) excluding name and slug of project and the content of the post
                 if(Object.values(post.details).find(value => {
-                    return value.toLowerCase().search(keyword.toLowerCase()) != -1;
+                    return (typeof(value) === "boolean") ? false : value.toLowerCase().search(keyword.toLowerCase()) != -1;
                 }) || fs.readFileSync(__dirname + post.dir + "/content.pug", { encoding:'utf8' }).split(" ").find(word => {
                     return word.toLowerCase().search(keyword.toLowerCase()) != -1;
                 })) {
