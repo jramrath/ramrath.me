@@ -37,6 +37,7 @@ $color-green: #4EC9B0;        /* Post-name part of h1 in posts */
             margin-top: 0;
             font-weight: bold;
             display: flex;
+            flex-wrap: wrap;
 
             span {
                 margin: auto 0;
