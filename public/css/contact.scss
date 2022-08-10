@@ -18,42 +18,44 @@ main {
     display: block;
     margin: 0;
 
-    a div.container {
-        display: inline-flex;
-        width: 100%;
-        margin: .75em 0;
-        height: 8em;
-        position: relative;
-        background: $color-black-medium;
-
-        img.icon {
-            float: left;
-            height: auto;
-            width: 3.5em;
-            margin: auto 1em;
-        }
-
-
-        section {
-            height: auto;
+    a, span {
+        div.container {
+            display: inline-flex;
             width: 100%;
-            margin: auto 0;
-            display: block;
+            margin: .75em 0;
+            height: 8em;
+            position: relative;
+            background: $color-black-medium;
 
-            h1 {
-                font-size: 1em;
-                width: auto;
-            }
-
-            h1.name {
+            img.icon {
+                float: left;
+                height: auto;
+                width: 3.5em;
                 margin: auto 1em;
             }
 
-            h1.content {
-                margin: auto 1em;
+
+            section {
+                height: auto;
+                width: 100%;
+                margin: auto 0;
+                display: block;
+
+                h1 {
+                    font-size: 1em;
+                    width: auto;
+                }
+
+                h1.name {
+                    margin: auto 1em;
+                }
+
+                h1.content {
+                    margin: auto 1em;
+                }
             }
         }
-    }
+}
 }
 
 .pgp-info {
@@ -106,32 +108,34 @@ main {
         width: 90%;
         margin: auto;
 
-        a div.container {
-            margin: .75em;
-            border-radius: .5em;
-            border: 1px solid $color-black-medium;
+        a, span {
+            div.container {
+                margin: .75em;
+                border-radius: .5em;
+                border: 1px solid $color-black-medium;
 
-            &:hover {
-                border-color: $color-blue-dark;
-            }
-
-            section {
-                display: inline-flex;
-
-                h1 {
-                    font-size: 2.25em;
+                &:hover {
+                    border-color: $color-blue-dark;
                 }
 
-                h1.name {
-                    float: left;
-                    margin: auto .5em auto 1em;
-                }
+                section {
+                    display: inline-flex;
 
-                h1.content {
-                    right: 0;
-                    text-align: right;
-                    width: 100%;
-                    margin: auto 1em auto .5em;
+                    h1 {
+                        font-size: 2.25em;
+                    }
+
+                    h1.name {
+                        float: left;
+                        margin: auto .5em auto 1em;
+                    }
+
+                    h1.content {
+                        right: 0;
+                        text-align: right;
+                        width: 100%;
+                        margin: auto 1em auto .5em;
+                    }
                 }
             }
         }

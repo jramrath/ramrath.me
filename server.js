@@ -106,15 +106,15 @@ app.get("/projects/", function(req, res) {
 app.get("/projects/:name", function(req, res) {
     const project = PM.projects[req.params.name]
 
-    var lastSevenDays = [];
-    Object.values(project.posts).forEach(post => {
-        var creationDate = new Date(post.details["creationDateISO"])
-            if(Math.floor(Date.now() / 86400000) - Math.floor(creationDate.getTime() / 86400000) <= 7) {
-                lastSevenDays.push(post);
-            }
-    });
-
     if(project) {
+        var lastSevenDays = [];
+        Object.values(project.posts).forEach(post => {
+            var creationDate = new Date(post.details["creationDateISO"])
+                if(Math.floor(Date.now() / 86400000) - Math.floor(creationDate.getTime() / 86400000) <= 7) {
+                    lastSevenDays.push(post);
+                }
+        });
+
         render(req, res, "post-overview.pug", { 
             project: project,
             lastSevenDays: lastSevenDays
@@ -128,11 +128,11 @@ app.get("/projects/:name", function(req, res) {
 
 
 app.get("/projects/:name/:post", function(req, res) {
-    const project = PM.projects[req.params.name];
-    const post = project.posts[req.params.post];
-    const nextPost = project.posts[(parseInt(req.params.post) +1).toString()]
+    if(PM.projects[req.params.name] && PM.projects[req.params.name].posts[req.params.post]) {
+        const project = PM.projects[req.params.name];
+        const post = project.posts[req.params.post];
+        const nextPost = project.posts[(parseInt(req.params.post) +1).toString()]
 
-    if(project && post) {
         render(req, res, "post.pug", {
             post: post,
             project: project,
