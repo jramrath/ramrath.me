@@ -32,6 +32,7 @@ html {
     a { 
         color: $color-blue-dark;
         text-decoration: none;
+        font-weight: bold;
     
         &:hover {
             text-decoration: underline;
@@ -58,6 +59,7 @@ html {
 
             a {
                 color: $color-white-dark;
+                font-weight: normal;
 
                 &:hover {
                     text-decoration: none;
