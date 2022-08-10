@@ -280,6 +280,29 @@ main {
                 text-align: center;
             }
         }
+
+        & > table {
+            width: 100%;
+            border-collapse: collapse;
+
+            td, th {
+                border-left: 1px solid $color-white-dark;
+            }
+
+            tbody > tr {
+                & > td:first-child, th:first-child {
+                    border-left: none;
+                }
+            }
+
+            td {
+                border-top: 1px solid $color-white-dark;
+            }
+
+            th {
+                border-bottom: 1px solid $color-white-light;
+            }
+        }
     }
 
     .post-navbar-wrapper {
