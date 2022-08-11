@@ -303,6 +303,22 @@ main {
                 border-bottom: 1px solid $color-white-light;
             }
         }
+
+        .slideshow_wrapper {
+            overflow: hidden;
+            margin: .5em auto;
+            width: 90%;
+
+            .slideshow {
+                width: 100%;
+                display: ruby;
+                position: relative;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
     }
 
     .post-navbar-wrapper {
