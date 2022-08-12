@@ -153,11 +153,25 @@ mixin slideshow(images, animation_length)
     - slideshowCounter += 1;
 
     .slideshow_wrapper 
-        .slideshow
-            each image in images 
-                img(src="/projects/" + project.details["slug"] + "/" + currentPost.details["slug"] + "/img/" + image)
 
-            img(src="/projects/" + project.details["slug"] + "/" + currentPost.details["slug"] + "/img/" + images[0])
+        input(type="radio" name="slideshowImageSelector" + slideshowCounter.toString() id="slideShow" + slideshowCounter.toString() + "img0" checked)
+        each image, index in images
+            if index != 0
+                input(type="radio" name="slideshowImageSelector" + slideshowCounter.toString() id="slideShow" + slideshowCounter.toString() + "img" + index.toString())
+
+        .slideshow
+            each image, index in images 
+                div(class= "image_wrapper" + index.toString()).image_wrapper
+                    img(src="/projects/" + project.details["slug"] + "/" + currentPost.details["slug"] + "/img/" + image)
+                    label(for="slideShow" + slideshowCounter.toString() + "img" + ((index -1 < 0) ? images.length -1 : index -1).toString()).left
+                    label(for="slideShow" + slideshowCounter.toString() + "img" + ((index +1 > images.length -1) ? 0 : index +1).toString()).right
+                
+            .image_wrapper
+                img(src="/projects/" + project.details["slug"] + "/" + currentPost.details["slug"] + "/img/" + images[0])
+
+
+
+
 
     style= ".slideshow_wrapper .slideshow { animation: slideshow_" + slideshowCounter.toString() + " "
         = animation_length.toString() + "s"
@@ -171,5 +185,9 @@ mixin slideshow(images, animation_length)
             = ((index +1) * (100 / images.length - 100 / animation_length) + (index) * (100 / animation_length)).toString()
             = "% { margin-left: " + (0 - index * 100).toString() + "%; } "
         
-        = "100% { margin-left: " + (0 - images.length * 100).toString() + "%; } }"
+        = "100% { margin-left: " + (0 - images.length * 100).toString() + "%; } } "
 
+
+        each image, index in images 
+            = ".slideshow_wrapper:hover input#slideshow" + slideshowCounter.toString() + "img" + index.toString() + ":checked ~ .slideshow .image_wrapper" + index.toString()
+            = " { display: unset; } "
