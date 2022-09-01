@@ -44,6 +44,8 @@ main
 
 	.bottomButtons
 
+		span.lastEdited= "Last edited: " + post.details["lastEdited"]
+
 		a(href= "/typo?project=" + post.details["projectSlug"] + "&post=" + post.details["slug"]).typo= "Found a typo? Report it"
 
 		if nextPost != "" && post.details["projectSlug"] != "uncategorized"
