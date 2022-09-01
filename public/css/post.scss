@@ -366,14 +366,7 @@ main {
             a {
                 border: none;
                 background-color: transparent;
-
-                &.nextpost {
-                    margin-right: 1.5em;
-                }
-
-                &.typo {
-                    margin-left: 1.5em;
-                }
+                margin: auto;
             }
         }
     }
