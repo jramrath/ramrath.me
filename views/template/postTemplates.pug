@@ -190,4 +190,4 @@ mixin slideshow(images, animation_length)
 
         each image, index in images 
             = ".slideshow_wrapper:hover input#slideshow" + slideshowCounter.toString() + "img" + index.toString() + ":checked ~ .slideshow .image_wrapper" + index.toString()
-            = " { display: unset; } "
+            = " { opacity: 1; z-index: 1; } "
