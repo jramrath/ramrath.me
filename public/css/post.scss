@@ -325,6 +325,11 @@ main {
             border-width: 2px;
             font-weight: normal;
         }
+
+        span {
+            color: $color-white-dark;
+            margin: auto;
+        }
     }
 }
 
@@ -362,18 +367,12 @@ main {
         .bottomButtons {
             flex-direction: row;
             height: auto;
+            justify-content: space-between;
 
             a {
                 border: none;
                 background-color: transparent;
-
-                &.nextpost {
-                    margin-right: 1.5em;
-                }
-
-                &.typo {
-                    margin-left: 1.5em;
-                }
+                margin: auto;
             }
         }
     }

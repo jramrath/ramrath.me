@@ -44,13 +44,12 @@ main
 
 	.bottomButtons
 
-		if nextPost != ""
-			a(href= "/typo?project=" + post.details["projectSlug"] + "&post=" + post.details["slug"]).typo= "Found a typo? Report it"
+		span.lastEdited= "Last edited: " + post.details["lastEdited"]
 
+		a(href= "/typo?project=" + post.details["projectSlug"] + "&post=" + post.details["slug"]).typo= "Found a typo? Report it"
+
+		if nextPost != "" && post.details["projectSlug"] != "uncategorized"
 			a(href= nextPost.dir).nextPost=  "Next Post 〉〉 #" + nextPost.details["slug"] + " " + nextPost.details["name"]
-		
-		else 
-			a(href= "/typo?project=" + post.details["projectSlug"] + "&post=" + post.details["slug"])= "Found a typo? Report it"
 
 
 footer
