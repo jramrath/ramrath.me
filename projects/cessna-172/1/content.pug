@@ -1,0 +1,195 @@
+include ../../../views/template/postTemplates.pug
+
++section("Introduction")
+	p.
+		I love flying in my flight simulator, but my current cockpit only consists of a remote control
+		that is normally used for flying RC planes or drones. <br>
+		<strong>It's time for an upgrade. </strong> <br>
+		The new cockpit should mimic a Cessna 172SP with all of the gauges, avionics and control inputs. 
+		Since I have access to a 3D-Printer and a Laser Cutter most of the parts will be made with the 
+		help of these machines (the laser cutter will only be used for engraving, not cutting). 
+		Everything else will be done by hand.
+
+	p.
+		I love open source hardware and software (even this website is open source). That's why I'll be
+		publishing and documenting my work and the building process on this website and in
+		<a href="https://github.com/jramrath/Cessna172" target="_blank" rel="noreferrer noopener">this</a>
+		GitHub repository. <br>
+		This series of posts won't be a tutorial but rather a documentation of my building process. Feel 
+		free to use it as  a reference while building your own. I will be using a lot of concepts and 
+		especially 3D-Printable models from other people while taking extra care in mentioning everybody. 
+		If I do, however, forget to mention somebody, please contact me. You can find my contacting 
+		information on <a href="/contact">/contact</a>.
+
+	p This project will be split into multiple posts (If you can't find a post, it's probably not finished yet):
+
+	ul
+		li 
+			a(href="1")= "#1: Intruduction"
+			= " (this post)"
+		li
+			a(href="2")= "#2: Building the Frame"
+		li
+			a(href="3")= "#3: Simple Gauges"
+		li 
+			a(href="4")= "#4: Turn Coordinator"
+		li 
+			a(href="5")= "#5: Directional Indicator"
+		li 
+			a(href="6")= "#6: Attitude Indicator"
+		li 
+			a(href="7")= "#7: Altimeter"
+		li 
+			a(href="8")= "#8: Flap Switch"
+		li
+			a(href="9")= "#9: Switch Panel"
+		li
+			a(href="10")= "#10: Throttle & Mixture"
+		li 
+			a(href="11")= "#11: VORs & ADF"
+		li
+			a(href="12")= "#12: GPS: GNS 530 & 430"
+		li 
+			a(href="13")= "#13: XPDR, ADF, DME & AP"
+		li 
+			a(href="14")= "#14: Parking Brake"
+		li
+			a(href="15")= "#15: Trim Wheel"
+		li
+			a(href="16")= "#16: Annunciator Panel"
+		li
+			a(href="17")= "#17: Wiring & Software"
+		li 
+			a(href="18")= "#18: Yoke"
+		li
+			a(href="19")= "#19: Rudder Pedals"
+
+
++section("Software & Wiring")
+	p.
+		All of the hardware has to somehow communicate with the simulation. To do that, I'm planning 
+		on using a X-Plane plugin called <a href="https://simvim.com">SimVimX</a>. It will communicate 
+		to an Arduino Mega running <a href="https://realsimcontrol.com">RealSimControl</a>. <br>
+		I will publish my experience with setting up the software in post <a href="17">#17: Wiring & Software</a>.
+		All posts following that post will show how I connect the individual components.
+
+	p.
+		When it comes to wiring, I will use the <a href="https://realsimcontrol.com/config.html">Online-Configurator</a>
+		of RealSimControl. Once I find a configuration that works for me, you'll find more information <a href="17">here</a>.
+		
+
++section("Costs")
+	p.
+		This section will give you an overview of what I've spent for each individual post. As long as I haven't actually 
+		built the components from a post, the price will most likely change. Said, not finished, posts will be marked with "(expected)".
+
+	style.
+		table.costs > tbody > tr > td:last-child {
+			text-align: center;
+		}
+
+		@media only screen and (min-width: 600px) {
+			table.costs {
+				width: 50%;
+			}
+		}
+
+	table.costs
+		tr 
+			th= "Post"
+			th= "Price"
+		tr
+			td
+				a(href="2")= "#2: Building the Frame"
+				= " (expected)"
+			td= "?"
+		tr
+			td
+				a(href="3")= "#3: Simple Gauges"
+				= " (expected)"
+			td= "?"
+		tr
+			td
+				a(href="4")= "#4: Turn Coordinator"
+				= " (expected)"
+			td= "?"
+		tr
+			td
+				a(href="5")= "#5: Directional Indicator"
+				= " (expected)"
+			td= "?"
+		tr
+			td
+				a(href="6")= "#6: Attitude Indicator"
+				= " (expected)"
+			td= "?"
+		tr
+			td
+				a(href="7")= "#7: Altimeter"
+				= " (expected)"
+			td= "?"
+		tr
+			td
+				a(href="8")= "#8: Flap Switch"
+				= " (expected)"
+			td= "?"
+		tr
+			td
+				a(href="9")= "#9: Switch Panel"
+				= " (expected)"
+			td= "?"
+		tr
+			td
+				a(href="10")= "#10: Throttle & Mixture"
+				= " (expected)"
+			td= "?"
+		tr
+			td
+				a(href="11")= "#11: VORs & ADF"
+				= " (expected)"
+			td= "?"
+		tr
+			td
+				a(href="12")= "#12: GPS: GNS 530 & 430"
+				= " (expected)"
+			td= "?"
+		tr
+			td
+				a(href="13")= "#13: XPDR, ADF, DME & AP"
+				= " (expected)"
+			td= "?"
+		tr
+			td
+				a(href="14")= "#14: Parking Brake"
+				= " (expected)"
+			td= "?"
+		tr
+			td
+				a(href="15")= "#15: Trim Wheel"
+				= " (expected)"
+			td= "?"
+		tr
+			td
+				a(href="16")= "#16: Annunciator Panel"
+				= " (expected)"
+			td= "?"
+		tr
+			td
+				a(href="17")= "#17: Wiring & Software"
+				= " (expected)"
+			td= "?"
+		tr
+			td
+				a(href="18")= "#18: Yoke"
+				= " (expected)"
+			td= "?"
+		tr
+			td
+				a(href="19")= "#19: Rudder Pedals"
+				= " (expected)"
+			td= "?"
+		
+
+
+
++post-navbar()
