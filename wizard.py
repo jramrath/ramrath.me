@@ -138,6 +138,8 @@ class Main():
 
         postDetails["description"] = "This is a placeholder description. You can change it in this posts 'postDetails.json' file"
 
+        postDetails["lastEdited"] = time.strftime("%d.%m.%Y")
+
         print()
         print(tc.info("This is the current Configuration:"))
         print(json.dumps(postDetails, indent=4))
