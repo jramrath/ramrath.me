@@ -89,23 +89,6 @@ mixin terminalMixin(commands)
 
     - terminalMixinCopyId += 1                
     
-        
-
-
-mixin pimg(imgFile)
-    .doubleContents
-        p 
-            block
-        
-        img(src="/projects/" + project.details["slug"] + "/" + currentPost.details["slug"] + "/img/" + imgFile)
-
-mixin imgp(imgFile)
-    .doubleContents
-        img(src="/projects/" + project.details["slug"] + "/" + currentPost.details["slug"] + "/img/" + imgFile)
-
-        p 
-            block
-
 
 mixin video(filename, ytMirror)
     - var filePath = "/projects/" + project.details["slug"] + "/" + currentPost.details["slug"] + "/video/" + filename;
