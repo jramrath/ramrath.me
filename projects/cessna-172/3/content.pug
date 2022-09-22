@@ -1,2 +1,89 @@
 include ../../../views/template/postTemplates.pug
 
++slideshow([], 30)
+
++section("Introduction")
+	p.
+		This post covers the building an installation process of the following 3 Basic Gauges:
+	ul 
+		li= "Airspeed Indicator (ASI)"
+		li= "Vertical Speed Indicator (VSI)"
+		li= "Engine RPM Gauge"
+	
+	p.
+		I found <a href="https://www.thingiverse.com/thing:2489322">this</a> phenomenal 3D-Printable 
+		design by <a href="https://www.thingiverse.com/alvaroalea/designs">Alvaro Alea</a> on 
+		<a href="https://www.thingiverse.com">Thingiverse</a>. He also designed some of the other 
+		gauges I will be using. You can find links to said designs in other posts from this project 
+		or on Alvaro's Thingiverse profile.
+
++section("Parts & Costs")
+	style.
+		table.costs > tbody > tr > td:last-child {
+			text-align: center;
+		}
+
+		@media only screen and (min-width: 600px) {
+			table.costs {
+				width: 50%;
+			}
+		}
+
+	table.costs
+		tr 
+			th= "Part"
+			th= "Price"
+		tr 
+			td
+				a(href="https://www.thingiverse.com/thing:2489322")= "3D-Printed Parts"
+			td= ""
+		tr 
+			td= "Screws"
+			td= ""
+		tr
+			td
+				a(href="https://www.amazon.de/Micro-Helicopter-Airplane-Remote-Control/dp/B07KPS9845")= "1x Servo"
+			td= "2.20 €"
+		tr 
+			td
+				strong= "Total (1 gauge only)"
+			td
+				strong= "2.20 €"
+		tr 
+			td
+				strong= "Total"
+			td
+				strong= "6.60 €"
+		
++section("3D-Printing")
+	.doubleContents 
+		div
+			+img()
+		div
+			p.
+				The following list is for one gauge only. Since I built all three of them, I printed 
+				everything three times.
+
+			ul
+				li= "back.stl"
+				li= "axis_option_A.stl"
+				li= "needle2_option_A.stl"
+				li= "bezel1_v1.stl"
+				li= "small_gear_option_A_2.66.stl"
+				li= "big_gear_2.66.stl"
+
+			p.
+				NOTE: I could have also chosen a different needle as long as it would have been an 'option_A' one.
+
++section("Assembly & Mounting")
+	p.
+		With the help of 'FULL.stl' and the Thingiverse description, the assembly process was pretty easy:
+	
+	ol
+		li= "Print the picture from 'indicadores_3.5.pdf' in the correct size and glue it on the flat side of 'back.stl'."
+		li= "Paint the needle and glue the axis to the needle."
+		li= "Push the axis through 'back.stl' and the small gear, attaching everything together."
+		li= "Center the needle and the servo. Attach a servo horn to the servo."
+		li= "Attach the servo with screws. It should hold the big gear in place."
+
++post-navbar()
