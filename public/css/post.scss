@@ -298,6 +298,11 @@ main {
         }
     }
 
+    .doubleContents {
+        padding: 0;
+        margin: 0;
+    }
+
     .slideshow_wrapper {
         overflow: hidden;
         margin: .5em auto;
@@ -414,15 +419,12 @@ main {
         }
 
         section {
-            ul.doubleContents {
+            .doubleContents {
                 display: flex;
-                padding: 0;
-                margin: 0;
 
-                & > li {
+                & > div {
                     width: 45%;
                     margin: 2.5%;
-                    list-style-type: none;
                 }
             }
         }
