@@ -1,4 +1,86 @@
 include ../../../views/template/postTemplates.pug
 
++slideshow([], 2)
+
++section("Introduction")
+	p.
+		This post covers the building and installation process of the Directional Indicator.
+	p.
+		Just like the gauges from the last two posts, the design is made by <a href="https://www.thingiverse.com/alvaroalea/designs">Alvaro Alea</a>
+		and can be found <a href="https://www.thingiverse.com/thing:3401254">here</a>.
+
+
++section("Parts & Costs")
+	style.
+		table.costs > tbody > tr > td:last-child {
+			text-align: center;
+		}
+
+		@media only screen and (min-width: 600px) {
+			table.costs {
+				width: 50%;
+			}
+		}
+
+	table.costs
+		tr 
+			th= "Part"
+			th= "Price"
+		tr 
+			td
+				a(href="https://www.thingiverse.com/thing:3401254")= "3D-Printed Parts"
+			td= ""
+		tr 
+			td= "Screws"
+			td= ""
+		tr
+			td
+				a(href="https://www.amazon.de/ANGEEK-28BYJ-48-ULN2003-Schrittmotor-Modulplatine/dp/B07VGV1XFT")= "2x Stepper Motor (28BYJ-48)"
+			td= "5.60 €"
+		tr
+			td
+				a(href="https://www.amazon.de/Alomejor-Longboard-Kugellager-Skateboards-Rollerblade/dp/B07SKM6VRH")= "2x Ball Bearing (608)"
+			td= "2.00 €"
+		tr
+			td
+				a(href="https://www.amazon.de/AZDelivery-Drehwinkelgeber-Drehgeber-Encoder-Arduino/dp/B07CMVQHLT")= "2x Rotary Encoder"
+			td= "4.20 €"
+		tr 
+			td
+				strong= "Total"
+			td
+				strong= "11.80 €"
+
++section("3D-Printing")
+	.doubleContents
+		div
+			+img()
+		div
+			p.
+				I printed the following parts:
+			ul
+				li= "1x fondo.stl"
+				li= "1x fondo2.stl"
+				li= "1x bezel.stl"
+				li= "1x needle2.stl"
+				li= "1x needle1.stl"
+				li= "1x gear2.stl"
+				li= "2x eje_mando.stl"
+				li= "2x mando.stl"
+				li= "1x rosa.stl"
+			
+			p.
+				I printed everything in black PLA except 'needle2.stl' which I printed in red PLA.
+				
+
++section("Assembly")
+	ul
+		li= "First I printed 'ee.pdf' in the correct size and glued the lower right graphic onto the flat side of 'rosa.stl'."
+		li= "Then I inserted a ball bearing into 'needle1.stl' and pushed it onto the shaft of 'rosa.stl' while making sure the gear is facing away from the flat part of 'rosa.stl'."
+		li= "Next, I glued 'needle2.stl' onto 'needle1.stl'. The red needle / bug has to be seen from the other side of 'rosa.stl'."
+		li= "After it finished drying, I pushed the second ball bearing onto the end of the shaft."
+		li= ""
+
++section("Installation")
 
 +post-navbar()
