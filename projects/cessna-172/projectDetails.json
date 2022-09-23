@@ -2,7 +2,7 @@
     "creationDate": "10.09.2022",
     "creationDateISO": "2022-09-10",
     "name": "Cessna 172",
-    "slug": "cessna-172",
+    "slug": "c172",
     "categories": "x-plane arduino simulation airplane 3d-printing laser-cutting",
     "description": "I love flying in my flight simulator, but my current cockpit only consists of a RC remote. It's time for an upgrade: A fully functional Cessna 172SP cockpit with working gauges, avionics, and control inputs!",
     "workInProgress": true
