@@ -23,7 +23,7 @@ mixin section(title)
 
 mixin img(src, alt)
     .img_wrapper
-        img(src="/projects/" + project.details["slug"] + "/" + currentPost.details["slug"] + "/assets/img/" + src, alt=alt)
+        img(src="/projects/" + project.details["slug"] + "/" + currentPost.details["slug"] + "/img/" + src, alt=alt)
 
 
 
@@ -145,7 +145,7 @@ mixin slideshow(images, animation_length)
         .slideshow
             each image, index in images 
                 div(class= "image_wrapper" + index.toString()).image_wrapper
-                    img(src="/projects/" + project.details["slug"] + "/" + currentPost.details["slug"] + "/assets/img/" + image)
+                    img(src="/projects/" + project.details["slug"] + "/" + currentPost.details["slug"] + "/img/" + image)
                     label(for="slideShow" + slideshowCounter.toString() + "img" + ((index -1 < 0) ? images.length -1 : index -1).toString()).left
                     label(for="slideShow" + slideshowCounter.toString() + "img" + ((index +1 > images.length -1) ? 0 : index +1).toString()).right
                 
