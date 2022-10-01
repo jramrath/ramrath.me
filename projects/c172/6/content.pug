@@ -1,0 +1,73 @@
+include ../../../views/template/postTemplates.pug
+
++slideshow([], 15)
+
++section("Introduction")
+	p.
+		This post covers the building and installation process of the Attitude Indicator.
+	p.
+		I found a beautiful design on <a href="https://www.thingiverse.com">Thingiverse</a> by
+		<a href="https://www.thingiverse.com/zockzock/designs">ZockZock</a>. You can find it 
+		<a href="https://www.thingiverse.com/thing:4593758">here</a>. In the future I might replace 
+		this gauge by the 360° Version ZockZock mentions in the Thingiverse description of this design.
+
++section("Parts & Costs")
+	style.
+		table.costs > tbody > tr > td:last-child {
+			text-align: center;
+		}
+
+		@media only screen and (min-width: 600px) {
+			table.costs {
+				width: 50%;
+			}
+		}
+
+	table.costs
+		tr 
+			th= "Part"
+			th= "Price"
+		tr 
+			td
+				a(href="https://www.thingiverse.com/thing:4593758")= "3D-Printed Parts"
+			td= ""
+		tr 
+			td= "Screws"
+			td= ""
+		tr
+			td
+				a(href="https://www.amazon.de/ANGEEK-28BYJ-48-ULN2003-Schrittmotor-Modulplatine/dp/B07VGV1XFT")= "2x Stepper Motor (28BYJ-48)"
+			td= "5.60 €"
+		tr 
+			td
+				strong= "Total"
+			td
+				strong= "5.60 €"
+
++section("3D-Printing")
+	.doubleContents
+		div
+			+img("3d-printed.png")
+		div 
+			p.
+				I printed the following parts: 
+			ul
+				li= "2x Adapter.stl"
+				li= "1x Anschlag_und_kabelfuehrung.stl"
+				li= "1x Indikator.stl"
+				li= "1x Rotor.stl"
+				li= "1x Traeger_Hinten.stl"
+				li= "1x V2_Gleitlagerring.stl"
+				li= "1x V2_Hintergrund.stl"
+				li= "1x V2_Mitlaufende_Horizontale.stl"
+				li= "2x V2_Mitnehmer_Horizontaler_Anzeiger.stl"
+				li= "1x V2_Nadel_Horizontaler_Anzeiger.stl"
+				li= "1x V2_Traeger_Vorne.stl"
+				li= "1x V2_Zwischen-Blende.stl"
+				li= "1x Vertikal_Anzeiger.stl"
+	
++section("Assembly & Mounting")
+	p.
+		
+
++post-navbar()
