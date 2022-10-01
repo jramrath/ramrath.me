@@ -1,0 +1,81 @@
+include ../../../views/template/postTemplates.pug
+
++slideshow(["front.jpg", "back.jpg"], 15)
+
++section("Introduction")
+	p.
+		This post covers the building and installation process of the Turn Coordinator. 
+	p.
+		Just like the <a href="3">Basic Gauges</a> from the last post, it is designed by Alvaro Alea and can 
+		be found <a href="https://www.thingiverse.com/thing:2613145">here</a>. You can find even more phenomenal 
+		designs by Alvaro on his <a href="https://www.thingiverse.com/alvaroalea/designs">Thingiverse profile</a>.
+
++section("Parts & Costs")
+	style.
+		table.costs > tbody > tr > td:last-child {
+			text-align: center;
+		}
+
+		@media only screen and (min-width: 600px) {
+			table.costs {
+				width: 50%;
+			}
+		}
+
+	table.costs
+		tr 
+			th= "Part"
+			th= "Price"
+		tr 
+			td
+				a(href="https://www.thingiverse.com/thing:2489322")= "3D-Printed Parts"
+			td= ""
+		tr 
+			td= "Screws"
+			td= ""
+		tr
+			td
+				a(href="https://www.amazon.de/Micro-Helicopter-Airplane-Remote-Control/dp/B07KPS9845")= "2x Servo"
+			td= "4.40 €"
+		tr 
+			td
+				strong= "Total"
+			td
+				strong= "4.40 €"
+
++section("3D-Printing")
+	.doubleContents 
+		div
+			+img("3d-printed.png")
+		div
+			p.
+				The Turn Coordinator is a bit more complex than the Basic Gauges I built in the last post.
+				I got away with printing the following parts: 
+			ul
+				li= "2x acople_servo.stl"
+				li= "1x eje2.stl"
+				li= "1x eje1.stl"
+				li= "1x bola1.stl"
+				li= "1x avion1.stl"
+				li= "1x fondo2.stl"
+				li= "1x fondo3.stl"
+				li= "1x fondo4.stl"
+				li= "1x bezel.stl"
+			
+			p.
+				I printed everything in black PLA and painted some parts with a white acrylic marker to get 
+				a realistic look and feeling.
+
++section("Assembly & Installation")
+	p.
+		With the help of 'full.stl' and the Thingiverse description, the assembly process was pretty easy:
+	ol 
+		li= "Print 'back.pdf' in the correct size, make the necessary cutouts and glue the graphics onto the 3D-Printed parts."
+		li= "Glue 'eje1.stl' and 'eje2.stl' to each one 'acople_servo.stl'."
+		li= "Push the shorter axis through the top hole of 'fondo4.stl' and attach it by installing a servo with screws."
+		li= "Attach 'bola1.stl' to the axis (use glue if necessary) and install 'fondo3.stl'. Only the ball part of 'bola1.stl' should be visible."
+		li= "Push the longer axis through the center hole and attach it by installing a servo with screws."
+		li= "Attach 'avion1.stl' to the axis. Use glue if necessary."
+		li= "Last but not least, install 'fondo2.stl' and 'bezel.stl'."
+
++post-navbar()
